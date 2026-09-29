@@ -734,6 +734,29 @@ const CONTENT = {
              だから<b>切り替えはブロックの切れ目で1回だけ。</b>`,
       html: K.sys('段取り') +
             K.head('鳴らす時間を、<em>ずらしてあります。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 150" role="img" aria-label="90分のマイクの持ち主：Aは踊り（拍の検出）、BとCは実演のときだけ、お披露目会は無し、Dは会話（聞き取り）、EとFは台本の声だけ" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <rect x="10" y="40" width="80" height="44" rx="10" fill="#FFF2CC" stroke="#FFC831" stroke-width="3"/>
+  <text x="50" y="58" text-anchor="middle" font-size="12" fill="#173A54">A 10分</text>
+  <text x="50" y="76" text-anchor="middle" font-size="11" fill="#B37C00">踊り</text>
+  <rect x="100" y="40" width="200" height="44" rx="10" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="200" y="58" text-anchor="middle" font-size="12" fill="#173A54">B 27分</text>
+  <text x="200" y="76" text-anchor="middle" font-size="11" fill="#4E7590">実演のときだけ切り替え</text>
+  <rect x="310" y="40" width="60" height="44" rx="10" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="340" y="58" text-anchor="middle" font-size="12" fill="#173A54">♥ 8分</text>
+  <text x="340" y="76" text-anchor="middle" font-size="11" fill="#4E7590">無し</text>
+  <rect x="380" y="40" width="120" height="44" rx="10" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="440" y="58" text-anchor="middle" font-size="12" fill="#173A54">C 16分</text>
+  <text x="440" y="76" text-anchor="middle" font-size="11" fill="#4E7590">無し</text>
+  <rect x="510" y="40" width="130" height="44" rx="10" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="575" y="58" text-anchor="middle" font-size="12" fill="#173A54">D 17分</text>
+  <text x="575" y="76" text-anchor="middle" font-size="11" fill="#2E8C42">会話（聞き取り）</text>
+  <rect x="650" y="40" width="100" height="44" rx="10" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="700" y="58" text-anchor="middle" font-size="12" fill="#173A54">E・F 12分</text>
+  <text x="700" y="76" text-anchor="middle" font-size="11" fill="#4E7590">台本の声だけ</text>
+  <text x="50" y="112" text-anchor="middle" font-size="11" fill="#B37C00">PLAY で ON</text>
+  <text x="510" y="112" text-anchor="start" font-size="11" fill="#2E8C42">MASTER で踊り OFF → 聞ける</text>
+  <text x="380" y="138" text-anchor="middle" font-size="12" fill="#1A73C4">同じマイクを取り合うので、持ち主はブロックの切れ目で1回だけ替える</text>
+</svg></div>` +
             K.cards([
               { k: 'A', v: '踊りモード', d: 'マイクは拍の検出に。曲を流す・DJ 機材を触る。PLAY ボタン（Note 11）で ON' },
               { k: 'B・C', v: 'どちらでもない', d: '実演のときだけ、その場で切り替える' },
@@ -932,6 +955,41 @@ const CONTENT = {
     { ch: 2, tag: '② 焼き方 — 戻れるようにしてから焼く',
       talk: `<b>「失敗したら文鎮」と思われがちですが、逆です。失敗できる形にしてから焼きます。</b>所要は実測で、①20分 ②10分 ③60分。`,
       html: K.sys('3つだけ') +
+            `<div class="panel"><svg viewBox="0 0 760 270" role="img" aria-label="焼き方の流れ：出荷時で遊ぶ、まるごと吸い出す、アンバインド、焼く、gatewayを立てる。アンバインドから焼き終わるまで喋らなくなる。書き込み領域は2面あり戻れる" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="10" y="40" width="130" height="90" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="75" y="66" text-anchor="middle" font-size="13" fill="#173A54">① 出荷時で遊ぶ</text>
+  <text x="75" y="88" text-anchor="middle" font-size="11" fill="#4E7590">30分</text>
+  <text x="75" y="108" text-anchor="middle" font-size="11" fill="#4E7590">基準を体で覚える</text>
+  <rect x="160" y="40" width="130" height="90" rx="16" fill="#FFF2CC" stroke="#FFC831" stroke-width="3"/>
+  <text x="225" y="66" text-anchor="middle" font-size="13" fill="#173A54">② まるごと吸い出す</text>
+  <text x="225" y="88" text-anchor="middle" font-size="11" fill="#4E7590">20分 / 16MB</text>
+  <text x="225" y="108" text-anchor="middle" font-size="11" fill="#B37C00">飛ばさない。戻る場所</text>
+  <rect x="310" y="40" width="130" height="90" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="375" y="66" text-anchor="middle" font-size="13" fill="#173A54">③ アンバインド</text>
+  <text x="375" y="88" text-anchor="middle" font-size="11" fill="#4E7590">10分</text>
+  <text x="375" y="108" text-anchor="middle" font-size="11" fill="#C43D3D">ここから喋らなくなる</text>
+  <rect x="460" y="40" width="130" height="90" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="525" y="66" text-anchor="middle" font-size="13" fill="#173A54">④ 焼く</text>
+  <text x="525" y="88" text-anchor="middle" font-size="11" fill="#4E7590">60分 / 一番詰まる</text>
+  <text x="525" y="108" text-anchor="middle" font-size="11" fill="#C43D3D">関門2段（登録・古い接続先）</text>
+  <rect x="610" y="40" width="140" height="90" rx="16" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="680" y="66" text-anchor="middle" font-size="13" fill="#173A54">⑤ gateway を立てる</text>
+  <text x="680" y="88" text-anchor="middle" font-size="11" fill="#4E7590">20分</text>
+  <text x="680" y="108" text-anchor="middle" font-size="11" fill="#2E8C42">頭脳が自分のものに</text>
+  <line x1="140" y1="85" x2="158" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <line x1="290" y1="85" x2="308" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <line x1="440" y1="85" x2="458" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <line x1="590" y1="85" x2="608" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <rect x="310" y="140" width="280" height="8" rx="4" fill="#FF6B6B"/>
+  <text x="450" y="166" text-anchor="middle" font-size="12" fill="#C43D3D">この区間、一度喋らなくなる。壊れたのではなく道のりの一部（合計 2時間20分）</text>
+  <rect x="10" y="186" width="360" height="70" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="190" y="210" text-anchor="middle" font-size="12" fill="#1A73C4">書き込み領域は2面（ota_0 / ota_1）</text>
+  <text x="190" y="232" text-anchor="middle" font-size="11" fill="#4E7590">新しい方を空いている面に置き、起動先だけ切り替える。ダメなら10秒で前の面へ</text>
+  <rect x="390" y="186" width="360" height="70" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="570" y="210" text-anchor="middle" font-size="12" fill="#1A73C4">焼いても消えない領域（NVS）がある</text>
+  <text x="570" y="232" text-anchor="middle" font-size="11" fill="#4E7590">前の接続先が残って古い先へ行き続ける。「焼き直した＝初期状態」は成り立たない</text>
+</svg></div>` +
             K.cards([
               { k: '①', v: '焼く前に、まるごと吸い出す', d: '<code>esptool read_flash 0x0 16MB</code> で 16MB を手元に。受け入れ試験を出荷時のまま1周して<b>基準</b>を取る。あとは差分だけ見ればよい' },
               { k: '②', v: '書き込み領域が2面ある', d: 'OTA の2スロット（ota_0 / ota_1）。新しい方を空いている面に置き、起動先だけ切り替える。<b>ダメなら10秒で前の面に戻る</b>' },
@@ -957,6 +1015,43 @@ const CONTENT = {
              「モグラ叩きになっている」と言われた日に数えたら、<b>表情を出す箇所が19（5ファイル）、瞬きが12（4ファイル）。持ち主がいませんでした。</b>`,
       html: K.sys('同じ形のバグが2回出たら、設計を見直す') +
             K.head('命令をやめて、<em>宣言にしました。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 300" role="img" aria-label="状態の持ち方：前は19箇所が実機を直接叩いていた。後は入力が1つの状態に集まり、優先順で1つに決まり、反映役が差分だけを実機と背景に送る" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <text x="120" y="28" text-anchor="middle" font-size="14" fill="#C43D3D">前：各所が叩く</text>
+  <rect x="20" y="44" width="200" height="150" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="120" y="70" text-anchor="middle" font-size="12" fill="#173A54">踊り・タッチ・DJ・会話・LED …</text>
+  <text x="120" y="92" text-anchor="middle" font-size="12" fill="#173A54">表情を出す箇所 19（5ファイル）</text>
+  <text x="120" y="110" text-anchor="middle" font-size="12" fill="#173A54">まばたき 12（4ファイル）</text>
+  <text x="120" y="140" text-anchor="middle" font-size="11" fill="#C43D3D">「顔を出せ」「N秒後に戻せ」が交錯</text>
+  <text x="120" y="158" text-anchor="middle" font-size="11" fill="#C43D3D">戻し忘れ・割り込み・上書き合戦</text>
+  <text x="120" y="182" text-anchor="middle" font-size="11" fill="#4E7590">＋見張り役（監督）が 0.4秒ごと</text>
+  <text x="500" y="28" text-anchor="middle" font-size="14" fill="#2E8C42">後：状態は1つ、書くのは1人</text>
+  <rect x="260" y="44" width="110" height="150" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="315" y="66" text-anchor="middle" font-size="12" fill="#1A73C4">入口</text>
+  <text x="315" y="88" text-anchor="middle" font-size="11" fill="#173A54">つまみ</text>
+  <text x="315" y="106" text-anchor="middle" font-size="11" fill="#173A54">タッチ</text>
+  <text x="315" y="124" text-anchor="middle" font-size="11" fill="#173A54">NFC</text>
+  <text x="315" y="142" text-anchor="middle" font-size="11" fill="#173A54">聞く／落ち／歓声</text>
+  <text x="315" y="160" text-anchor="middle" font-size="11" fill="#173A54">拍（踊り）</text>
+  <text x="315" y="178" text-anchor="middle" font-size="11" fill="#173A54">顔（既定）</text>
+  <rect x="400" y="44" width="180" height="150" rx="14" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="490" y="66" text-anchor="middle" font-size="13" fill="#2E8C42">Presence（いまどうあるべきか）</text>
+  <text x="490" y="90" text-anchor="middle" font-size="11" fill="#173A54">優先順で1つに決まる</text>
+  <text x="490" y="110" text-anchor="middle" font-size="11" fill="#4E7590">つまみ ＞ タッチ ＞ NFC ＞ 聞く</text>
+  <text x="490" y="126" text-anchor="middle" font-size="11" fill="#4E7590">＞ 落ち ＞ 歓声 ＞ 顔</text>
+  <text x="490" y="150" text-anchor="middle" font-size="11" fill="#173A54">一時的なものは期限つき</text>
+  <text x="490" y="168" text-anchor="middle" font-size="11" fill="#4E7590">（表情は4秒で idle へ）</text>
+  <rect x="610" y="44" width="130" height="150" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="675" y="66" text-anchor="middle" font-size="12" fill="#1A73C4">反映役（Reconciler）</text>
+  <text x="675" y="90" text-anchor="middle" font-size="11" fill="#173A54">前回との差分だけ送る</text>
+  <text x="675" y="116" text-anchor="middle" font-size="11" fill="#173A54">→ 実機：首・顔・LED・声</text>
+  <text x="675" y="134" text-anchor="middle" font-size="11" fill="#173A54">→ 背景：同じ30個の配列</text>
+  <text x="675" y="164" text-anchor="middle" font-size="11" fill="#4E7590">書くのはここ1人</text>
+  <line x1="370" y1="120" x2="398" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar3)"/>
+  <line x1="580" y1="120" x2="608" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar3)"/>
+  <text x="380" y="236" text-anchor="middle" font-size="12" fill="#1A73C4">見張り役が要らなくなって消えた。足して直すのではなく、減らして直った</text>
+  <text x="380" y="262" text-anchor="middle" font-size="11" fill="#4E7590">新旧に同じ時刻を流して 16,000 点で最大差 0.0000000000 度を確かめてから、旧コードを消した</text>
+</svg></div>` +
             K.cards([
               { k: '前', v: '各所が実機を叩く', d: '「顔を出せ」「N秒後に戻せ」を19箇所が送る → 戻し忘れ・割り込み・上書き合戦' },
               { k: '後', v: '「いまどうあるべきか」を1箇所に', d: '状態は1つ（Presence）。優先順は つまみ > タッチ > NFC > 聞く > 落ち > 歓声 > 顔。反映役（Reconciler）が差分だけ実機に送る' },
@@ -981,6 +1076,49 @@ const CONTENT = {
              DJ 機材は USB で PC に刺さっているだけ（ドライバ不要）。PC の中にあるのは、<b>翻訳表（mapping.json）と、いまの状態を1つ持つ console</b>。実機はそれを首・顔・光で出すだけ。`,
       html: K.sys('B④ 6分') +
             K.head('機材は数字を出す。PC が翻訳する。<em>実機は身体で出す。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 250" role="img" aria-label="DJ機材からｽﾀｯｸﾁｬﾝまでの翻訳の流れ：機材がMIDIの数字を出し、consoleが翻訳表で意味に変え、状態を1つに決め、gatewayが実機へ、同じ配列が背景へ" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="10" y="50" width="140" height="110" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="80" y="76" text-anchor="middle" font-size="13" fill="#1A73C4">DDJ-FLX2</text>
+  <text x="80" y="98" text-anchor="middle" font-size="11" fill="#173A54">つまみ → CC 番号 + 0〜127</text>
+  <text x="80" y="116" text-anchor="middle" font-size="11" fill="#173A54">パッド → Note 番号 + ON/OFF</text>
+  <text x="80" y="142" text-anchor="middle" font-size="11" fill="#4E7590">実機のことは知らない</text>
+  <rect x="190" y="20" width="360" height="170" rx="20" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
+  <text x="370" y="44" text-anchor="middle" font-size="13" fill="#1A73C4">PC（MacBook）の中</text>
+  <rect x="204" y="58" width="100" height="112" rx="12" fill="#fff"/>
+  <text x="254" y="82" text-anchor="middle" font-size="12" fill="#173A54">翻訳表</text>
+  <text x="254" y="98" text-anchor="middle" font-size="10" fill="#4E7590">mapping.json</text>
+  <text x="254" y="120" text-anchor="middle" font-size="10" fill="#4E7590">CC23 → 首 yaw</text>
+  <text x="254" y="136" text-anchor="middle" font-size="10" fill="#4E7590">CC15 → うなずき</text>
+  <text x="254" y="152" text-anchor="middle" font-size="10" fill="#4E7590">Note#5 → 驚き顔</text>
+  <rect x="318" y="58" width="104" height="112" rx="12" fill="#fff"/>
+  <text x="370" y="82" text-anchor="middle" font-size="12" fill="#173A54">状態1つ</text>
+  <text x="370" y="98" text-anchor="middle" font-size="10" fill="#4E7590">console / Presence</text>
+  <text x="370" y="120" text-anchor="middle" font-size="10" fill="#4E7590">優先順で1つに</text>
+  <text x="370" y="136" text-anchor="middle" font-size="10" fill="#4E7590">表情は4秒で戻す</text>
+  <text x="370" y="152" text-anchor="middle" font-size="10" fill="#4E7590">つまみ離して2秒で踊りへ</text>
+  <rect x="436" y="58" width="100" height="112" rx="12" fill="#fff"/>
+  <text x="486" y="82" text-anchor="middle" font-size="12" fill="#173A54">窓口</text>
+  <text x="486" y="98" text-anchor="middle" font-size="10" fill="#4E7590">gateway</text>
+  <text x="486" y="120" text-anchor="middle" font-size="10" fill="#4E7590">move_head</text>
+  <text x="486" y="136" text-anchor="middle" font-size="10" fill="#4E7590">set_avatar</text>
+  <text x="486" y="152" text-anchor="middle" font-size="10" fill="#4E7590">ws2812.set_strip</text>
+  <rect x="590" y="20" width="160" height="80" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="46" text-anchor="middle" font-size="13" fill="#1A73C4">ｽﾀｯｸﾁｬﾝ</text>
+  <text x="670" y="68" text-anchor="middle" font-size="11" fill="#173A54">首 30回/秒・色 20回/秒</text>
+  <text x="670" y="86" text-anchor="middle" font-size="11" fill="#4E7590">角度と色の列を出すだけ</text>
+  <rect x="590" y="116" width="160" height="74" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="142" text-anchor="middle" font-size="13" fill="#1A73C4">背景（iPad）</text>
+  <text x="670" y="164" text-anchor="middle" font-size="11" fill="#173A54">同じ30個の配列を受け取る</text>
+  <line x1="150" y1="105" x2="188" y2="105" stroke="#4E7590" stroke-width="3" marker-end="url(#ar5)"/>
+  <text x="169" y="96" text-anchor="middle" font-size="10" fill="#4E7590">USB</text>
+  <line x1="304" y1="114" x2="316" y2="114" stroke="#4E7590" stroke-width="3" marker-end="url(#ar5)"/>
+  <line x1="422" y1="114" x2="434" y2="114" stroke="#4E7590" stroke-width="3" marker-end="url(#ar5)"/>
+  <line x1="550" y1="80" x2="588" y2="62" stroke="#4E7590" stroke-width="3" marker-end="url(#ar5)"/>
+  <text x="569" y="56" text-anchor="middle" font-size="10" fill="#4E7590">Wi-Fi</text>
+  <line x1="550" y1="130" x2="588" y2="150" stroke="#4E7590" stroke-width="3" marker-end="url(#ar5)"/>
+  <text x="380" y="222" text-anchor="middle" font-size="12" fill="#1A73C4">機材は数字を出す → PC が意味に翻訳する → 実機は身体で出す。翻訳表を書き換えれば、同じ機材で別の子になる</text>
+</svg></div>` +
             K.cards([
               { k: '① 機材（DDJ-FLX2）', v: '出しているのは MIDI の数字だけ', d: 'つまみは CC（番号と 0〜127）、パッドとボタンは Note（番号と ON/OFF）。<b>機材は実機の存在を知りません</b>' },
               { k: '② PC の中', v: '翻訳表 ＋ 状態1つ ＋ 窓口', d: '<b>mapping.json</b>（この番号はこの意味）→ <b>console</b>（いまどうあるべきか。優先順 つまみ > タッチ > NFC > 聞く > 落ち > 歓声 > 顔）→ <b>gateway</b>（49個の道具で実機へ）' },
@@ -1043,6 +1181,31 @@ const CONTENT = {
              ★A-2 で踊らなかったときは、ここに繋げます（「会場の音量だと閾値が足りない」のと同じ場所の話）。`,
       html: K.sys('2026-09-05 / 自分が原因') +
             K.head('マイクが拾っていたのは、<span class="r">自分のサーボ音。</span>') +
+            `<div class="panel"><svg viewBox="0 0 760 230" role="img" aria-label="失敗1の自己増幅ループ：首が動くとサーボ音が出て、マイクが拾い、拍として検出され、また踊る。4秒ごとに首を止めて測ることで輪を切った" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="20" y="30" width="150" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="95" y="58" text-anchor="middle" font-size="13" fill="#173A54">首が動く</text>
+  <text x="95" y="80" text-anchor="middle" font-size="11" fill="#4E7590">サーボ音（音楽の40倍）</text>
+  <rect x="220" y="30" width="150" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="295" y="58" text-anchor="middle" font-size="13" fill="#173A54">マイクが拾う</text>
+  <text x="295" y="80" text-anchor="middle" font-size="11" fill="#4E7590">同じ体に載っている</text>
+  <rect x="420" y="30" width="150" height="70" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="495" y="58" text-anchor="middle" font-size="13" fill="#173A54">「拍だ」と検出</text>
+  <text x="495" y="80" text-anchor="middle" font-size="11" fill="#C43D3D">動きは拍に同期している</text>
+  <rect x="600" y="30" width="140" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="58" text-anchor="middle" font-size="13" fill="#173A54">踊り続ける</text>
+  <text x="670" y="80" text-anchor="middle" font-size="11" fill="#4E7590">曲を止めても</text>
+  <line x1="170" y1="65" x2="218" y2="65" stroke="#4E7590" stroke-width="3" marker-end="url(#ar6)"/>
+  <line x1="370" y1="65" x2="418" y2="65" stroke="#4E7590" stroke-width="3" marker-end="url(#ar6)"/>
+  <line x1="570" y1="65" x2="598" y2="65" stroke="#4E7590" stroke-width="3" marker-end="url(#ar6)"/>
+  <path d="M670 100 Q 670 150 380 150 Q 95 150 95 102" fill="none" stroke="#C43D3D" stroke-width="3" marker-end="url(#ar6)"/>
+  <text x="380" y="140" text-anchor="middle" font-size="12" fill="#C43D3D">踊るほど拍が立つ（自己増幅）</text>
+  <rect x="300" y="168" width="160" height="44" rx="12" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="380" y="188" text-anchor="middle" font-size="12" fill="#2E8C42">4秒ごとに首を止めて測る</text>
+  <text x="380" y="204" text-anchor="middle" font-size="10" fill="#2E8C42">止まっている間だけ拍を見る＝「聴き入る」</text>
+  <line x1="380" y1="168" x2="380" y2="152" stroke="#55C96A" stroke-width="3"/>
+  <text x="392" y="164" font-size="14" fill="#2E8C42">✂</text>
+</svg></div>` +
             K.cards([
               { k: '起きたこと', v: '音楽を止めたのに踊りが終わらない', d: '首が動くと音量が<b>40倍</b>。音楽より大きい。しかも動きは拍に同期しているので「規則正しい拍」として検出され、<b>踊るほど拍が立つ</b>自己増幅ループ' },
               { k: 'なぜハマるか', v: '音源は外にあると当然に思う', d: '自分が音を出す側でもあることは、設計図のどこにも出てこない' },
@@ -1055,6 +1218,31 @@ const CONTENT = {
              不安なほど細かく見たくなる。<b>監視は無害に思える</b>、という話です。`,
       html: K.sys('2026-09-06 / 観測が原因') +
             K.head('測るために、<span class="o">壊していた。</span>') +
+            `<div class="panel"><svg viewBox="0 0 760 230" role="img" aria-label="失敗2の悪循環：監督が0.4秒ごとにコマンドを送り、音声フレームを押しのけ、拍が取れなくなり、監督が止まったと判断してさらにコマンドを送る。監督を消して輪を切った" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="20" y="30" width="160" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="100" y="58" text-anchor="middle" font-size="13" fill="#173A54">監督が見に行く</text>
+  <text x="100" y="80" text-anchor="middle" font-size="11" fill="#4E7590">0.4秒ごとにコマンド</text>
+  <rect x="220" y="30" width="160" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="300" y="58" text-anchor="middle" font-size="13" fill="#173A54">同じ1本の線を通る</text>
+  <text x="300" y="80" text-anchor="middle" font-size="11" fill="#4E7590">音声フレームが押しのけられる</text>
+  <rect x="420" y="30" width="150" height="70" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="495" y="58" text-anchor="middle" font-size="13" fill="#173A54">拍が取れない</text>
+  <text x="495" y="80" text-anchor="middle" font-size="11" fill="#C43D3D">音が欠けるから</text>
+  <rect x="600" y="30" width="140" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="58" text-anchor="middle" font-size="13" fill="#173A54">「止まった」と判断</text>
+  <text x="670" y="80" text-anchor="middle" font-size="11" fill="#4E7590">畳むコマンドを送る</text>
+  <line x1="180" y1="65" x2="218" y2="65" stroke="#4E7590" stroke-width="3" marker-end="url(#ar7)"/>
+  <line x1="380" y1="65" x2="418" y2="65" stroke="#4E7590" stroke-width="3" marker-end="url(#ar7)"/>
+  <line x1="570" y1="65" x2="598" y2="65" stroke="#4E7590" stroke-width="3" marker-end="url(#ar7)"/>
+  <path d="M670 100 Q 670 150 380 150 Q 100 150 100 102" fill="none" stroke="#C43D3D" stroke-width="3" marker-end="url(#ar7)"/>
+  <text x="380" y="140" text-anchor="middle" font-size="12" fill="#C43D3D">壊れるほどコマンドが増え、増えるほど壊れる</text>
+  <rect x="290" y="168" width="180" height="44" rx="12" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="380" y="188" text-anchor="middle" font-size="12" fill="#2E8C42">監督そのものを消す</text>
+  <text x="380" y="204" text-anchor="middle" font-size="10" fill="#2E8C42">状態を1か所に置いたら、見張りが要らなくなった</text>
+  <line x1="380" y1="168" x2="380" y2="152" stroke="#55C96A" stroke-width="3"/>
+  <text x="392" y="164" font-size="14" fill="#2E8C42">✂</text>
+</svg></div>` +
             K.cards([
               { k: '起きたこと', v: '「音が止まったら畳む」監督を 0.4秒ごとに回した', d: 'すると<b>拍の検出そのものが壊れた</b>。音声と制御が同じ経路（1本の WebSocket）を通っていて、コマンドが音声フレームを押しのけていた' },
               { k: '悪循環', v: '壊れるほどコマンドが増え、増えるほど壊れた', d: '拍が取れない → 監督が「止まった」と判断 → 畳むコマンド → さらに音声が欠ける' },
@@ -1132,6 +1320,39 @@ const CONTENT = {
              流れ：なでる → 首を上げてこちらを見る・LED 緑 → 話す → 「うん」と相槌 → 3〜5秒で返事（青）→ 消灯。`,
       html: K.sys('★予告してから') +
             K.head('緑は、<em>聞いています。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 250" role="img" aria-label="会話の流れ：なでる、緑で聞く、声を文字に、考える、文字を声に、青で喋る、消灯。返事まで3〜5秒" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="10" y="40" width="120" height="86" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="70" y="70" text-anchor="middle" font-size="14" fill="#173A54">なでる</text>
+  <text x="70" y="92" text-anchor="middle" font-size="11" fill="#4E7590">頭の上・1秒</text>
+  <text x="70" y="110" text-anchor="middle" font-size="11" fill="#4E7590">首が上がる</text>
+  <rect x="160" y="40" width="120" height="86" rx="16" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="220" y="70" text-anchor="middle" font-size="14" fill="#2E8C42">緑：聞く</text>
+  <text x="220" y="92" text-anchor="middle" font-size="11" fill="#4E7590">実機マイク → Mac</text>
+  <text x="220" y="110" text-anchor="middle" font-size="11" fill="#4E7590">話し終わりで確定</text>
+  <rect x="310" y="20" width="140" height="126" rx="16" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
+  <text x="380" y="46" text-anchor="middle" font-size="13" fill="#1A73C4">MacBook の中</text>
+  <text x="380" y="70" text-anchor="middle" font-size="12" fill="#173A54">faster-whisper</text>
+  <text x="380" y="86" text-anchor="middle" font-size="10" fill="#4E7590">声 → 文字</text>
+  <text x="380" y="106" text-anchor="middle" font-size="12" fill="#173A54">Ollama gemma3:4b</text>
+  <text x="380" y="122" text-anchor="middle" font-size="10" fill="#4E7590">40文字まで・先に「うん」</text>
+  <text x="380" y="140" text-anchor="middle" font-size="10" fill="#4E7590">VOICEVOX：文字 → 声</text>
+  <rect x="480" y="40" width="120" height="86" rx="16" fill="#CFEBFA" stroke="#2E9BE0" stroke-width="3"/>
+  <text x="540" y="70" text-anchor="middle" font-size="14" fill="#1A73C4">青：喋る</text>
+  <text x="540" y="92" text-anchor="middle" font-size="11" fill="#4E7590">口と首が動く</text>
+  <text x="540" y="110" text-anchor="middle" font-size="11" fill="#4E7590">かぶせても聞けない</text>
+  <rect x="630" y="40" width="120" height="86" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="690" y="70" text-anchor="middle" font-size="14" fill="#173A54">消灯：待機</text>
+  <text x="690" y="92" text-anchor="middle" font-size="11" fill="#4E7590">まばたきだけ</text>
+  <text x="690" y="110" text-anchor="middle" font-size="11" fill="#4E7590">またなでると最初へ</text>
+  <line x1="130" y1="83" x2="158" y2="83" stroke="#4E7590" stroke-width="3" marker-end="url(#ar2)"/>
+  <line x1="280" y1="83" x2="308" y2="83" stroke="#4E7590" stroke-width="3" marker-end="url(#ar2)"/>
+  <line x1="450" y1="83" x2="478" y2="83" stroke="#4E7590" stroke-width="3" marker-end="url(#ar2)"/>
+  <line x1="600" y1="83" x2="628" y2="83" stroke="#4E7590" stroke-width="3" marker-end="url(#ar2)"/>
+  <path d="M690 126 Q 690 200 70 200 Q 70 170 70 128" fill="none" stroke="#4E7590" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar2)"/>
+  <text x="380" y="176" text-anchor="middle" font-size="12" fill="#1A73C4">話し終わり → 返事まで 3〜5 秒。無音が2秒続くと壊れて見えるので、先に「うん」</text>
+  <text x="380" y="236" text-anchor="middle" font-size="12" fill="#4E7590">誰かが話している間は緑のまま → 順番待ちが言葉なしで解決する</text>
+</svg></div>` +
             K.cards([
               { k: '緑', v: 'あなたの声を聞いています', d: '首を上げてこちらを見る。<b>話してください</b>' },
               { k: '青', v: '喋っています', d: '待つ。かぶせても聞き取れません' },
