@@ -658,12 +658,12 @@ const CONTENT = {
   <text x="100" y="356" text-anchor="middle" font-size="13" fill="#173A54">マイク</text>
   <text x="100" y="384" text-anchor="middle" font-size="13" fill="#173A54">頭のタッチ（3ゾーン）</text>
   <text x="100" y="412" text-anchor="middle" font-size="13" fill="#173A54">NFC カード</text>
-  <text x="100" y="434" text-anchor="middle" font-size="11" fill="#4E7590">M5Stack CoreS3 / Wi-Fi</text>
+  <text x="100" y="434" text-anchor="middle" font-size="11" fill="#4E7590">M5Stack CoreS3 / USB で有線 LAN</text>
   <rect x="236" y="22" width="300" height="428" rx="24" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
   <text x="386" y="50" text-anchor="middle" font-size="15" fill="#1A73C4">MacBook 1台（この机の上）</text>
   <rect x="256" y="66" width="260" height="70" rx="14" fill="#fff"/>
   <text x="386" y="92" text-anchor="middle" font-size="14" fill="#173A54">gateway（stackchan-mcp）</text>
-  <text x="386" y="112" text-anchor="middle" font-size="11" fill="#4E7590">実機との唯一の窓口。道具 49 個を Wi-Fi 越しに叩く</text>
+  <text x="386" y="112" text-anchor="middle" font-size="11" fill="#4E7590">実機との唯一の窓口。道具 49 個を USB 越しに叩く</text>
   <rect x="256" y="152" width="260" height="84" rx="14" fill="#fff"/>
   <text x="386" y="178" text-anchor="middle" font-size="14" fill="#173A54">console（演技）</text>
   <text x="386" y="198" text-anchor="middle" font-size="11" fill="#4E7590">「いまどうあるべきか」を1か所に持ち、</text>
@@ -694,24 +694,24 @@ const CONTENT = {
   <line x1="188" y1="140" x2="256" y2="190" stroke="#4E7590" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar)"/>
   <text x="196" y="172" font-size="11" fill="#4E7590">拍を推定</text>
   <line x1="188" y1="370" x2="256" y2="110" stroke="#4E7590" stroke-width="2" marker-end="url(#ar)"/>
-  <text x="192" y="250" font-size="11" fill="#4E7590">Wi-Fi</text>
+  <text x="192" y="250" font-size="11" fill="#4E7590">USB</text>
   <line x1="516" y1="100" x2="584" y2="120" stroke="#4E7590" stroke-width="2" marker-end="url(#ar)"/>
-  <text x="522" y="90" font-size="11" fill="#4E7590">Wi-Fi</text>
+  <text x="522" y="90" font-size="11" fill="#4E7590">USB</text>
   <line x1="516" y1="200" x2="584" y2="350" stroke="#4E7590" stroke-width="2" marker-end="url(#ar)"/>
-  <text x="522" y="290" font-size="11" fill="#4E7590">同じ LAN</text>
+  <text x="522" y="290" font-size="11" fill="#4E7590">会場の Wi-Fi</text>
   <line x1="386" y1="136" x2="386" y2="152" stroke="#4E7590" stroke-width="2" marker-end="url(#ar)" marker-start="url(#ar)"/>
   <line x1="386" y1="236" x2="386" y2="252" stroke="#4E7590" stroke-width="2" marker-end="url(#ar)" marker-start="url(#ar)"/>
-  <text x="380" y="464" text-anchor="middle" font-size="12" fill="#1A73C4">外に出る通信はありません。Wi-Fi も MacBook が出しています</text>
+  <text x="380" y="464" text-anchor="middle" font-size="12" fill="#1A73C4">実機とは USB ケーブル1本（有線 LAN）。会場の Wi-Fi は iPad とネット用</text>
 </svg></div>` +
             K.cards([
-              { k: '実機', v: 'ｽﾀｯｸﾁｬﾝ<br>M5Stack CoreS3<br>ESP32-S3', d: '入口（マイク・頭の3ゾーンタッチ・NFC）と出口（顔・首2軸・声・LED）。<b>考える部分は入っていません。</b>Wi-Fi で MacBook と WebSocket 1本で話します' },
-              { k: '窓口', v: 'gateway<br>stackchan-mcp', d: '実機との唯一の窓口。ファームが持つ<b>49個の道具</b>（首を向ける・表情・LED・撮る・I2C…）を名前で呼べる。聞き取り（faster-whisper）もここ' },
-              { k: '演技', v: 'console<br>自作 Python<br>約9,300行', d: 'DJ 機材・拍・タッチ・NFC を受けて「いまどうあるべきか」を1か所に持ち、首・表情・LED・声を差分で送る。受付（名前を呼ぶ）もここ' },
+              { k: '実機', v: 'ｽﾀｯｸﾁｬﾝ<br>M5Stack CoreS3<br>ESP32-S3', d: '入口（マイク・頭の3ゾーンタッチ・NFC）と出口（顔・首2軸・声・LED）。<b>考える部分は入っていません。</b>USB ケーブル（有線 LAN）で MacBook と WebSocket 1本で話します' },
+              { k: '窓口', v: 'gateway<br>stackchan-mcp', d: '実機との唯一の窓口。ファームが持つ<b>49個の道具</b>（首を向ける・表情・LED・撮る・I2C…）を名前で呼べる。実機とは USB（有線 LAN）で1本' },
+              { k: '演技', v: 'console<br>自作 Python<br>約7,000行', d: 'DJ 機材・拍・タッチ・NFC を受けて「いまどうあるべきか」を1か所に持ち、首・表情・LED・声を差分で送る。受付（名前を呼ぶ）もここ' },
               { k: '頭脳', v: 'Ollama<br>VOICEVOX<br>faster-whisper', d: '声を文字に、文字を考えて、文字を声に。<b>全部 MacBook の中。</b>会話は gemma3:4b（速さ優先）、質疑 bot は qwen2.5:14b（正確さ優先）' },
               { k: '入口の機材', v: 'Pioneer DDJ-FLX2<br>USB MIDI', d: 'ドライバ不要。流れているのは番号と 0〜127 の値だけ。つまみ→首、パッド→表情と LED、擦り→光、フェーダー→バースト' },
               { k: '背景', v: 'iPad の画面<br>質疑 bot', d: 'ブラウザ1枚で会場を描く（奥から手前へ7層）。実機のテープに送る30個の配列をそのまま受け取る。質疑 bot はスマホから「今日のこと」を文字で' },
             ]) +
-            K.tiny('外に出る通信はありません。Wi-Fi も MacBook 自身が出しています') },
+            K.tiny('実機と MacBook は USB ケーブル1本（有線 LAN）。会場の Wi-Fi は iPad とネット用に使います') },
 
     { ch: 0, tag: '今日のゴールと、みんなへ',
       talk: `<b>アジェンダのあとに、みんなに向けて読み上げます。</b>ここは段取りではなく、来てくれた人へのメッセージです。5つの見出しを読んで、開いた文を1つずつ。`,
@@ -757,8 +757,8 @@ const CONTENT = {
       html: K.cards([
               { k: '踊りが変', v: '「いま聴き入っています」', d: '4秒ごとに首を止めて測る作り。そのまま失敗1の話へ' },
               { k: '踊らない', v: '「会場の音量だと閾値が足りません」', d: '→ 失敗1（サーボ音）に繋げる。感度を上げると悪化する（0.2 が最良だった）' },
-              { k: '背景が出ない', v: '致命ではない', d: '実機は動く。iPad を MacBook の Wi-Fi に繋ぎ直して QR を読み直す' },
-              { k: '実機が落ちた', v: '電源を入れ直す（顔まで約10〜35秒）', d: 'OTA スタブ → gateway の順で来る。30秒は待つ。それでもダメなら<b>デモ録画に切り替える</b>（★録画は必ず持っていく）' },
+              { k: '背景が出ない', v: '致命ではない', d: '実機は動く。iPad を会場の Wi-Fi に繋ぎ直して QR を読み直す' },
+              { k: '実機が落ちた', v: '電源を入れ直す（顔まで約10〜35秒）', d: 'USB ケーブルを挿し直してから電源。OTA スタブ → gateway の順で来る。30秒は待つ。それでもダメなら<b>デモ録画に切り替える</b>' },
             ]) },
 
     /* ───────── A ───────── */
@@ -787,7 +787,7 @@ const CONTENT = {
               { k: '1', v: 'スタックチャン', d: 'M5Stack を顔にした手のひらサイズのロボット。2021 年にししかわさんが公開したオープンソース。今日のは公式キット K151（CoreS3 ＋ サーボ2基）' },
               { k: '2', v: 'M5Stack CoreS3', d: 'スタックチャンの「顔」の部分。ESP32-S3 というマイコンに、画面・カメラ・マイク・スピーカー・タッチ・Wi-Fi が入った箱' },
               { k: '3', v: 'ファームウェア', d: 'その箱の中で動くソフト。<b>買ったときから1つ入っている</b>（出荷時ファーム）。入れ替えることも、中の設定を変えることもできる' },
-              { k: '4', v: '母艦（PC）', d: '実機の外で考える係。今日は MacBook 1台。実機と Wi-Fi で繋がる。「頭脳をどこに置くか」は、ファーム次第で自分で選べる' },
+              { k: '4', v: '母艦（PC）', d: '実機の外で考える係。今日は MacBook 1台。実機とは USB ケーブル（家では Wi-Fi でも）で繋がる。「頭脳をどこに置くか」は、ファーム次第で自分で選べる' },
               { k: '5', v: 'gateway と MCP', d: 'gateway は母艦にいる窓口のプログラム。MCP は「道具の並べ方と呼び方」の規格で、これに対応すると AI（Claude Code など）から実機の機能を名前で呼べる' },
               { k: '6', v: 'Grove', d: '実機の横にある差し込み口（Port A 赤・Port B 黒）。センサーや LED を<b>買って挿すだけ</b>で足せる。今日は NFC リーダーと LED テープ' },
             ]) },
@@ -826,7 +826,7 @@ const CONTENT = {
   <rect x="270" y="236" width="220" height="80" rx="16" fill="#FFE2E2" stroke="#fff" stroke-width="3"/>
   <text x="380" y="262" text-anchor="middle" font-size="14" fill="#173A54">console（演技）</text>
   <text x="380" y="282" text-anchor="middle" font-size="10" fill="#4E7590">自作 Python。DJ・拍・タッチ・NFC を受けて</text>
-  <text x="380" y="298" text-anchor="middle" font-size="10" fill="#4E7590">gateway の道具を叩く。テスト 524 件</text>
+  <text x="380" y="298" text-anchor="middle" font-size="10" fill="#4E7590">gateway の道具を叩く。約7,000行・テスト 524 件</text>
   <rect x="270" y="336" width="220" height="110" rx="16" fill="#DCF5DF" stroke="#fff" stroke-width="3"/>
   <text x="380" y="360" text-anchor="middle" font-size="14" fill="#173A54">頭脳（OSS をそのまま）</text>
   <text x="380" y="382" text-anchor="middle" font-size="11" fill="#173A54">Ollama（gemma3 / qwen2.5）</text>
@@ -846,7 +846,7 @@ const CONTENT = {
   <text x="640" y="402" text-anchor="middle" font-size="11" fill="#173A54">DJ の割り当て表・受付・背景</text>
   <text x="640" y="422" text-anchor="middle" font-size="11" fill="#173A54">テスト・失敗の記録・配布物</text>
   <line x1="220" y1="130" x2="268" y2="130" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)" marker-start="url(#arw)"/>
-  <text x="244" y="122" text-anchor="middle" font-size="9" fill="#4E7590">Wi-Fi</text>
+  <text x="244" y="122" text-anchor="middle" font-size="9" fill="#4E7590">USB</text>
   <line x1="490" y1="100" x2="538" y2="100" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)" marker-start="url(#arw)"/>
   <text x="514" y="92" text-anchor="middle" font-size="9" fill="#4E7590">MCP</text>
   <line x1="380" y1="236" x2="380" y2="208" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)"/>
@@ -862,22 +862,22 @@ const CONTENT = {
             K.cards([
               { k: '製品（青）', v: 'M5Stack K151・DDJ-FLX2・iPad・Grove ユニット', d: '買ってくる。公式のキットと市販品。ここは何も直していない' },
               { k: 'OSS をそのまま（緑）', v: 'Ollama・VOICEVOX・faster-whisper', d: '頭脳・声・聞き取り。入れて設定するだけ。全部 MacBook の中で動く' },
-              { k: 'OSS を改造（黄）', v: 'stackchan-mcp のファームと gateway', d: 'xiaozhi のフォーク（非公式）。ファームは頭なでの検出と起動時の省電力を直した。gateway は名乗り方（mDNS）を直した。改変は patch にして持ち運ぶ' },
-              { k: '自作（赤）', v: 'console・表情・振り付け・割り当て表・受付・背景', d: 'Python 約9,300行。MCP の道具を叩く側。ここが「こんなことやってみた」の本体' },
+              { k: 'OSS を改造（黄）', v: 'stackchan-mcp のファームと gateway', d: 'xiaozhi のフォーク（非公式）。ファームは USB を有線 LAN にした（CDC-NCM）のと、起動時の省電力の1行。gateway は名乗り方（mDNS）と踊り・聞き取りの調整。改変は patch にして持ち運ぶ' },
+              { k: '自作（赤）', v: 'console・表情・振り付け・割り当て表・受付・背景', d: 'console 約7,000行 ＋ 背景 約2,000行。MCP の道具を叩く側。ここが「こんなことやってみた」の本体' },
               { k: '商用（紫）', v: 'Claude Code', d: 'MCP 経由で実機を動かしながら作った。当日は無くても動く。他の MCP 対応 AI でも同じことができる' },
             ]) },
 
     { ch: 2, tag: '物理的な接続 — 何があれば始められるか',
       talk: `<b>最初に繋ぐのは、本体と USB-C と Wi-Fi だけです。</b>今日の机の上は、そこにあとから足したもの。図はその全部。<br>
-             「どこにも（インターネットに）繋がっていない」も、この図で見せます。`,
+             今日は実機を USB ケーブルで MacBook に繋いでいます（USB が有線 LAN になる）。会場の Wi-Fi に依存しないため。`,
       html: K.head('始めるのに要るのは、<em>本体と USB-C と 2.4GHz の Wi-Fi。</em>') +
             `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="物理的な接続：MacBook が Wi-Fi を出し、ｽﾀｯｸﾁｬﾝと iPad がそこに繋がる。DJ 機材は USB で MacBook に。LED テープは Grove Port B、NFC リーダーは Grove Port A で実機に。実機は USB 給電" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
   <defs><marker id="ar9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
   <rect x="290" y="110" width="180" height="110" rx="18" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
   <text x="380" y="140" text-anchor="middle" font-size="15" fill="#1A73C4">MacBook</text>
-  <text x="380" y="162" text-anchor="middle" font-size="11" fill="#4E7590">Wi-Fi を出す（親機）</text>
-  <text x="380" y="180" text-anchor="middle" font-size="11" fill="#4E7590">192.168.2.1</text>
-  <text x="380" y="204" text-anchor="middle" font-size="11" fill="#4E7590">USB-C ×2</text>
+  <text x="380" y="162" text-anchor="middle" font-size="11" fill="#4E7590">USB-C ×2（DJ 機材・実機）</text>
+  <text x="380" y="180" text-anchor="middle" font-size="11" fill="#4E7590">Wi-Fi は会場のもの</text>
+  <text x="380" y="204" text-anchor="middle" font-size="11" fill="#4E7590">（iPad・ネット用）</text>
   <rect x="20" y="120" width="170" height="90" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
   <text x="105" y="150" text-anchor="middle" font-size="14" fill="#173A54">DDJ-FLX2</text>
   <text x="105" y="172" text-anchor="middle" font-size="11" fill="#4E7590">DJ 機材</text>
@@ -889,27 +889,27 @@ const CONTENT = {
   <text x="650" y="68" text-anchor="middle" font-size="11" fill="#4E7590">M5Stack CoreS3（K151）</text>
   <text x="650" y="90" text-anchor="middle" font-size="11" fill="#4E7590">Port A（赤）← NFC リーダー</text>
   <text x="650" y="108" text-anchor="middle" font-size="11" fill="#4E7590">Port B（黒）← LED テープ 30粒</text>
-  <text x="650" y="128" text-anchor="middle" font-size="11" fill="#4E7590">USB-C ← 給電（台側）</text>
-  <path d="M470 140 Q 520 90 558 80" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ar9)"/>
-  <text x="500" y="96" text-anchor="middle" font-size="11" fill="#1A73C4">Wi-Fi 2.4GHz</text>
+  <text x="650" y="128" text-anchor="middle" font-size="11" fill="#4E7590">USB-C（本体側）← MacBook。有線 LAN ＋ 給電</text>
+  <line x1="470" y1="140" x2="558" y2="90" stroke="#4E7590" stroke-width="4" marker-end="url(#ar9)"/>
+  <text x="500" y="100" text-anchor="middle" font-size="11" fill="#173A54">USB（CDC-NCM）</text>
   <rect x="560" y="200" width="180" height="90" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
   <text x="650" y="230" text-anchor="middle" font-size="14" fill="#173A54">iPad</text>
   <text x="650" y="252" text-anchor="middle" font-size="11" fill="#4E7590">背景の画面（ブラウザ1枚）</text>
   <text x="650" y="272" text-anchor="middle" font-size="11" fill="#4E7590">QR を読んで開く</text>
   <path d="M470 190 Q 520 240 558 245" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ar9)"/>
-  <text x="500" y="232" text-anchor="middle" font-size="11" fill="#1A73C4">Wi-Fi</text>
+  <text x="500" y="232" text-anchor="middle" font-size="11" fill="#1A73C4">会場の Wi-Fi</text>
   <rect x="20" y="20" width="170" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
   <text x="105" y="48" text-anchor="middle" font-size="14" fill="#173A54">スピーカー</text>
   <text x="105" y="70" text-anchor="middle" font-size="11" fill="#4E7590">曲。実機のマイクが拾う</text>
   <rect x="20" y="240" width="170" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
   <text x="105" y="268" text-anchor="middle" font-size="14" fill="#173A54">参加者のスマホ</text>
-  <text x="105" y="290" text-anchor="middle" font-size="11" fill="#4E7590">質疑 bot（同じ Wi-Fi）</text>
+  <text x="105" y="290" text-anchor="middle" font-size="11" fill="#4E7590">質疑 bot（会場の Wi-Fi）</text>
   <path d="M190 275 Q 240 275 288 200" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ar9)"/>
-  <text x="380" y="318" text-anchor="middle" font-size="12" fill="#1A73C4">線は USB 1本だけ。あとは MacBook が出す Wi-Fi。外（インターネット）には何も繋がっていない</text>
+  <text x="380" y="318" text-anchor="middle" font-size="12" fill="#1A73C4">線は USB 2本（DJ 機材・実機）。実機は USB がそのまま有線 LAN になる。会場の Wi-Fi に依存しない</text>
 </svg></div>` +
             K.cards([
               { k: '最初の日に要るもの', v: 'K151 本体・USB-C ケーブル・2.4GHz の Wi-Fi・スマホ', d: '出荷時のままなら、アプリを入れて Wi-Fi を教えるだけで喋ります（30分）。PC も DJ 機材も LED も要りません' },
-              { k: '今日の机にあるもの', v: '＋ MacBook・DJ 機材・LED テープ・NFC リーダー・iPad', d: '全部あとから足したもの。線は USB 1本、あとは MacBook が出す Wi-Fi。実機の USB-C は2つ：台側は給電、本体側は書き込み用' },
+              { k: '今日の机にあるもの', v: '＋ MacBook・DJ 機材・LED テープ・NFC リーダー・iPad', d: '全部あとから足したもの。線は USB 2本（DJ 機材と実機）。実機は USB ケーブルがそのまま有線 LAN になるので、会場の Wi-Fi が 5GHz だけでも、ログイン画面つきでも止まらない。iPad だけ会場の Wi-Fi' },
             ]) },
 
     { ch: 2, tag: 'ファームウェア — 出荷時はどうなっているか',
@@ -941,7 +941,7 @@ const CONTENT = {
       html: K.head('設定を変える／ファームを直す／<em>物理で足す。</em>') +
             K.cards([
               { k: '① 設定を変える', v: 'ファームの中の設定をいじる', d: '接続先の URL（どの母艦を見るか）、Wi-Fi、音量、踊りの閾値。設定画面・NVS・gateway_config_set から。<b>焼き直しは要らない</b>' },
-              { k: '② ファームを直す', v: 'ソースを直して焼き直す', d: '例：頭なでの検出（20秒に1回 → 15回、PR #374）／起動時の Wi-Fi 省電力を切る1行。全部 OSS なので読めて直せる。改変は patch にして持ち運ぶ' },
+              { k: '② ファームを直す', v: 'ソースを直して焼き直す', d: '例：USB を有線 LAN にして会場の Wi-Fi に依存しない（CDC-NCM）／頭なでの検出（20秒に1回 → 15回、PR #374）／起動時の Wi-Fi 省電力の1行。全部 OSS なので読めて直せる。改変は patch にして持ち運ぶ' },
               { k: '③ 物理で足す', v: 'Grove に買って挿す', d: '例：NFC リーダー（¥1,000 台）で受付、LED テープ（¥1,344）で光。ファームに汎用の I2C の道具があるので、<b>ファームを触らずに母艦から読める</b>' },
               { k: '共通', v: 'AI と一緒に反復する', d: 'MCP で実機を会話で動かし、テストを先に書き、詰まったら記録に残す。閾値は実測から決める（撫で 9.5・52・92秒）。1回で当たらないのが普通' },
             ]) },
@@ -1019,7 +1019,7 @@ const CONTENT = {
   <line x1="186" y1="160" x2="248" y2="160" stroke="#4E7590" stroke-width="2" marker-end="url(#art)"/>
   <text x="217" y="152" text-anchor="middle" font-size="9" fill="#4E7590">MCP</text>
   <line x1="510" y1="160" x2="572" y2="160" stroke="#4E7590" stroke-width="2" marker-end="url(#art)"/>
-  <text x="541" y="152" text-anchor="middle" font-size="9" fill="#4E7590">Wi-Fi</text>
+  <text x="541" y="152" text-anchor="middle" font-size="9" fill="#4E7590">USB</text>
   <rect x="600" y="118" width="120" height="86" rx="18" fill="#1c1f24" stroke="#87A6BC" stroke-width="4" transform="rotate(-8 660 161)"/>
   <circle cx="636" cy="150" r="11" fill="#fff" transform="rotate(-8 660 161)"/><circle cx="684" cy="150" r="11" fill="#fff" transform="rotate(-8 660 161)"/>
   <path d="M644 176 Q 660 190 676 176" fill="none" stroke="#fff" stroke-width="4" transform="rotate(-8 660 161)"/>
@@ -1150,7 +1150,7 @@ const CONTENT = {
   <text x="120" y="294" text-anchor="middle" font-size="12" fill="#1A73C4">DJ 機材 ── DDJ-FLX2</text>
   <text x="120" y="310" text-anchor="middle" font-size="10" fill="#4E7590">つまみ・パッド・フェーダー。USB</text>
   <rect x="150" y="340" width="460" height="120" rx="18" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
-  <text x="380" y="362" text-anchor="middle" font-size="13" fill="#1A73C4">母艦 ── MacBook 1台（Wi-Fi もここが出す）</text>
+  <text x="380" y="362" text-anchor="middle" font-size="13" fill="#1A73C4">母艦 ── MacBook 1台（実機とは USB、iPad とは会場の Wi-Fi）</text>
   <rect x="164" y="374" width="104" height="72" rx="12" fill="#FFF2CC"/>
   <text x="216" y="396" text-anchor="middle" font-size="12" fill="#173A54">窓口</text>
   <text x="216" y="414" text-anchor="middle" font-size="10" fill="#4E7590">gateway</text>
@@ -1169,23 +1169,24 @@ const CONTENT = {
   <text x="549" y="430" text-anchor="middle" font-size="9" fill="#4E7590">faster-whisper</text>
   <line x1="210" y1="250" x2="230" y2="338" stroke="#4E7590" stroke-width="2" marker-end="url(#arr)"/>
   <text x="236" y="300" text-anchor="middle" font-size="9" fill="#4E7590">USB</text>
-  <path d="M380 340 Q 380 320 380 302" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  <line x1="380" y1="340" x2="380" y2="302" stroke="#4E7590" stroke-width="4" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  <text x="398" y="326" text-anchor="start" font-size="9" fill="#4E7590">USB</text>
   <path d="M606 342 Q 748 210 515 48" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)"/>
-  <text x="712" y="170" text-anchor="middle" font-size="10" fill="#1A73C4">Wi-Fi</text>
-  <text x="380" y="486" text-anchor="middle" font-size="12" fill="#1A73C4">買ったもの・OSS・自作が、机の上でこう並んでいる。いじったのは、ファーム1行・gateway 6ファイル・あとは自作</text>
+  <text x="712" y="170" text-anchor="middle" font-size="10" fill="#1A73C4">会場の Wi-Fi</text>
+  <text x="380" y="486" text-anchor="middle" font-size="12" fill="#1A73C4">買ったもの・OSS・自作が、机の上でこう並んでいる。いじったのは、ファーム2か所・gateway 6ファイル・あとは自作</text>
 </svg></div>` +
             K.cards([
               { k: '身体', v: 'M5Stack K151<br>（CoreS3 / ESP32-S3）', d: '<b>そのまま。</b>サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。¥18,150' },
-              { k: 'ファーム', v: 'stackchan-mcp<br>（xiaozhi のフォーク）', d: '<b>改造は1行。</b>起動直後の Wi-Fi 省電力を切る（効果はまだ確かめ切れていない）。頭なでの検出は上流の PR #374 を焼いた。表情14枚は自作の画像を起動時に流し込む（ファームは触らない）' },
+              { k: 'ファーム', v: 'stackchan-mcp<br>（xiaozhi のフォーク）', d: '<b>改造は2つ。</b>USB を有線 LAN にする（CDC-NCM。会場の Wi-Fi に依存しないため）と、起動直後の Wi-Fi 省電力を切る1行。頭なでの検出は上流の PR #374 を焼いた。表情14枚は自作の画像を起動時に流し込む' },
               { k: '窓口', v: 'stackchan-mcp gateway<br>（Python）', d: '<b>改造 6ファイル。</b>踊りの閾値を外から変えられるように／聞き取り（小さい音を持ち上げる・当日の語彙を先に教える・無音を捨てる）／名乗り方（Tailscale の網を除外）／実機から来る信号の切り分けログ。改変は patch にして持ち運ぶ' },
-              { k: '演技', v: 'console<br>（自作 Python 約9,300行）', d: '<b>自作。</b>MIDI・拍・タッチ・NFC → 状態1つ → 差分で反映。表情・振り付け・LED 13種・割り当て表・受付もここ。テスト 524 件' },
+              { k: '演技', v: 'console<br>（自作 Python 約7,000行）', d: '<b>自作。</b>MIDI・拍・タッチ・NFC → 状態1つ → 差分で反映。表情・振り付け・LED 13種・割り当て表・受付もここ。約7,000行、背景の画面は別に約2,000行。テスト 524 件' },
               { k: '考える', v: 'Ollama<br>gemma3:4b／qwen2.5:14b', d: '<b>そのまま。</b>触ったのはモデルの選択とプロンプトだけ。会話は小さく速く、質疑 bot は大きく正確に' },
               { k: '声・聞き取り', v: 'VOICEVOX<br>faster-whisper', d: '<b>そのまま。</b>VOICEVOX は話者14を選んだだけ。faster-whisper の使い方は gateway 側で少し直した（上の6ファイルに含む）' },
               { k: 'DJ 機材', v: 'Pioneer DDJ-FLX2', d: '<b>そのまま。</b>USB MIDI、ドライバ不要。どのつまみを何にするかの割り当て表（mapping.json）は自作' },
               { k: '光', v: 'LED テープ SK6812 30粒<br>（M5Stack A093）', d: '<b>そのまま。</b>Grove Port B。全開 5V 1.8A なので上限 35% はソフト側で。¥1,344' },
               { k: '受付', v: 'RFID 2 Unit<br>（WS1850S / I2C 0x28）', d: '<b>そのまま。</b>Grove Port A。読むコードは自作（ファームの汎用 I2C の道具を母艦から叩く）' },
               { k: '背景', v: 'iPad ＋ ブラウザ1枚<br>（stage.html）', d: '<b>自作。</b>奥から手前へ7層。実機と同じ色の列を受け取る' },
-              { k: '網', v: 'MacBook のインターネット共有', d: '<b>設定だけ。</b>2.4GHz。MacBook は 192.168.2.1 固定。外には出ない' },
+              { k: '網', v: '実機とは USB（有線 LAN）<br>iPad とは会場の Wi-Fi', d: '<b>ファームの改造で実現。</b>実機の USB を有線 LAN（CDC-NCM）にした。会場の Wi-Fi が 5GHz だけ・ログイン画面つき・端末どうし通信禁止でも止まらない。家では Wi-Fi にも戻せる' },
             ]) },
 
     { ch: 3, tag: 'DJ 台 → PC → ｽﾀｯｸﾁｬﾝ',
@@ -1232,7 +1233,7 @@ const CONTENT = {
   <line x1="304" y1="114" x2="316" y2="114" stroke="#4E7590" stroke-width="2" marker-end="url(#ar5)"/>
   <line x1="422" y1="114" x2="434" y2="114" stroke="#4E7590" stroke-width="2" marker-end="url(#ar5)"/>
   <line x1="550" y1="80" x2="588" y2="62" stroke="#4E7590" stroke-width="2" marker-end="url(#ar5)"/>
-  <text x="569" y="56" text-anchor="middle" font-size="10" fill="#4E7590">Wi-Fi</text>
+  <text x="569" y="56" text-anchor="middle" font-size="10" fill="#4E7590">USB</text>
   <line x1="550" y1="130" x2="588" y2="150" stroke="#4E7590" stroke-width="2" marker-end="url(#ar5)"/>
   <text x="380" y="222" text-anchor="middle" font-size="12" fill="#1A73C4">機材は数字を出す → PC が意味に翻訳する → 実機は身体で出す。翻訳表を書き換えれば、同じ機材で別のスタックチャンになる</text>
 </svg></div>` +
@@ -1291,7 +1292,7 @@ const CONTENT = {
 
     { ch: 3, tag: '作り方 — 会話で動かしてから、コードに',
       talk: `<b>これが開発の実体です。コードを書く前に、まず会話で動かします。</b><br>
-             動いてから、繰り返したいものだけコードにしています。2週間・175コミット・手を動かした日は7日（git の記録）。`,
+             動いてから、繰り返したいものだけコードにしています。約4週間・221コミット・手を動かした日は11日（git の記録）。`,
       html: K.head('線で繋いで、<em>話しかけて作る。</em>') +
             K.quote('右を向いて、写真を撮って', '→ 首が振れて、画像が返ってきます（Claude Code から MCP で）') +
             K.cards([
