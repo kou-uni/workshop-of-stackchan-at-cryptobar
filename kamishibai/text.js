@@ -27,7 +27,7 @@ const CONTENT = {
               { title: 'A 掴み（10分）— 持ち帰り：触った実感',
                 body: '1人ずつ手のひらに乗せて、なでてもらいます。曲を流すと踊ります。最後に DJ のフェーダーを1本上げて、会場を赤くして戻します。説明はそのあと' },
               { title: 'B 仕組み（27分）— 持ち帰り：構成図・ファーム選び・DJ の割り当て表',
-                body: '全体の構成図 → ①実機は入口と出口だけ（Wi-Fi を切る実演）→ ②ファーム5つの比較と、焼き方3つ → ③作り方（会話で動かす・テストを先に書く）→ ④DJ → PC → ｽﾀｯｸﾁｬﾝの対応表' },
+                body: '①実機は入口と出口だけ（Wi-Fi を切る実演）→ ②ファーム5つの比較と、焼き方3つ → ③作り方（会話で動かす・テストを先に書く）→ ④DJ → PC → ｽﾀｯｸﾁｬﾝの対応表' },
               { title: '♥ 持ってきた子のお披露目会！（8分）— 推しポイントを1人2分',
                 body: '仕組みの話のすぐあと。受付で並べてもらった子を、持ち主が2分で。子の名前 → 推しポイント（実演30秒）→ 一言。X で #スタックチャン交流会 も' },
               { title: 'C 失敗カタログ（16分）— 持ち帰り：3つの壊れ方',
@@ -40,6 +40,84 @@ const CONTENT = {
                 body: '今日の録音と記録を本人に返してから同意を聞く。¥19,494 と 2時間20分。最後に背景に図を1枚出して、左・右・真ん中・机を指します' },
             ]) +
             K.tiny('配布物 10 枚は <b>kou-uni.github.io/workshop-of-stackchan-at-cryptobar</b>。スマホでそのまま開けます') },
+
+    { ch: 0, tag: '全体の構成',
+      talk: `<b>アジェンダの次に、この1枚を出します。</b>左が入口、真ん中が MacBook 1台、右が出口。掴みの前に「机の上に何があるか」だけ共有しておくと、A で触るときに迷いません。<br>
+             詳しい話は B で。ここでは1分。`,
+      html: K.sys('机の上の全体図（1分）') +
+            K.head('信号は左から右へ。<em>考えているのは真ん中の1台。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 470" role="img" aria-label="全体の構成：入口の機材と実機からの信号が MacBook の gateway と console に集まり、頭脳（音声認識・言語モデル・音声合成）を経て、実機の顔・首・声・LED と背景に戻る" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="12" y="34" width="176" height="150" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="100" y="60" text-anchor="middle" font-size="14" fill="#1A73C4">入口（人が触るもの）</text>
+  <text x="100" y="90" text-anchor="middle" font-size="13" fill="#173A54">DJ 機材 DDJ-FLX2</text>
+  <text x="100" y="108" text-anchor="middle" font-size="11" fill="#4E7590">つまみ・パッド・フェーダー</text>
+  <text x="100" y="138" text-anchor="middle" font-size="13" fill="#173A54">曲の音</text>
+  <text x="100" y="156" text-anchor="middle" font-size="11" fill="#4E7590">スピーカーから鳴る</text>
+  <rect x="12" y="300" width="176" height="150" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="100" y="326" text-anchor="middle" font-size="14" fill="#1A73C4">ｽﾀｯｸﾁｬﾝの入口</text>
+  <text x="100" y="356" text-anchor="middle" font-size="13" fill="#173A54">マイク</text>
+  <text x="100" y="384" text-anchor="middle" font-size="13" fill="#173A54">頭のタッチ（3ゾーン）</text>
+  <text x="100" y="412" text-anchor="middle" font-size="13" fill="#173A54">NFC カード</text>
+  <text x="100" y="434" text-anchor="middle" font-size="11" fill="#4E7590">M5Stack CoreS3 / Wi-Fi</text>
+  <rect x="236" y="22" width="300" height="428" rx="24" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
+  <text x="386" y="50" text-anchor="middle" font-size="15" fill="#1A73C4">MacBook 1台（この机の上）</text>
+  <rect x="256" y="66" width="260" height="70" rx="14" fill="#fff"/>
+  <text x="386" y="92" text-anchor="middle" font-size="14" fill="#173A54">gateway（stackchan-mcp）</text>
+  <text x="386" y="112" text-anchor="middle" font-size="11" fill="#4E7590">実機との唯一の窓口。道具 49 個を Wi-Fi 越しに叩く</text>
+  <rect x="256" y="152" width="260" height="84" rx="14" fill="#fff"/>
+  <text x="386" y="178" text-anchor="middle" font-size="14" fill="#173A54">console（演技）</text>
+  <text x="386" y="198" text-anchor="middle" font-size="11" fill="#4E7590">「いまどうあるべきか」を1か所に持ち、</text>
+  <text x="386" y="214" text-anchor="middle" font-size="11" fill="#4E7590">首・表情・LED・声・受付を差分で反映</text>
+  <rect x="256" y="252" width="260" height="176" rx="14" fill="#fff"/>
+  <text x="386" y="278" text-anchor="middle" font-size="14" fill="#173A54">頭脳（全部ローカル）</text>
+  <text x="386" y="304" text-anchor="middle" font-size="12" fill="#173A54">音声認識 faster-whisper</text>
+  <text x="386" y="322" text-anchor="middle" font-size="11" fill="#4E7590">声 → 文字</text>
+  <text x="386" y="348" text-anchor="middle" font-size="12" fill="#173A54">言語モデル Ollama</text>
+  <text x="386" y="366" text-anchor="middle" font-size="11" fill="#4E7590">会話 gemma3:4b ／ 質疑 bot qwen2.5:14b</text>
+  <text x="386" y="392" text-anchor="middle" font-size="12" fill="#173A54">音声合成 VOICEVOX</text>
+  <text x="386" y="410" text-anchor="middle" font-size="11" fill="#4E7590">文字 → 声</text>
+  <rect x="584" y="34" width="164" height="190" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="666" y="60" text-anchor="middle" font-size="14" fill="#1A73C4">ｽﾀｯｸﾁｬﾝの出口</text>
+  <text x="666" y="92" text-anchor="middle" font-size="13" fill="#173A54">顔（表情 14 枚）</text>
+  <text x="666" y="120" text-anchor="middle" font-size="13" fill="#173A54">首（2 軸）</text>
+  <text x="666" y="148" text-anchor="middle" font-size="13" fill="#173A54">声</text>
+  <text x="666" y="176" text-anchor="middle" font-size="13" fill="#173A54">LED（本体12＋テープ30）</text>
+  <text x="666" y="204" text-anchor="middle" font-size="11" fill="#4E7590">受け取るのは角度と色の列だけ</text>
+  <rect x="584" y="300" width="164" height="150" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="666" y="326" text-anchor="middle" font-size="14" fill="#1A73C4">背景（iPad）</text>
+  <text x="666" y="356" text-anchor="middle" font-size="13" fill="#173A54">同じ状態を大きく</text>
+  <text x="666" y="376" text-anchor="middle" font-size="11" fill="#4E7590">LED の模様・スポット・花火</text>
+  <text x="666" y="408" text-anchor="middle" font-size="13" fill="#173A54">質疑 bot（スマホ）</text>
+  <text x="666" y="428" text-anchor="middle" font-size="11" fill="#4E7590">今日のことを文字で答える</text>
+  <line x1="188" y1="90" x2="256" y2="176" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="196" y="122" font-size="11" fill="#4E7590">USB MIDI</text>
+  <line x1="188" y1="140" x2="256" y2="190" stroke="#4E7590" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+  <text x="196" y="172" font-size="11" fill="#4E7590">拍を推定</text>
+  <line x1="188" y1="370" x2="256" y2="110" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="192" y="250" font-size="11" fill="#4E7590">Wi-Fi</text>
+  <line x1="516" y1="100" x2="584" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="522" y="90" font-size="11" fill="#4E7590">Wi-Fi</text>
+  <line x1="516" y1="200" x2="584" y2="350" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="522" y="290" font-size="11" fill="#4E7590">同じ LAN</text>
+  <line x1="386" y1="136" x2="386" y2="152" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <line x1="386" y1="236" x2="386" y2="252" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <text x="380" y="464" text-anchor="middle" font-size="12" fill="#1A73C4">外に出る通信はありません。Wi-Fi も MacBook が出しています</text>
+</svg></div>` },
+
+    { ch: 0, tag: 'それぞれ何をしているか',
+      talk: `<b>6つの箱を、1つ1行ずつ。</b>名前だけ先に。深い話は B で1つずつ開けます。<br>
+             数字を1つだけ添えるなら「<b>実機のファームに道具が49個</b>」。これが速く作れた理由です。`,
+      html: K.sys('登場するもの（1分）') +
+            K.cards([
+              { k: '実機', v: 'ｽﾀｯｸﾁｬﾝ<br>M5Stack CoreS3<br>ESP32-S3', d: '入口（マイク・頭の3ゾーンタッチ・NFC）と出口（顔・首2軸・声・LED）。<b>考える部分は入っていません。</b>Wi-Fi で MacBook と WebSocket 1本で話します' },
+              { k: '窓口', v: 'gateway<br>stackchan-mcp', d: '実機との唯一の窓口。ファームが持つ<b>49個の道具</b>（首を向ける・表情・LED・撮る・I2C…）を名前で呼べる。聞き取り（faster-whisper）もここ' },
+              { k: '演技', v: 'console<br>自作 Python<br>約9,300行', d: 'DJ 機材・拍・タッチ・NFC を受けて「いまどうあるべきか」を1か所に持ち、首・表情・LED・声を差分で送る。受付（名前を呼ぶ）もここ' },
+              { k: '頭脳', v: 'Ollama<br>VOICEVOX<br>faster-whisper', d: '声を文字に、文字を考えて、文字を声に。<b>全部 MacBook の中。</b>会話は gemma3:4b（速さ優先）、質疑 bot は qwen2.5:14b（正確さ優先）' },
+              { k: '入口の機材', v: 'Pioneer DDJ-FLX2<br>USB MIDI', d: 'ドライバ不要。流れているのは番号と 0〜127 の値だけ。つまみ→首、パッド→表情と LED、擦り→光、フェーダー→バースト' },
+              { k: '背景', v: 'iPad の画面<br>質疑 bot', d: 'ブラウザ1枚で会場を描く（奥から手前へ7層）。実機のテープに送る30個の配列をそのまま受け取る。質疑 bot はスマホから「今日のこと」を文字で' },
+            ]) +
+            K.memo('<b>外に出る通信はありません。</b>Wi-Fi も MacBook 自身が出しています。だから B② の「クラウドに行く出荷時」との対比が、そのまま成り立ちます。') },
 
     /* ───────── 序 ───────── */
     { ch: 0, tag: '今日いちばん大事なこと',
@@ -201,86 +279,8 @@ const CONTENT = {
     /* ───────── B ───────── */
     { ch: 2, tag: '仕組み', cover: { num: 'B', title: '仕組み', sub: '27分 / 開けて見せる' },
       talk: `<b>ここが教材の本体です。</b>「できます」ではなく「どうなっていて、どう作っているか」を見せます。<br>
-             順番は、全体の構成図 → ①構成（6分）→ ②ファームと焼き方（8分）→ ③作り方（7分）→ ④DJ の接続（6分）。
+             順番は、①構成（6分）→ ②ファームと焼き方（8分）→ ③作り方（7分）→ ④DJ の接続（6分）。全体図は冒頭で見せたので、ここでは中を開けます。
              ★<b>机の地図を出しておきます</b>（配布物の「この机の上の地図」、14場面を寄ったり引いたり）。` },
-
-    { ch: 2, tag: '全体の構成',
-      talk: `<b>技術の話は、この1枚から始めます。</b>左が入口、真ん中が MacBook 1台、右が出口。<br>
-             ★参加者の視線が「実機の中に AI がいる」から「実機は入口と出口」に移ったら、次へ進みます。`,
-      html: K.sys('B 全体の地図') +
-            K.head('信号は左から右へ。<em>考えているのは真ん中の1台。</em>') +
-            `<div class="panel"><svg viewBox="0 0 760 470" role="img" aria-label="全体の構成：入口の機材と実機からの信号が MacBook の gateway と console に集まり、頭脳（音声認識・言語モデル・音声合成）を経て、実機の顔・首・声・LED と背景に戻る" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
-  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
-  <rect x="12" y="34" width="176" height="150" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="100" y="60" text-anchor="middle" font-size="14" fill="#1A73C4">入口（人が触るもの）</text>
-  <text x="100" y="90" text-anchor="middle" font-size="13" fill="#173A54">DJ 機材 DDJ-FLX2</text>
-  <text x="100" y="108" text-anchor="middle" font-size="11" fill="#4E7590">つまみ・パッド・フェーダー</text>
-  <text x="100" y="138" text-anchor="middle" font-size="13" fill="#173A54">曲の音</text>
-  <text x="100" y="156" text-anchor="middle" font-size="11" fill="#4E7590">スピーカーから鳴る</text>
-  <rect x="12" y="300" width="176" height="150" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="100" y="326" text-anchor="middle" font-size="14" fill="#1A73C4">ｽﾀｯｸﾁｬﾝの入口</text>
-  <text x="100" y="356" text-anchor="middle" font-size="13" fill="#173A54">マイク</text>
-  <text x="100" y="384" text-anchor="middle" font-size="13" fill="#173A54">頭のタッチ（3ゾーン）</text>
-  <text x="100" y="412" text-anchor="middle" font-size="13" fill="#173A54">NFC カード</text>
-  <text x="100" y="434" text-anchor="middle" font-size="11" fill="#4E7590">M5Stack CoreS3 / Wi-Fi</text>
-  <rect x="236" y="22" width="300" height="428" rx="24" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
-  <text x="386" y="50" text-anchor="middle" font-size="15" fill="#1A73C4">MacBook 1台（この机の上）</text>
-  <rect x="256" y="66" width="260" height="70" rx="14" fill="#fff"/>
-  <text x="386" y="92" text-anchor="middle" font-size="14" fill="#173A54">gateway（stackchan-mcp）</text>
-  <text x="386" y="112" text-anchor="middle" font-size="11" fill="#4E7590">実機との唯一の窓口。道具 49 個を Wi-Fi 越しに叩く</text>
-  <rect x="256" y="152" width="260" height="84" rx="14" fill="#fff"/>
-  <text x="386" y="178" text-anchor="middle" font-size="14" fill="#173A54">console（演技）</text>
-  <text x="386" y="198" text-anchor="middle" font-size="11" fill="#4E7590">「いまどうあるべきか」を1か所に持ち、</text>
-  <text x="386" y="214" text-anchor="middle" font-size="11" fill="#4E7590">首・表情・LED・声・受付を差分で反映</text>
-  <rect x="256" y="252" width="260" height="176" rx="14" fill="#fff"/>
-  <text x="386" y="278" text-anchor="middle" font-size="14" fill="#173A54">頭脳（全部ローカル）</text>
-  <text x="386" y="304" text-anchor="middle" font-size="12" fill="#173A54">音声認識 faster-whisper</text>
-  <text x="386" y="322" text-anchor="middle" font-size="11" fill="#4E7590">声 → 文字</text>
-  <text x="386" y="348" text-anchor="middle" font-size="12" fill="#173A54">言語モデル Ollama</text>
-  <text x="386" y="366" text-anchor="middle" font-size="11" fill="#4E7590">会話 gemma3:4b ／ 質疑 bot qwen2.5:14b</text>
-  <text x="386" y="392" text-anchor="middle" font-size="12" fill="#173A54">音声合成 VOICEVOX</text>
-  <text x="386" y="410" text-anchor="middle" font-size="11" fill="#4E7590">文字 → 声</text>
-  <rect x="584" y="34" width="164" height="190" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="666" y="60" text-anchor="middle" font-size="14" fill="#1A73C4">ｽﾀｯｸﾁｬﾝの出口</text>
-  <text x="666" y="92" text-anchor="middle" font-size="13" fill="#173A54">顔（表情 14 枚）</text>
-  <text x="666" y="120" text-anchor="middle" font-size="13" fill="#173A54">首（2 軸）</text>
-  <text x="666" y="148" text-anchor="middle" font-size="13" fill="#173A54">声</text>
-  <text x="666" y="176" text-anchor="middle" font-size="13" fill="#173A54">LED（本体12＋テープ30）</text>
-  <text x="666" y="204" text-anchor="middle" font-size="11" fill="#4E7590">受け取るのは角度と色の列だけ</text>
-  <rect x="584" y="300" width="164" height="150" rx="18" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="666" y="326" text-anchor="middle" font-size="14" fill="#1A73C4">背景（iPad）</text>
-  <text x="666" y="356" text-anchor="middle" font-size="13" fill="#173A54">同じ状態を大きく</text>
-  <text x="666" y="376" text-anchor="middle" font-size="11" fill="#4E7590">LED の模様・スポット・花火</text>
-  <text x="666" y="408" text-anchor="middle" font-size="13" fill="#173A54">質疑 bot（スマホ）</text>
-  <text x="666" y="428" text-anchor="middle" font-size="11" fill="#4E7590">今日のことを文字で答える</text>
-  <line x1="188" y1="90" x2="256" y2="176" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
-  <text x="196" y="122" font-size="11" fill="#4E7590">USB MIDI</text>
-  <line x1="188" y1="140" x2="256" y2="190" stroke="#4E7590" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#ar)"/>
-  <text x="196" y="172" font-size="11" fill="#4E7590">拍を推定</text>
-  <line x1="188" y1="370" x2="256" y2="110" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
-  <text x="192" y="250" font-size="11" fill="#4E7590">Wi-Fi</text>
-  <line x1="516" y1="100" x2="584" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
-  <text x="522" y="90" font-size="11" fill="#4E7590">Wi-Fi</text>
-  <line x1="516" y1="200" x2="584" y2="350" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)"/>
-  <text x="522" y="290" font-size="11" fill="#4E7590">同じ LAN</text>
-  <line x1="386" y1="136" x2="386" y2="152" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)" marker-start="url(#ar)"/>
-  <line x1="386" y1="236" x2="386" y2="252" stroke="#4E7590" stroke-width="3" marker-end="url(#ar)" marker-start="url(#ar)"/>
-  <text x="380" y="464" text-anchor="middle" font-size="12" fill="#1A73C4">外に出る通信はありません。Wi-Fi も MacBook が出しています</text>
-</svg></div>` },
-
-    { ch: 2, tag: 'それぞれ何をしているか',
-      talk: `<b>6つの箱を、1つ1行ずつ。</b>深い話はここではしません。B①〜④で1つずつ開けていきます。<br>
-             数字を1つだけ添えるなら「<b>実機のファームに道具が49個</b>」。これが速く作れた理由です。`,
-      html: K.sys('B 登場するもの') +
-            K.cards([
-              { k: '実機', v: 'ｽﾀｯｸﾁｬﾝ（M5Stack CoreS3 / ESP32-S3）', d: '入口（マイク・頭の3ゾーンタッチ・NFC）と出口（顔・首2軸・声・LED）。<b>考える部分は入っていません。</b>Wi-Fi で MacBook と WebSocket 1本で話します' },
-              { k: '窓口', v: 'gateway（stackchan-mcp）', d: '実機との唯一の窓口。ファームが持つ<b>49個の道具</b>（首を向ける・表情・LED・撮る・I2C…）を名前で呼べる。聞き取り（faster-whisper）もここ' },
-              { k: '演技', v: 'console（自作・Python 約9,300行）', d: 'DJ 機材・拍・タッチ・NFC を受けて「いまどうあるべきか」を1か所に持ち、首・表情・LED・声を差分で送る。受付（名前を呼ぶ）もここ' },
-              { k: '頭脳', v: 'Ollama ＋ VOICEVOX ＋ faster-whisper', d: '声を文字に、文字を考えて、文字を声に。<b>全部 MacBook の中。</b>会話は gemma3:4b（速さ優先）、質疑 bot は qwen2.5:14b（正確さ優先）' },
-              { k: '入口の機材', v: 'Pioneer DDJ-FLX2（USB MIDI）', d: 'ドライバ不要。流れているのは番号と 0〜127 の値だけ。つまみ→首、パッド→表情と LED、擦り→光、フェーダー→バースト' },
-              { k: '背景', v: 'iPad の画面 ＋ 質疑 bot', d: 'ブラウザ1枚で会場を描く（奥から手前へ7層）。実機のテープに送る30個の配列をそのまま受け取る。質疑 bot はスマホから「今日のこと」を文字で' },
-            ]) +
-            K.memo('<b>外に出る通信はありません。</b>Wi-Fi も MacBook 自身が出しています。だから B② の「クラウドに行く出荷時」との対比が、そのまま成り立ちます。') },
 
     { ch: 2, tag: '① 構成（6分）',
       talk: `<b>今日いちばん持ち帰ってほしい考え方です。</b><br>
@@ -290,7 +290,7 @@ const CONTENT = {
             K.cards([
               { k: '★実演 1', v: 'MacBook の Wi-Fi を切る', d: '実機が止まります →「中身は、この子の中に無いからです」→ 戻すと約10秒で顔が出ます' },
               { k: '★実演 2', v: 'DJ 機材のパッド #5 を押す', d: '実機の顔が驚き顔、テープと背景が同時に同じ模様に。<b>同じ30個の配列を2つに送っているだけ</b>' },
-              { k: '数字', v: '首 30回/秒・色 20回/秒', d: '実機が受け取っているのは<b>角度と色の列だけ</b>。意味は持っていません' },
+              { k: '数字', v: '首 30回/秒<br>色 20回/秒', d: '実機が受け取っているのは<b>角度と色の列だけ</b>。意味は持っていません' },
             ]) +
             K.memo('実機のファームは xiaozhi 系のフォーク。<b>WebSocket で遠くのサーバーに繋いで喋る</b>のがプロトコルの前提なので、接続先の URL を差し替えるだけで頭脳の置き場所が変わります。無理をしていません。') },
 
@@ -325,7 +325,7 @@ const CONTENT = {
       html: K.sys('カメラカバーの直後に') +
             K.head('2つの機械で、<span class="r">録っています。</span>') +
             K.cards([
-              { k: '伝える', v: 'この Mac と、首に掛けた録音機（Omi）', d: 'どちらも周りの声が入ります。僕の声だけを録る仕組みはありません' },
+              { k: '伝える', v: 'この Mac<br>首に掛けた録音機（Omi）', d: 'どちらも周りの声が入ります。僕の声だけを録る仕組みはありません' },
               { k: '伝える', v: '音声・文字起こし・要約は外に出ない', d: 'この机の上で文字にして、締めのスピーチに使うだけ。★「一歩も出ません」とは言い切りません' },
               { k: '★出口', v: '嫌な方は、いま言ってください', d: 'この場で電源を切ります（Omi は本体を3秒長押し。見せながら）' },
               { k: '★正直に', v: 'その場では消せない', d: '録れた分は、持ち帰ってから消します。それまでは僕の Mac の中です' },
@@ -337,10 +337,10 @@ const CONTENT = {
       html: K.sys('★道具の一覧を出します') +
             K.head('ファームの中に、道具が<em>49個。</em>') +
             K.cards([
-              { k: '身体', v: 'move_head / set_avatar / set_blink / set_mouth', d: '首を向ける・表情14枚・まばたき・口の動き' },
-              { k: '光と目', v: 'led.set_all / set_brightness / take_photo', d: '本体 LED 12個・画面の明るさ・カメラ' },
-              { k: '外の口', v: 'i2c.scan / i2c.write_read / port_b.ws2812', d: 'Grove の I2C（NFC リーダーはこれで読んだ）と LED テープ' },
-              { k: '声と耳', v: 'say / listen / touch.get_touch_state', d: '喋る・聞き取る・タッチの状態' },
+              { k: '身体', v: 'move_head<br>set_avatar<br>set_blink<br>set_mouth', d: '首を向ける・表情14枚・まばたき・口の動き' },
+              { k: '光と目', v: 'led.set_all<br>set_brightness<br>take_photo', d: '本体 LED 12個・画面の明るさ・カメラ' },
+              { k: '外の口', v: 'i2c.scan<br>i2c.write_read<br>port_b.ws2812', d: 'Grove の I2C（NFC リーダーはこれで読んだ）と LED テープ' },
+              { k: '声と耳', v: 'say<br>listen<br>touch.get_touch_state', d: '喋る・聞き取る・タッチの状態' },
             ]) +
             K.quote('「どう動かすか」を読んで、コードに書き写す工程が、丸ごと消えました。「右を向いて写真を撮って」で、実機が動いて画像が返ります。') },
 
@@ -401,6 +401,17 @@ const CONTENT = {
               { k: '2日目〜', v: '繰り返すものをコードに', d: '踊り・LED・タッチ反応は毎秒動くので、Python の console に' },
               { k: '途中から', v: 'テストを先に書く', d: '設計の不変条件7つをテストにしたら、<b>違反が35箇所</b>機械的に出た' },
             ]) },
+
+    { ch: 2, tag: '③ 実際に使っているプロンプト',
+      talk: `<b>全文をそのまま見せます。</b>短いのが特徴です。<b>ロールを増やすほど失敗する</b>ので、土台は壊れない指示だけ。知識はファイルで渡し、指示に書きません。`,
+      html: K.sys('4つとも本物（リポジトリに入っています）') +
+            K.cards([
+              { k: '① 会話の土台（app/persona/stackchan.md）', v: '実機が喋るときの人格', d: '<code>あなたは手のひらサイズのロボットです。目の前の人と短く会話します。</code><br><code>必ず守ること：返答の先頭に感情タグを1つ付ける（Neutral / Happy / Sleepy / Doubt / Sad / Angry）。返答は2文以内。声で聞くので長いと伝わらない。分からないことは分からないと言う。作らない。考える時間が要るときは、まず短い相槌を返す。</code>' },
+              { k: '② 参加者カードの差し込み口', v: '4項目だけ', d: '<code>あなたの名前は {name} です。話し方：{tone}　好きなもの：{likes}　やらないこと：{never}</code><br>1分以内に書き切れる分量が上限。自由記述にすると、書ける人と書けない人の差がそのまま体験の差になる' },
+              { k: '③ 質疑 bot（app/dj/ask.py）', v: '資料の外は答えない', d: '<code>あなたはスタックチャンという手のひらサイズのロボットです。今日の勉強会で、自分がどう作られたかを知っています。来た人の質問に、今日配った資料の中から答えます。</code><br><code>一人称は「僕」。2〜3文で答える。下の「資料」に書いてあることだけを使う。書いていないことは推測しない。資料に無ければ「僕の記憶にありません」と正直に言う。難しい言葉は使わない。</code><br>このあとに、質問と似た資料の抜粋を機械が貼って渡す（bot は道具を持たない）' },
+              { k: '④ 持ち帰り用（参加者が自分の Claude Code に貼る）', v: '手順は渡す。覚えない', d: '<code>このリポジトリを読んで、僕の状況に合わせて手順を出して。持っているもの: M5Stack K151／Mac。いまの状態: 箱を開けたところ。今日やりたいこと: 出荷時のまま喋らせるところまで。詰まったところは docs/learnings.md に全部書いてあるので、先に読んでから答えて。</code>' },
+            ]) +
+            K.memo('作るときの指示は、もっと短い。「右を向いて、写真を撮って」「首を49.8度振る指示が出てきたのはなぜ？」。<b>長い指示より、テストと資料を渡すほうが効きます。</b>') },
 
     { ch: 2, tag: '③ 減らして直る',
       talk: `<b>踊りが止まらない、瞬きが消える。機能の不足だと思って叩いていました。</b><br>
@@ -513,7 +524,7 @@ const CONTENT = {
 </svg></div>` +
             K.cards([
               { k: '① 機材（DDJ-FLX2）', v: '出しているのは MIDI の数字だけ', d: 'つまみは CC（番号と 0〜127）、パッドとボタンは Note（番号と ON/OFF）。<b>機材は実機の存在を知りません</b>' },
-              { k: '② PC の中', v: '翻訳表 ＋ 状態1つ ＋ 窓口', d: '<b>mapping.json</b>（この番号はこの意味）→ <b>console</b>（いまどうあるべきか。優先順 つまみ > タッチ > NFC > 聞く > 落ち > 歓声 > 顔）→ <b>gateway</b>（49個の道具で実機へ）' },
+              { k: '② PC の中', v: '翻訳表<br>状態1つ<br>窓口', d: '<b>mapping.json</b>（この番号はこの意味）→ <b>console</b>（いまどうあるべきか。優先順 つまみ > タッチ > NFC > 聞く > 落ち > 歓声 > 顔）→ <b>gateway</b>（49個の道具で実機へ）' },
               { k: '③ 実機', v: '角度と色の列を受けて動く', d: '首 30回/秒・色 20回/秒で届く。<b>意味は持っていません</b>。同じ配列を背景（iPad）も受け取るので、実機と画面が必ず揃う' },
             ]) +
             K.memo('番号は推測せず、<b>1つずつ動かして覚えさせました</b>（2026-09-08 実測）。最初「うなずきは 0〜64」と記録して間違えた。本人が中央で止めた区間を全可動域と解釈していた。<b>0 と 127 の両方が観測されたこと</b>を全可動域の条件にした。') },
@@ -522,10 +533,52 @@ const CONTENT = {
       talk: `<b>この表のとおりに、その場で触ります。</b>「特別な操作画面は1つもありません」。<br>
              表情は<b>4秒で自動的に idle に戻ります</b>。押しっぱなしで顔が固定されないように。落差で「反応した」ように見えます。`,
       html: K.sys('mapping.json の中身（実測で確定）') +
+            `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="DJ 機材の見取り図と割り当て：左のジョグを擦ると光が刻む、EQ つまみで首が回る、FILTER でうなずく、パッド4枚で表情、音量フェーダーでバースト、PLAY で踊り ON、MASTER で OFF" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1A73C4"/></marker></defs>
+  <rect x="40" y="70" width="680" height="200" rx="18" fill="#2B2F36" stroke="#4E7590" stroke-width="3"/>
+  <text x="380" y="58" text-anchor="middle" font-size="13" fill="#1A73C4">DDJ-FLX2（上から見た図）</text>
+  <circle cx="150" cy="180" r="62" fill="#1c1f24" stroke="#87A6BC" stroke-width="3"/>
+  <circle cx="150" cy="180" r="40" fill="#2B2F36" stroke="#87A6BC" stroke-width="2"/>
+  <text x="150" y="185" text-anchor="middle" font-size="11" fill="#E4F6FC">ジョグ</text>
+  <circle cx="610" cy="180" r="62" fill="#1c1f24" stroke="#87A6BC" stroke-width="3"/>
+  <circle cx="610" cy="180" r="40" fill="#2B2F36" stroke="#87A6BC" stroke-width="2"/>
+  <text x="610" y="185" text-anchor="middle" font-size="11" fill="#E4F6FC">ジョグ</text>
+  <rect x="86" y="236" width="40" height="22" rx="6" fill="#55C96A"/>
+  <text x="106" y="251" text-anchor="middle" font-size="10" fill="#0e2a14">PLAY</text>
+  <circle cx="330" cy="105" r="11" fill="#87A6BC"/><circle cx="330" cy="140" r="11" fill="#87A6BC"/><circle cx="330" cy="175" r="11" fill="#FFC831"/>
+  <circle cx="430" cy="105" r="11" fill="#87A6BC"/><circle cx="430" cy="140" r="11" fill="#87A6BC"/><circle cx="430" cy="175" r="11" fill="#87A6BC"/>
+  <text x="380" y="98" text-anchor="middle" font-size="9" fill="#E4F6FC">EQ</text>
+  <circle cx="330" cy="215" r="13" fill="#FF9F40"/><circle cx="430" cy="215" r="13" fill="#87A6BC"/>
+  <text x="380" y="219" text-anchor="middle" font-size="9" fill="#E4F6FC">FILTER</text>
+  <rect x="368" y="100" width="24" height="120" rx="6" fill="#1c1f24" stroke="#87A6BC" stroke-width="2"/>
+  <rect x="371" y="108" width="18" height="10" rx="3" fill="#FF6B6B"/>
+  <text x="380" y="242" text-anchor="middle" font-size="9" fill="#E4F6FC">音量</text>
+  <rect x="360" y="252" width="40" height="14" rx="4" fill="#9B7BF0"/>
+  <text x="380" y="262" text-anchor="middle" font-size="8" fill="#fff">MASTER</text>
+  <rect x="222" y="236" width="18" height="18" rx="3" fill="#4E7590"/><rect x="244" y="236" width="18" height="18" rx="3" fill="#4E7590"/><rect x="266" y="236" width="18" height="18" rx="3" fill="#4E7590"/><rect x="288" y="236" width="18" height="18" rx="3" fill="#4E7590"/>
+  <rect x="222" y="214" width="18" height="18" rx="3" fill="#8FDBF5"/><rect x="244" y="214" width="18" height="18" rx="3" fill="#8FDBF5"/><rect x="266" y="214" width="18" height="18" rx="3" fill="#8FDBF5"/><rect x="288" y="214" width="18" height="18" rx="3" fill="#8FDBF5"/>
+  <text x="264" y="204" text-anchor="middle" font-size="9" fill="#E4F6FC">パッド #4〜#7</text>
+  <line x1="150" y1="118" x2="150" y2="34" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)"/>
+  <text x="150" y="26" text-anchor="middle" font-size="12" fill="#1A73C4">擦る → LED が白く速く刻む</text>
+  <line x1="330" y1="175" x2="250" y2="60" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)"/>
+  <text x="228" y="52" text-anchor="middle" font-size="12" fill="#1A73C4">EQ（CC23）→ 首が左右に</text>
+  <line x1="330" y1="215" x2="300" y2="300" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)"/>
+  <text x="290" y="318" text-anchor="middle" font-size="12" fill="#1A73C4">FILTER（CC15）→ うなずく</text>
+  <line x1="380" y1="110" x2="470" y2="36" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)"/>
+  <text x="500" y="28" text-anchor="middle" font-size="12" fill="#1A73C4">音量フェーダー → 70% 赤 / 100% 花火</text>
+  <line x1="264" y1="222" x2="180" y2="300" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)"/>
+  <text x="130" y="318" text-anchor="middle" font-size="12" fill="#1A73C4">パッド4枚 → 表情（4秒で戻る）</text>
+  <line x1="106" y1="258" x2="60" y2="300" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)"/>
+  <text x="44" y="318" text-anchor="start" font-size="11" fill="#1A73C4">PLAY → 踊り ON</text>
+  <line x1="380" y1="266" x2="470" y2="300" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)"/>
+  <text x="520" y="318" text-anchor="middle" font-size="12" fill="#1A73C4">MASTER → 踊り OFF（会話へ）</text>
+  <line x1="610" y1="118" x2="610" y2="34" stroke="#1A73C4" stroke-width="2.5" marker-end="url(#ar8)" stroke-dasharray="5 4"/>
+  <text x="640" y="26" text-anchor="middle" font-size="11" fill="#4E7590">右側は今日は使わない</text>
+</svg></div>` +
             K.cards([
               { k: 'EQ つまみ（CC 23 / ch6）', v: '首が左右に回る', d: '0〜127 がそのまま yaw ±90°。テープが回した分だけメーターのように点く。離して2秒で首を踊りに返す' },
               { k: 'FILTER つまみ（CC 15 / ch0）', v: 'うなずく', d: '0〜127 が pitch 5〜85°。128種すべて確認した' },
-              { k: 'パッド #4 #5 #6 #7（Note ch7）', v: 'happy / surprised / embarrassed / sad', d: '隣接4枚で指の移動が最小。#5 の驚き顔が暗い箱で一番変化が見える。LED の模様（13種）と背景も同時に' },
+              { k: 'パッド #4 #5 #6 #7（Note ch7）', v: 'happy<br>surprised<br>embarrassed<br>sad', d: '隣接4枚で指の移動が最小。#5 の驚き顔が暗い箱で一番変化が見える。LED の模様（13種）と背景も同時に' },
               { k: 'ジョグを擦る', v: 'LED が白く速く刻む', d: '背景で下からスポットライト。灯体は揺れない（本物のムービングヘッドは止まっていて光だけが刻む）' },
               { k: '音量フェーダー', v: '70% で赤、100% で花火と CO2', d: '会場が赤く染まり、首が揺れ、テープが白く速く。A の掴みで使ったのはこれ' },
               { k: 'PLAY / MASTER ボタン（Note 11 / 99）', v: '踊り ON / OFF', d: 'トグルにしていない。セット中に何度も押す人、押しっぱなしの人がいるため' },
@@ -679,7 +732,7 @@ const CONTENT = {
       html: K.sys('★始め方の地図を渡します') +
             K.head('今日は<em>1まで。</em>') +
             K.cards([
-              { k: '買うもの', v: 'M5Stack K151 一択（¥18,150）', d: 'CoreS3・サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。<b>USB ポートは2つ。本体側が書き込み、台側は給電だけ</b>' },
+              { k: '買うもの', v: 'M5Stack K151<br>一択（¥18,150）', d: 'CoreS3・サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。<b>USB ポートは2つ。本体側が書き込み、台側は給電だけ</b>' },
               { k: '6手順・実測', v: '30 / 20 / 10 / 60 / 20 分 / ずっと', d: '①出荷時で遊ぶ ②まるごと吸い出す ③アンバインド ④焼く ⑤gateway ⑥作り込む。⑤まで <b>2時間20分</b>' },
               { k: '渡し方', v: 'この一文を、自分の Claude Code に貼る', d: '「このリポジトリを読んで、僕の状況に合わせて手順を出して。持っているもの: K151／Mac。いまの状態: 箱を開けたところ。今日やりたいこと: 出荷時のまま喋らせるところまで。詰まったところは docs/learnings.md に全部書いてあるので、先に読んでから答えて」' },
             ]) +
@@ -691,8 +744,8 @@ const CONTENT = {
       html: K.sys('今日いちばん実務的な話') +
             K.head('危ないのは鍵ではなく、<span class="r">ログ。</span>') +
             K.cards([
-              { k: '形で探す', v: 'sk-… / ghp_… / 32桁の16進', d: '名前（API_KEY=）で探すと、変数名を変えただけで抜ける' },
-              { k: '入れないもの', v: '名簿・録音・文字起こし・NVS の退避', d: '<b>会話ログは作業ファイルの顔をしているのに、中に本名と雑談が入っている</b>。NFC の名簿（人名）は git に入れず、手で運ぶ' },
+              { k: '形で探す', v: 'sk-…<br>ghp_…<br>32桁の16進', d: '名前（API_KEY=）で探すと、変数名を変えただけで抜ける' },
+              { k: '入れないもの', v: '名簿<br>録音<br>文字起こし<br>NVS の退避', d: '<b>会話ログは作業ファイルの顔をしているのに、中に本名と雑談が入っている</b>。NFC の名簿（人名）は git に入れず、手で運ぶ' },
               { k: '取り消せない', v: '一度 push したら戻らない', d: 'GitHub から消しても、clone された分と履歴は残る。だから<b>配る前に機械に見せる</b>' },
             ]) +
             K.quote('鍵は形が決まっているので目に付きます。会話ログは、作業ファイルの顔をしているのに、中に本名と雑談が入っている。') },
