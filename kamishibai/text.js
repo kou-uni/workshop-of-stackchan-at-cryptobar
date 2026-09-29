@@ -501,8 +501,62 @@ const CONTENT = {
             K.tiny('DJ 機材の MIDI は 1秒に数十件、首の角度は 30回/秒、色の列は 20回/秒、会話は1往復 3〜5秒') },
 
     { ch: 3, tag: '役割ごとの製品・技術',
-      talk: `<b>用語の共有です。</b>役割ごとに「何を使っているか」を一覧で。全部 OSS か市販品で、特別なものはありません。`,
-      html: K.cards([
+      talk: `<b>役割と製品を、机の見取り図で1枚に。</b>身体・ファーム・窓口・演技・考える・声・DJ 機材・光・受付・背景。全部 OSS か市販品で、特別なものはありません。下の一覧は開くと詳しく。`,
+      html: K.head('役割は8つ。<em>机の上に、こう並んでいます。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 500" role="img" aria-label="机の上の見取り図で役割と製品を対応づける：背景は iPad、真ん中にスタックチャン（身体 K151・中にファーム stackchan-mcp・頭に NFC リーダー・周りに LED テープ）、左に DJ 機材 DDJ-FLX2、下に MacBook（窓口 gateway・演技 console・考える Ollama・声 VOICEVOX・聞き取り faster-whisper）、MacBook が Wi-Fi を出す" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="250" y="14" width="260" height="96" rx="16" fill="#1c1f24" stroke="#87A6BC" stroke-width="4"/>
+  <rect x="262" y="26" width="236" height="72" rx="8" fill="#1A73C4"/>
+  <circle cx="300" cy="62" r="10" fill="#FF6B6B"/><circle cx="330" cy="70" r="7" fill="#FFC831"/><circle cx="470" cy="60" r="12" fill="#55C96A"/><rect x="380" y="40" width="10" height="50" rx="3" fill="#8FDBF5"/>
+  <text x="380" y="126" text-anchor="middle" font-size="12" fill="#1A73C4">背景 ── iPad（ブラウザ1枚 stage.html）</text>
+  <rect x="352" y="146" width="56" height="16" rx="5" fill="#EDE6FF" stroke="#9B7BF0" stroke-width="2"/>
+  <text x="380" y="158" text-anchor="middle" font-size="9" fill="#5E42B8">NFC</text>
+  <text x="470" y="158" text-anchor="start" font-size="11" fill="#5E42B8">受付 ── RFID 2 Unit</text>
+  <rect x="325" y="164" width="110" height="82" rx="14" fill="#1c1f24" stroke="#87A6BC" stroke-width="4"/>
+  <circle cx="358" cy="196" r="10" fill="#fff"/><circle cx="402" cy="196" r="10" fill="#fff"/>
+  <path d="M366 220 Q 380 232 394 220" fill="none" stroke="#fff" stroke-width="4"/>
+  <rect x="338" y="168" width="84" height="14" rx="5" fill="#FFF2CC"/>
+  <text x="380" y="179" text-anchor="middle" font-size="9" fill="#B37C00">ファーム stackchan-mcp</text>
+  <rect x="365" y="248" width="30" height="14" rx="4" fill="#4E7590"/>
+  <circle cx="380" cy="280" r="20" fill="#87A6BC"/>
+  <text x="470" y="200" text-anchor="start" font-size="12" fill="#1A73C4">身体 ── M5Stack K151</text>
+  <text x="470" y="216" text-anchor="start" font-size="10" fill="#4E7590">CoreS3 / ESP32-S3</text>
+  <text x="470" y="236" text-anchor="start" font-size="11" fill="#B37C00">中のファーム ── xiaozhi のフォーク</text>
+  <circle cx="300" cy="300" r="5" fill="#FF6B6B"/><circle cx="318" cy="308" r="5" fill="#FF9F40"/><circle cx="338" cy="313" r="5" fill="#FFC831"/><circle cx="358" cy="316" r="5" fill="#55C96A"/><circle cx="380" cy="317" r="5" fill="#2E9BE0"/><circle cx="402" cy="316" r="5" fill="#9B7BF0"/><circle cx="422" cy="313" r="5" fill="#FF6B6B"/><circle cx="442" cy="308" r="5" fill="#FF9F40"/><circle cx="460" cy="300" r="5" fill="#FFC831"/>
+  <text x="470" y="300" text-anchor="start" font-size="11" fill="#2E8C42">光 ── LED テープ 30粒（A093）</text>
+  <rect x="30" y="180" width="180" height="96" rx="16" fill="#2B2F36" stroke="#4E7590" stroke-width="3"/>
+  <circle cx="70" cy="222" r="24" fill="#1c1f24" stroke="#87A6BC" stroke-width="2"/>
+  <circle cx="130" cy="204" r="7" fill="#87A6BC"/><circle cx="160" cy="204" r="7" fill="#87A6BC"/><circle cx="190" cy="204" r="7" fill="#FFC831"/>
+  <rect x="125" y="222" width="14" height="14" rx="3" fill="#8FDBF5"/><rect x="145" y="222" width="14" height="14" rx="3" fill="#8FDBF5"/><rect x="165" y="222" width="14" height="14" rx="3" fill="#8FDBF5"/><rect x="185" y="222" width="14" height="14" rx="3" fill="#8FDBF5"/>
+  <rect x="150" y="246" width="40" height="8" rx="3" fill="#FF6B6B"/>
+  <text x="120" y="294" text-anchor="middle" font-size="12" fill="#1A73C4">DJ 機材 ── DDJ-FLX2</text>
+  <text x="120" y="310" text-anchor="middle" font-size="10" fill="#4E7590">つまみ・パッド・フェーダー。USB</text>
+  <rect x="150" y="340" width="460" height="120" rx="18" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
+  <text x="380" y="362" text-anchor="middle" font-size="13" fill="#1A73C4">母艦 ── MacBook 1台（Wi-Fi もここが出す）</text>
+  <rect x="164" y="374" width="104" height="72" rx="12" fill="#FFF2CC"/>
+  <text x="216" y="396" text-anchor="middle" font-size="12" fill="#173A54">窓口</text>
+  <text x="216" y="414" text-anchor="middle" font-size="10" fill="#4E7590">gateway</text>
+  <text x="216" y="430" text-anchor="middle" font-size="9" fill="#4E7590">stackchan-mcp</text>
+  <rect x="276" y="374" width="104" height="72" rx="12" fill="#FFE2E2"/>
+  <text x="328" y="396" text-anchor="middle" font-size="12" fill="#173A54">演技</text>
+  <text x="328" y="414" text-anchor="middle" font-size="10" fill="#4E7590">console</text>
+  <text x="328" y="430" text-anchor="middle" font-size="9" fill="#4E7590">自作 Python</text>
+  <rect x="388" y="374" width="104" height="72" rx="12" fill="#DCF5DF"/>
+  <text x="440" y="396" text-anchor="middle" font-size="12" fill="#173A54">考える</text>
+  <text x="440" y="414" text-anchor="middle" font-size="10" fill="#4E7590">Ollama</text>
+  <text x="440" y="430" text-anchor="middle" font-size="9" fill="#4E7590">gemma3 / qwen2.5</text>
+  <rect x="500" y="374" width="98" height="72" rx="12" fill="#DCF5DF"/>
+  <text x="549" y="396" text-anchor="middle" font-size="12" fill="#173A54">声・聞き取り</text>
+  <text x="549" y="414" text-anchor="middle" font-size="10" fill="#4E7590">VOICEVOX</text>
+  <text x="549" y="430" text-anchor="middle" font-size="9" fill="#4E7590">faster-whisper</text>
+  <line x1="210" y1="250" x2="230" y2="338" stroke="#4E7590" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="236" y="300" text-anchor="middle" font-size="9" fill="#4E7590">USB</text>
+  <path d="M380 340 Q 380 320 380 302" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  <path d="M600 340 Q 680 200 520 60" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="660" y="250" text-anchor="middle" font-size="10" fill="#1A73C4">Wi-Fi</text>
+  <text x="380" y="486" text-anchor="middle" font-size="12" fill="#1A73C4">役割は8つ。買ったもの・OSS・自作が、机の上でこう並んでいる</text>
+</svg></div>` +
+            K.cards([
               { k: '身体', v: 'M5Stack K151<br>（CoreS3 / ESP32-S3）', d: 'サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。¥18,150' },
               { k: 'ファーム', v: 'stackchan-mcp<br>（xiaozhi のフォーク）', d: 'K151 専用のボード定義。MCP で道具 49 個。WebSocket で母艦と話す' },
               { k: '窓口', v: 'stackchan-mcp gateway<br>（Python）', d: '実機と1本の WebSocket。MCP サーバー。聞き取り faster-whisper もここ' },
