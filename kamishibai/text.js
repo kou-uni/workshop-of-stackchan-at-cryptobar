@@ -7,7 +7,7 @@ const CONTENT = {
   brand: { name: 'ｽﾀｯｸﾁｬﾝ交流会', sub: 'Crypto Cafe & Bar' },
   guide: { still: '@@assets/stackchan.png@@', face: '@@assets/stackchan-face.png@@' },
   sound: 'chip',   // ぴこぴこ音。ｽﾀｯｸﾁｬﾝに寄せている
-  chapters: ['序', 'A', 'B', 'お披露目', 'C', 'D', '交流', '締'],
+  chapters: ['序', 'A', '基本', 'デモ', 'お披露目', 'C', 'D', '交流', '締'],
   labels: { next: 'つぎへ', prev: 'もどる', start: 'はじめる', end: 'いってらっしゃい' },
 
   steps: [
@@ -25,7 +25,8 @@ const CONTENT = {
             K.head('触って、開けて、<em>語って、作る。</em>') +
             K.todo([
               { title: 'A 掴み', body: 'まず、さわる時間。1人ずつ手のひらに乗せて、なでてもらいます。曲を流すと踊ります' },
-              { title: 'B 仕組み', body: '構成やファームなど、簡単なことを知る・振り返る。①実機は入口と出口だけ ②ファーム5つの比較と焼き方 ③作り方 ④DJ 機材との対応' },
+              { title: 'B 基本', body: '用語を合わせる。何を繋げば始められるか。ファームウェアとは何か、出荷時はどうか、他に何があって今回はどれを選んだか。カスタマイズの3つの入口' },
+              { title: 'B+ 今回のデモ', body: 'DJ 機材をロボットの入力にした、という話。なぜそうしたか、中で何が起きているか、どう作ったか' },
               { title: '♥ 持ってきたスタックチャンのお披露目会！', body: '受付で並べてもらったスタックチャンを、持ち主が2分で。名前 → 推しポイント（実演30秒）→ 一言。X で #スタックチャンザギャザリング も' },
               { title: 'C 失敗カタログ', body: '失敗体験を、楽しく語ろう。サーボ音で踊り続けた／監視で壊した／LED で電源が落ちた、の3つ。そのあとはみんなの「うちではこう壊れた」' },
               { title: 'D 動かす', body: 'スターターと始め方の地図を渡します。自分のエージェントに読ませて、それぞれのペースで' },
@@ -35,7 +36,7 @@ const CONTENT = {
 
     /* ───────── 序 ───────── */
     { ch: 0, tag: '全体の構成',
-      talk: `<b>アジェンダの次に、この1枚。</b>左が入口、真ん中が MacBook 1台、右が出口。箱を押すと1行ずつ説明が出ます。詳しい話は B で。`,
+      talk: `<b>アジェンダの次に、この1枚。</b>左が入口、真ん中が MacBook 1台、右が出口。箱を押すと1行ずつ説明が出ます。詳しい話は基本編とデモ編で。`,
       html: K.head('信号は左から右へ。<em>考えているのは真ん中の1台。</em>') +
             `<div class="panel"><svg viewBox="0 0 760 470" role="img" aria-label="全体の構成：入口の機材と実機からの信号が MacBook の gateway と console に集まり、頭脳（音声認識・言語モデル・音声合成）を経て、実機の顔・首・声・LED と背景に戻る" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
   <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
@@ -117,7 +118,7 @@ const CONTENT = {
             ]) +
             K.cards([
               { k: 'まだ分からない人へ', v: 'さわってみましょう。分からないところは、その場で聞いてください', d: '分からないまま来て、分からないまま触って大丈夫。用語の共有は体験のあとで。「僕も9月8日に箱を開けるまで、全部分かりませんでした」' },
-              { k: '持ってきた人へ', v: '大好きなスタックチャンの推しポイント、ぜひ聞かせてください', d: '受付で並べてもらい、仕組みのあとのお披露目会（1人2分）で。うまくいっていないところも、そのまま。堅苦しくしない' },
+              { k: '持ってきた人へ', v: '大好きなスタックチャンの推しポイント、ぜひ聞かせてください', d: '受付で並べてもらい、デモのあとのお披露目会（1人2分）で。うまくいっていないところも、そのまま。堅苦しくしない' },
             ]) },
 
     { ch: 0, tag: 'お披露目会の受付（開場 18:30〜・受付の横）',
@@ -142,15 +143,15 @@ const CONTENT = {
                 body: '起きること：数拍おいて首が拍に合わせて振れ、テープ30粒が拍で光る。4秒ごとに一瞬止まって聴き入る。<br>ダメなとき：「会場の音量だと閾値が足りません」→ そのまま C の失敗1へ繋ぐ' },
               { title: 'A-3 音量フェーダーを上げて、戻して、指す',
                 body: '起きること：70% で実機のテープと背景が赤く、100% で背景に花火と CO2、首が揺れ、テープが白く速く刻む。<br>言うこと：戻して一拍おいて「で、いま僕がやったのは、このフェーダーを上げただけです」' },
-              { title: 'B①-1 MacBook の Wi-Fi を切る → 戻す',
+              { title: 'デモ1 MacBook の Wi-Fi を切る → 戻す',
                 body: '起きること：実機が止まる（顔は最後の表情のまま）。戻すと約10秒で顔が出て、console が「実機が戻りました。組み直します」。<br>言うこと：「中身は、このスタックチャンの中に無いからです」' },
-              { title: 'B①-2 パッド #5 を押す（ch7 #5 = surprised）',
+              { title: 'デモ2 パッド #5 を押す（ch7 #5 = surprised）',
                 body: '起きること：実機の顔が驚き顔、テープと背景の柱が同じ模様に。4秒で idle に戻る。<br>言うこと：「同じ30個の配列を、実機と画面の2つに送っているだけです」' },
-              { title: 'B② 道具の一覧を出す（Claude Code の MCP 一覧か gateway_config_get）',
+              { title: 'デモ3 道具の一覧を出す（Claude Code の MCP 一覧か gateway_config_get）',
                 body: '起きること：49個の名前が並ぶ（move_head / set_avatar / led.set_all / i2c.scan / take_photo …）。<br>言うこと：「取扱説明書と製品が、同じものになりました」' },
-              { title: 'B③ Claude Code に「右を向いて、写真を撮って」',
-                body: '起きること：首が右を向き、数秒後に画像が返る。<br>ダメなとき：「カメラは会話中にしか切れない作りにしてあります」→ B② のカメラの話へ' },
-              { title: 'B④ 流し込み（操作パネルの MIDI 流し込みでパッド #5 を送る）',
+              { title: 'デモ4 Claude Code に「右を向いて、写真を撮って」',
+                body: '起きること：首が右を向き、数秒後に画像が返る。<br>ダメなとき：「カメラは会話中にしか切れない作りにしてあります」→ 基本編の出荷時ファームの話へ' },
+              { title: 'デモ5 流し込み（操作パネルの MIDI 流し込みでパッド #5 を送る）',
                 body: '起きること：機材に触っていないのに、B①-2 と同じ顔と光。<br>言うこと：「機材のケーブルを抜いても同じことが起きます。動かなければ、機材ではなく設定側です」' },
               { title: 'D は進行役のデモ無し',
                 body: '声の会話・録音まわりは今日は見せません。参加者が自分のエージェントに読ませるのを、机を回って手伝います。持ってきたスタックチャンで会話するものがあれば、そちらに任せます' },
@@ -194,26 +195,27 @@ const CONTENT = {
             K.quote('……で、いま僕がやったのは、このフェーダーを上げただけです。', '説明は足さない') },
 
     /* ───────── B ───────── */
-    { ch: 2, tag: '仕組み', cover: { num: 'B', title: '仕組み', sub: '27分 / 開けて見せる' },
-      talk: `<b>ここが教材の本体です。</b>「できます」ではなく「どうなっていて、どう作っているか」を見せます。<br>
-             順番は、①構成（6分）→ ②ファームと焼き方（8分）→ ③作り方（7分）→ ④DJ の接続（6分）。全体図は冒頭で見せたので、ここでは中を開けます。
-             ★<b>机の地図を出しておきます</b>（配布物の「この机の上の地図」、14場面を寄ったり引いたり）。` },
+    /* ───────── 基本（用語・接続・ファーム・カスタマイズ） ───────── */
+    { ch: 2, tag: '基本', cover: { num: 'B', title: '基本', sub: '用語を合わせて、何があれば始められるかを知る' },
+      talk: `<b>ここは基本編。デモの話はしません。</b>目的は3つ：用語を合わせる／物理的に何を繋げば始められるかを知る／ファームウェアという層があることを知る。<br>
+             そのあとで「今回僕が持ってきたデモ」を、別の章で話します。` },
 
-    { ch: 2, tag: '① 構成（6分）',
-      talk: `<b>今日いちばん持ち帰ってほしい考え方です。</b><br>
-             「中に AI が入っている」と思うと、買ったものが天井になります。<b>入口と出口だと思うと、頭脳は自分で選べます。</b>今日の gemma3:4b も、明日には別のモデルに差し替えられます。`,
-      html: K.head('中に AI は、<em>入っていません。</em>') +
+    { ch: 2, tag: '用語を合わせる',
+      talk: `<b>6つだけ。</b>この6語が通じれば、今日の話は全部追えます。押すと説明が出ます。`,
+      html: K.head('この6語だけ、<em>先に合わせます。</em>') +
             K.cards([
-              { k: '★実演 1', v: 'MacBook の Wi-Fi を切る', d: '実機が止まります →「中身は、このスタックチャンの中に無いからです」→ 戻すと約10秒で顔が出ます' },
-              { k: '★実演 2', v: 'DJ 機材のパッド #5 を押す', d: '実機の顔が驚き顔、テープと背景が同時に同じ模様に。<b>同じ30個の配列を2つに送っているだけ</b>' },
-              { k: '数字', v: '首 30回/秒<br>色 20回/秒', d: '実機が受け取っているのは<b>角度と色の列だけ</b>。意味は持っていません' },
-            ]) +
-            K.memo('実機のファームは xiaozhi 系のフォーク。<b>WebSocket で遠くのサーバーに繋いで喋る</b>のがプロトコルの前提なので、接続先の URL を差し替えるだけで頭脳の置き場所が変わります。無理をしていません。') },
+              { k: '1', v: 'スタックチャン', d: 'M5Stack を顔にした手のひらサイズのロボット。2021 年にししかわさんが公開したオープンソース。今日のは公式キット K151（CoreS3 ＋ サーボ2基）' },
+              { k: '2', v: 'M5Stack CoreS3', d: 'スタックチャンの「顔」の部分。ESP32-S3 というマイコンに、画面・カメラ・マイク・スピーカー・タッチ・Wi-Fi が入った箱' },
+              { k: '3', v: 'ファームウェア', d: 'その箱の中で動くソフト。<b>買ったときから1つ入っている</b>（出荷時ファーム）。入れ替えることも、中の設定を変えることもできる' },
+              { k: '4', v: '母艦（PC）', d: '実機の外で考える係。今日は MacBook 1台。実機と Wi-Fi で繋がる。「頭脳をどこに置くか」は、ファーム次第で自分で選べる' },
+              { k: '5', v: 'gateway と MCP', d: 'gateway は母艦にいる窓口のプログラム。MCP は「道具の並べ方と呼び方」の規格で、これに対応すると AI（Claude Code など）から実機の機能を名前で呼べる' },
+              { k: '6', v: 'Grove', d: '実機の横にある差し込み口（Port A 赤・Port B 黒）。センサーや LED を<b>買って挿すだけ</b>で足せる。今日は NFC リーダーと LED テープ' },
+            ]) },
 
-    { ch: 2, tag: '① 物理的な接続',
-      talk: `<b>線は USB 1本だけです。</b>あとは MacBook が出す Wi-Fi。実機の Grove ポートに NFC リーダー（Port A）と LED テープ（Port B）。<br>
-             「どこにも繋がっていない」を、この図で見せます。`,
-      html: K.head('線は<em>1本。</em>あとは、この机の上の Wi-Fi。') +
+    { ch: 2, tag: '物理的な接続 — 何があれば始められるか',
+      talk: `<b>最初に繋ぐのは、本体と USB-C と Wi-Fi だけです。</b>今日の机の上は、そこにあとから足したもの。図はその全部。<br>
+             「どこにも（インターネットに）繋がっていない」も、この図で見せます。`,
+      html: K.head('始めるのに要るのは、<em>本体と USB-C と 2.4GHz の Wi-Fi。</em>') +
             `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="物理的な接続：MacBook が Wi-Fi を出し、ｽﾀｯｸﾁｬﾝと iPad がそこに繋がる。DJ 機材は USB で MacBook に。LED テープは Grove Port B、NFC リーダーは Grove Port A で実機に。実機は USB 給電" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
   <defs><marker id="ar9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
   <rect x="290" y="110" width="180" height="110" rx="18" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
@@ -250,9 +252,130 @@ const CONTENT = {
   <path d="M190 275 Q 240 275 288 200" fill="none" stroke="#2E9BE0" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ar9)"/>
   <text x="380" y="318" text-anchor="middle" font-size="12" fill="#1A73C4">線は USB 1本だけ。あとは MacBook が出す Wi-Fi。外（インターネット）には何も繋がっていない</text>
 </svg></div>` +
-            K.tiny('実機の USB-C は2つ。台側は給電だけ、本体側は書き込み用（今日は使わない）') },
+            K.cards([
+              { k: '最初の日に要るもの', v: 'K151 本体・USB-C ケーブル・2.4GHz の Wi-Fi・スマホ', d: '出荷時のままなら、アプリを入れて Wi-Fi を教えるだけで喋ります（30分）。PC も DJ 機材も LED も要りません' },
+              { k: '今日の机にあるもの', v: '＋ MacBook・DJ 機材・LED テープ・NFC リーダー・iPad', d: '全部あとから足したもの。線は USB 1本、あとは MacBook が出す Wi-Fi。実機の USB-C は2つ：台側は給電、本体側は書き込み用' },
+            ]) },
 
-    { ch: 2, tag: '① データの流れ',
+    { ch: 2, tag: 'ファームウェア — 出荷時はどうなっているか',
+      talk: `<b>ハードだけでは動きません。中にファームウェアがあります。</b>買ったときに入っているのが出荷時ファーム。とてもよくできていて、体験としてはいまでも一番速い。<br>
+             ただ「その声がどこへ行くか」はここで決まります。けなす話にはしません。「知って使うのと、知らずに使うのは別」。`,
+      html: K.head('出荷時ファームは、<em>よくできている。だから、知っておく。</em>') +
+            K.cards([
+              { k: '良いところ', v: '買ってすぐ喋る。速い。表情・モーション・ダンスが最初から', d: 'アプリだけで完結。自前で組むと、たいてい速さで負ける。OTA・アプリストア・Home Assistant にも繋がる' },
+              { k: '気をつけること', v: '聞き取り・考える・喋るが、全部海外のクラウド', d: '通信先は深セン・香港。会話の流れでカメラのシャッターも切れて、画像も送られる。セットアップに利用規約の提示も承諾も無い' },
+              { k: 'だから', v: 'ファームを選ぶ、が最初の分かれ道', d: '次の画面で5つ比べます。どれが正解という話ではなく、何を大事にするかで変わる' },
+            ]) },
+
+    { ch: 2, tag: '他にどんなファームがあるか — 今回はどれを、なぜ',
+      talk: `<b>いちばん大きな分かれ道です。</b>どれが正解という話ではなく、<b>「その声がどこへ行くか」がファームで決まる</b>、という話です。
+             ★けなす話にはしません。出荷時は体験としていまでも一番速い。「知って使うのと、知らずに使うのは別」。`,
+      html: K.head('ファームは5つ。<span class="o">声の行き先が違います。</span>') +
+            K.cards([
+              { k: '① 出荷時 XiaoZhi', v: 'ノーコード・最速', d: '聞き取り・考える・喋るが<b>全部海外のクラウド</b>（深セン・香港）。会話の流れでカメラも切れて画像も行く。セットアップに規約の提示も承諾も無い' },
+              { k: '② xiaozhi-esp32-server', v: '接続先を自前に', d: '声は自前。遠隔できる。手間は大' },
+              { k: '③ 元祖 stack-chan', v: '教材として一番きれい', d: 'ブラウザだけで書き込める。ただ遠隔の概念が薄い' },
+              { k: '④ xangi-stackchan', v: 'PC が頭脳・USB 直結', d: 'フルローカル。宅内据え置きなら最高だが、遠隔ができない' },
+              { k: '⑤ stackchan-mcp ← これ', v: '②のフォーク＋MCP', d: 'K151 専用のボード定義（サーボ・LED・タッチ・カメラがそのまま動く）。<b>Claude Code から首振り・撮影・表情を直接呼べる</b>' },
+            ]) +
+            K.memo('選んだ理由は3つ：K151 がそのまま動く／MCP で開発が速い／<b>出荷時の体験を保ったまま頭脳だけ自分の側へ移せる</b>。全部 OSS なので、読めて直せてフォークできます。') },
+
+    { ch: 2, tag: 'カスタマイズのやり方は3つ',
+      talk: `<b>「機能を足す」には3つの入口があります。</b>①設定を変える ②ファームそのものを直す ③物理的に足す。どれも今日の机の上に実例があります。<br>
+             そして<b>どれも AI と一緒に反復するのが前提</b>です。1回で当たらない。測って、直して、また測る。`,
+      html: K.head('設定を変える／ファームを直す／<em>物理で足す。</em>') +
+            K.cards([
+              { k: '① 設定を変える', v: 'ファームの中の設定をいじる', d: '接続先の URL（どの母艦を見るか）、Wi-Fi、音量、踊りの閾値。設定画面・NVS・gateway_config_set から。<b>焼き直しは要らない</b>' },
+              { k: '② ファームを直す', v: 'ソースを直して焼き直す', d: '例：頭なでの検出（20秒に1回 → 15回、PR #374）／起動時の Wi-Fi 省電力を切る1行。全部 OSS なので読めて直せる。改変は patch にして持ち運ぶ' },
+              { k: '③ 物理で足す', v: 'Grove に買って挿す', d: '例：NFC リーダー（¥1,000 台）で受付、LED テープ（¥1,344）で光。ファームに汎用の I2C の道具があるので、<b>ファームを触らずに母艦から読める</b>' },
+              { k: '共通', v: 'AI と一緒に反復する', d: 'MCP で実機を会話で動かし、テストを先に書き、詰まったら記録に残す。閾値は実測から決める（撫で 9.5・52・92秒）。1回で当たらないのが普通' },
+            ]) },
+
+    { ch: 2, tag: 'ファームを入れ替える手順 — 戻れるようにしてから',
+      talk: `<b>「失敗したら文鎮」と思われがちですが、逆です。失敗できる形にしてから焼きます。</b>所要は実測で、①20分 ②10分 ③60分。`,
+      html: `<div class="panel"><svg viewBox="0 0 760 270" role="img" aria-label="焼き方の流れ：出荷時で遊ぶ、まるごと吸い出す、アンバインド、焼く、gatewayを立てる。アンバインドから焼き終わるまで喋らなくなる。書き込み領域は2面あり戻れる" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="10" y="40" width="130" height="90" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="75" y="66" text-anchor="middle" font-size="13" fill="#173A54">① 出荷時で遊ぶ</text>
+  <text x="75" y="88" text-anchor="middle" font-size="11" fill="#4E7590">30分</text>
+  <text x="75" y="108" text-anchor="middle" font-size="11" fill="#4E7590">基準を体で覚える</text>
+  <rect x="160" y="40" width="130" height="90" rx="16" fill="#FFF2CC" stroke="#FFC831" stroke-width="3"/>
+  <text x="225" y="66" text-anchor="middle" font-size="13" fill="#173A54">② まるごと吸い出す</text>
+  <text x="225" y="88" text-anchor="middle" font-size="11" fill="#4E7590">20分 / 16MB</text>
+  <text x="225" y="108" text-anchor="middle" font-size="11" fill="#B37C00">飛ばさない。戻る場所</text>
+  <rect x="310" y="40" width="130" height="90" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="375" y="66" text-anchor="middle" font-size="13" fill="#173A54">③ アンバインド</text>
+  <text x="375" y="88" text-anchor="middle" font-size="11" fill="#4E7590">10分</text>
+  <text x="375" y="108" text-anchor="middle" font-size="11" fill="#C43D3D">ここから喋らなくなる</text>
+  <rect x="460" y="40" width="130" height="90" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="525" y="66" text-anchor="middle" font-size="13" fill="#173A54">④ 焼く</text>
+  <text x="525" y="88" text-anchor="middle" font-size="11" fill="#4E7590">60分 / 一番詰まる</text>
+  <text x="525" y="108" text-anchor="middle" font-size="11" fill="#C43D3D">関門2段（登録・古い接続先）</text>
+  <rect x="610" y="40" width="140" height="90" rx="16" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="680" y="66" text-anchor="middle" font-size="13" fill="#173A54">⑤ gateway を立てる</text>
+  <text x="680" y="88" text-anchor="middle" font-size="11" fill="#4E7590">20分</text>
+  <text x="680" y="108" text-anchor="middle" font-size="11" fill="#2E8C42">頭脳が自分のものに</text>
+  <line x1="140" y1="85" x2="158" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <line x1="290" y1="85" x2="308" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <line x1="440" y1="85" x2="458" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <line x1="590" y1="85" x2="608" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
+  <rect x="310" y="140" width="280" height="8" rx="4" fill="#FF6B6B"/>
+  <text x="450" y="166" text-anchor="middle" font-size="12" fill="#C43D3D">この区間、一度喋らなくなる。壊れたのではなく道のりの一部（合計 2時間20分）</text>
+  <rect x="10" y="186" width="360" height="70" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="190" y="210" text-anchor="middle" font-size="12" fill="#1A73C4">書き込み領域は2面（ota_0 / ota_1）</text>
+  <text x="190" y="232" text-anchor="middle" font-size="11" fill="#4E7590">新しい方を空いている面に置き、起動先だけ切り替える。ダメなら10秒で前の面へ</text>
+  <rect x="390" y="186" width="360" height="70" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="570" y="210" text-anchor="middle" font-size="12" fill="#1A73C4">焼いても消えない領域（NVS）がある</text>
+  <text x="570" y="232" text-anchor="middle" font-size="11" fill="#4E7590">前の接続先が残って古い先へ行き続ける。「焼き直した＝初期状態」は成り立たない</text>
+</svg></div>` +
+            K.cards([
+              { k: '①', v: '焼く前に、まるごと吸い出す', d: '<code>esptool read_flash 0x0 16MB</code> で 16MB を手元に。受け入れ試験を出荷時のまま1周して<b>基準</b>を取る。あとは差分だけ見ればよい' },
+              { k: '②', v: '書き込み領域が2面ある', d: 'OTA の2スロット（ota_0 / ota_1）。新しい方を空いている面に置き、起動先だけ切り替える。<b>ダメなら10秒で前の面に戻る</b>' },
+              { k: '③', v: '順番を守る', d: '<b>バックアップ → アンバインド → 焼く</b>。逆にするとペアリングが壊れる。アンバインドから焼き終わるまで、一度喋らなくなる' },
+            ]) +
+            K.memo('★焼いても消えない領域（NVS）があります。前の接続先が残っていて、こちらの指定を無視して古い先へ行き続けました。「焼き直したのだから初期状態」は成り立ちません。<br>' +
+                   '★<b>実機の顔を指して1行。</b>「この表情、<b>14枚とも自分で描いています</b>（顔6・目3・口5）。同梱の画像は、開けたら<b>1×1の黒い点</b>でした」') },
+
+    { ch: 2, tag: '今回のファームの特長 — MCP で道具が49個',
+      talk: `<b>これは感想ではなく、選定理由です。</b>「AI に任せられる範囲」が、ファームの作りで決まります。<br>
+             ★道具の一覧をその場で出します（Claude Code の MCP 一覧か、<code>gateway_config_get</code>）。`,
+      html: K.head('ファームの中に、道具が<em>49個。</em>') +
+            K.cards([
+              { k: '身体', v: 'move_head<br>set_avatar<br>set_blink<br>set_mouth', d: '首を向ける・表情14枚・まばたき・口の動き' },
+              { k: '光と目', v: 'led.set_all<br>set_brightness<br>take_photo', d: '本体 LED 12個・画面の明るさ・カメラ' },
+              { k: '外の口', v: 'i2c.scan<br>i2c.write_read<br>port_b.ws2812', d: 'Grove の I2C（NFC リーダーはこれで読んだ）と LED テープ' },
+              { k: '声と耳', v: 'say<br>listen<br>touch.get_touch_state', d: '喋る・聞き取る・タッチの状態' },
+            ]) +
+            K.quote('「どう動かすか」を読んで、コードに書き写す工程が、丸ごと消えました。「右を向いて写真を撮って」で、実機が動いて画像が返ります。') },
+
+    /* ───────── デモ（今回、僕が持ってきたもの） ───────── */
+    { ch: 3, tag: 'デモ', cover: { num: 'B+', title: '今回のデモ', sub: 'DJ 機材を、ロボットの入力にした' },
+      talk: `<b>ここからは「今回僕が持ってきたもの」。</b>基本編の上に、何を足したか。` },
+
+    { ch: 3, tag: '今回のデモのポイント（一言で）',
+      talk: `<b>一言で言うと：ロボットの入力と出力は、キーボードや声でなくていい。</b><br>
+             DJ 機材をそのまま入力にすると、それ自体がエンターテインメントになり、ロボットへの新しい入力にもなる。そう思って作りました。`,
+      html: K.head('入力は、キーボードや声で<em>なくていい。</em>') +
+            K.lead('<b>DJ 機材を、そのままスタックチャンの入力にしました。</b>つまみで首、パッドで顔、フェーダーで会場。') +
+            K.cards([
+              { k: 'なぜ DJ 機材か', v: '触った瞬間に返ってくる。説明が要らない', d: 'つまみは回した分だけ、パッドは押した瞬間に。人の手つきがそのまま演出になる。「特別な操作画面は1つもありません」' },
+              { k: '何が新しいか', v: '入力デバイスの選び直し', d: '音声もキーボードも、ロボットへの入力としては「待たされる」。物理のつまみは待たない。DJ 機材でなくても、身の回りの入力装置は全部候補' },
+              { k: '出力も選び直した', v: '首・顔・LED テープ・背景の画面', d: '実機の中だけでなく、会場全体を出力にした。同じ30個の色の列を、実機と背景に同時に送る' },
+              { k: '今日見せるもの', v: 'つまみ→首／パッド→顔／フェーダー→会場が赤く', d: 'A の掴みで触ったもの。仕組みは次の画面から' },
+            ]) },
+
+    { ch: 3, tag: '実機は入口と出口だけ',
+      talk: `<b>今日いちばん持ち帰ってほしい考え方です。</b><br>
+             「中に AI が入っている」と思うと、買ったものが天井になります。<b>入口と出口だと思うと、頭脳は自分で選べます。</b>今日の gemma3:4b も、明日には別のモデルに差し替えられます。`,
+      html: K.head('中に AI は、<em>入っていません。</em>') +
+            K.cards([
+              { k: '★実演 1', v: 'MacBook の Wi-Fi を切る', d: '実機が止まります →「中身は、このスタックチャンの中に無いからです」→ 戻すと約10秒で顔が出ます' },
+              { k: '★実演 2', v: 'DJ 機材のパッド #5 を押す', d: '実機の顔が驚き顔、テープと背景が同時に同じ模様に。<b>同じ30個の配列を2つに送っているだけ</b>' },
+              { k: '数字', v: '首 30回/秒<br>色 20回/秒', d: '実機が受け取っているのは<b>角度と色の列だけ</b>。意味は持っていません' },
+            ]) +
+            K.memo('実機のファームは xiaozhi 系のフォーク。<b>WebSocket で遠くのサーバーに繋いで喋る</b>のがプロトコルの前提なので、接続先の URL を差し替えるだけで頭脳の置き場所が変わります。無理をしていません。') },
+
+    { ch: 3, tag: 'データの流れ',
       talk: `<b>何が、どんな形で流れているか。</b>入口は4種類、出口も4種類。<b>意味を持っているのは真ん中だけ</b>で、実機に届くのは角度・表情の名前・色の列・音です。`,
       html: K.head('入るのは数字と音。<em>出るのも数字と音。</em>') +
             `<div class="panel"><svg viewBox="0 0 760 300" role="img" aria-label="データの流れ：入口から出口まで、何がどんな形で流れるか。MIDI の数字、音、タッチ、カード ID が MacBook に入り、角度と色の列、文字、声になって出ていく" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
@@ -312,7 +435,7 @@ const CONTENT = {
 </svg></div>` +
             K.tiny('DJ 機材の MIDI は 1秒に数十件、首の角度は 30回/秒、色の列は 20回/秒、会話は1往復 3〜5秒') },
 
-    { ch: 2, tag: '① 役割ごとの製品・技術',
+    { ch: 3, tag: '役割ごとの製品・技術',
       talk: `<b>用語の共有です。</b>役割ごとに「何を使っているか」を一覧で。全部 OSS か市販品で、特別なものはありません。`,
       html: K.cards([
               { k: '身体', v: 'M5Stack K151<br>（CoreS3 / ESP32-S3）', d: 'サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。¥18,150' },
@@ -328,157 +451,7 @@ const CONTENT = {
               { k: '網', v: 'MacBook のインターネット共有', d: '2.4GHz。MacBook は 192.168.2.1 固定。外には出ない' },
             ]) },
 
-    { ch: 2, tag: '② ファーム — 5つ調べて、1つ選んだ',
-      talk: `<b>いちばん大きな分かれ道です。</b>どれが正解という話ではなく、<b>「その声がどこへ行くか」がファームで決まる</b>、という話です。
-             ★けなす話にはしません。出荷時は体験としていまでも一番速い。「知って使うのと、知らずに使うのは別」。`,
-      html: K.head('ファームは5つ。<span class="o">声の行き先が違います。</span>') +
-            K.cards([
-              { k: '① 出荷時 XiaoZhi', v: 'ノーコード・最速', d: '聞き取り・考える・喋るが<b>全部海外のクラウド</b>（深セン・香港）。会話の流れでカメラも切れて画像も行く。セットアップに規約の提示も承諾も無い' },
-              { k: '② xiaozhi-esp32-server', v: '接続先を自前に', d: '声は自前。遠隔できる。手間は大' },
-              { k: '③ 元祖 stack-chan', v: '教材として一番きれい', d: 'ブラウザだけで書き込める。ただ遠隔の概念が薄い' },
-              { k: '④ xangi-stackchan', v: 'PC が頭脳・USB 直結', d: 'フルローカル。宅内据え置きなら最高だが、遠隔ができない' },
-              { k: '⑤ stackchan-mcp ← これ', v: '②のフォーク＋MCP', d: 'K151 専用のボード定義（サーボ・LED・タッチ・カメラがそのまま動く）。<b>Claude Code から首振り・撮影・表情を直接呼べる</b>' },
-            ]) +
-            K.memo('選んだ理由は3つ：K151 がそのまま動く／MCP で開発が速い／<b>出荷時の体験を保ったまま頭脳だけ自分の側へ移せる</b>。全部 OSS なので、読めて直せてフォークできます。') },
-
-    { ch: 2, tag: '② MCP — 説明書と製品が同じになった',
-      talk: `<b>これは感想ではなく、選定理由です。</b>「AI に任せられる範囲」が、ファームの作りで決まります。<br>
-             ★道具の一覧をその場で出します（Claude Code の MCP 一覧か、<code>gateway_config_get</code>）。`,
-      html: K.head('ファームの中に、道具が<em>49個。</em>') +
-            K.cards([
-              { k: '身体', v: 'move_head<br>set_avatar<br>set_blink<br>set_mouth', d: '首を向ける・表情14枚・まばたき・口の動き' },
-              { k: '光と目', v: 'led.set_all<br>set_brightness<br>take_photo', d: '本体 LED 12個・画面の明るさ・カメラ' },
-              { k: '外の口', v: 'i2c.scan<br>i2c.write_read<br>port_b.ws2812', d: 'Grove の I2C（NFC リーダーはこれで読んだ）と LED テープ' },
-              { k: '声と耳', v: 'say<br>listen<br>touch.get_touch_state', d: '喋る・聞き取る・タッチの状態' },
-            ]) +
-            K.quote('「どう動かすか」を読んで、コードに書き写す工程が、丸ごと消えました。「右を向いて写真を撮って」で、実機が動いて画像が返ります。') },
-
-    { ch: 2, tag: '② 焼き方 — 戻れるようにしてから焼く',
-      talk: `<b>「失敗したら文鎮」と思われがちですが、逆です。失敗できる形にしてから焼きます。</b>所要は実測で、①20分 ②10分 ③60分。`,
-      html: `<div class="panel"><svg viewBox="0 0 760 270" role="img" aria-label="焼き方の流れ：出荷時で遊ぶ、まるごと吸い出す、アンバインド、焼く、gatewayを立てる。アンバインドから焼き終わるまで喋らなくなる。書き込み領域は2面あり戻れる" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
-  <defs><marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
-  <rect x="10" y="40" width="130" height="90" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="75" y="66" text-anchor="middle" font-size="13" fill="#173A54">① 出荷時で遊ぶ</text>
-  <text x="75" y="88" text-anchor="middle" font-size="11" fill="#4E7590">30分</text>
-  <text x="75" y="108" text-anchor="middle" font-size="11" fill="#4E7590">基準を体で覚える</text>
-  <rect x="160" y="40" width="130" height="90" rx="16" fill="#FFF2CC" stroke="#FFC831" stroke-width="3"/>
-  <text x="225" y="66" text-anchor="middle" font-size="13" fill="#173A54">② まるごと吸い出す</text>
-  <text x="225" y="88" text-anchor="middle" font-size="11" fill="#4E7590">20分 / 16MB</text>
-  <text x="225" y="108" text-anchor="middle" font-size="11" fill="#B37C00">飛ばさない。戻る場所</text>
-  <rect x="310" y="40" width="130" height="90" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
-  <text x="375" y="66" text-anchor="middle" font-size="13" fill="#173A54">③ アンバインド</text>
-  <text x="375" y="88" text-anchor="middle" font-size="11" fill="#4E7590">10分</text>
-  <text x="375" y="108" text-anchor="middle" font-size="11" fill="#C43D3D">ここから喋らなくなる</text>
-  <rect x="460" y="40" width="130" height="90" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
-  <text x="525" y="66" text-anchor="middle" font-size="13" fill="#173A54">④ 焼く</text>
-  <text x="525" y="88" text-anchor="middle" font-size="11" fill="#4E7590">60分 / 一番詰まる</text>
-  <text x="525" y="108" text-anchor="middle" font-size="11" fill="#C43D3D">関門2段（登録・古い接続先）</text>
-  <rect x="610" y="40" width="140" height="90" rx="16" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
-  <text x="680" y="66" text-anchor="middle" font-size="13" fill="#173A54">⑤ gateway を立てる</text>
-  <text x="680" y="88" text-anchor="middle" font-size="11" fill="#4E7590">20分</text>
-  <text x="680" y="108" text-anchor="middle" font-size="11" fill="#2E8C42">頭脳が自分のものに</text>
-  <line x1="140" y1="85" x2="158" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
-  <line x1="290" y1="85" x2="308" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
-  <line x1="440" y1="85" x2="458" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
-  <line x1="590" y1="85" x2="608" y2="85" stroke="#4E7590" stroke-width="3" marker-end="url(#ar4)"/>
-  <rect x="310" y="140" width="280" height="8" rx="4" fill="#FF6B6B"/>
-  <text x="450" y="166" text-anchor="middle" font-size="12" fill="#C43D3D">この区間、一度喋らなくなる。壊れたのではなく道のりの一部（合計 2時間20分）</text>
-  <rect x="10" y="186" width="360" height="70" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="190" y="210" text-anchor="middle" font-size="12" fill="#1A73C4">書き込み領域は2面（ota_0 / ota_1）</text>
-  <text x="190" y="232" text-anchor="middle" font-size="11" fill="#4E7590">新しい方を空いている面に置き、起動先だけ切り替える。ダメなら10秒で前の面へ</text>
-  <rect x="390" y="186" width="360" height="70" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="570" y="210" text-anchor="middle" font-size="12" fill="#1A73C4">焼いても消えない領域（NVS）がある</text>
-  <text x="570" y="232" text-anchor="middle" font-size="11" fill="#4E7590">前の接続先が残って古い先へ行き続ける。「焼き直した＝初期状態」は成り立たない</text>
-</svg></div>` +
-            K.cards([
-              { k: '①', v: '焼く前に、まるごと吸い出す', d: '<code>esptool read_flash 0x0 16MB</code> で 16MB を手元に。受け入れ試験を出荷時のまま1周して<b>基準</b>を取る。あとは差分だけ見ればよい' },
-              { k: '②', v: '書き込み領域が2面ある', d: 'OTA の2スロット（ota_0 / ota_1）。新しい方を空いている面に置き、起動先だけ切り替える。<b>ダメなら10秒で前の面に戻る</b>' },
-              { k: '③', v: '順番を守る', d: '<b>バックアップ → アンバインド → 焼く</b>。逆にするとペアリングが壊れる。アンバインドから焼き終わるまで、一度喋らなくなる' },
-            ]) +
-            K.memo('★焼いても消えない領域（NVS）があります。前の接続先が残っていて、こちらの指定を無視して古い先へ行き続けました。「焼き直したのだから初期状態」は成り立ちません。<br>' +
-                   '★<b>実機の顔を指して1行。</b>「この表情、<b>14枚とも自分で描いています</b>（顔6・目3・口5）。同梱の画像は、開けたら<b>1×1の黒い点</b>でした」') },
-
-    { ch: 2, tag: '③ 作り方（7分）',
-      talk: `<b>これが開発の実体です。コードを書く前に、まず会話で動かします。</b><br>
-             動いてから、繰り返したいものだけコードにしています。2週間・175コミット・手を動かした日は7日（git の記録）。`,
-      html: K.head('線で繋いで、<em>話しかけて作る。</em>') +
-            K.quote('右を向いて、写真を撮って', '→ 首が振れて、画像が返ってきます（Claude Code から MCP で）') +
-            K.cards([
-              { k: '1日目', v: '会話で動かす', d: 'MCP の道具を Claude Code から呼ぶだけ。コードはゼロ' },
-              { k: '2日目〜', v: '繰り返すものをコードに', d: '踊り・LED・タッチ反応は毎秒動くので、Python の console に' },
-              { k: '途中から', v: 'テストを先に書く', d: '設計の不変条件7つをテストにしたら、<b>違反が35箇所</b>機械的に出た' },
-            ]) },
-
-    { ch: 2, tag: '③ 実際に使っているプロンプト',
-      talk: `<b>全文をそのまま見せます。</b>短いのが特徴です。<b>ロールを増やすほど失敗する</b>ので、土台は壊れない指示だけ。知識はファイルで渡し、指示に書きません。`,
-      html: K.cards([
-              { k: '① 会話の土台（app/persona/stackchan.md）', v: '実機が喋るときの人格', d: '<code>あなたは手のひらサイズのロボットです。目の前の人と短く会話します。</code><br><code>必ず守ること：返答の先頭に感情タグを1つ付ける（Neutral / Happy / Sleepy / Doubt / Sad / Angry）。返答は2文以内。声で聞くので長いと伝わらない。分からないことは分からないと言う。作らない。考える時間が要るときは、まず短い相槌を返す。</code>' },
-              { k: '② 参加者カードの差し込み口', v: '4項目だけ', d: '<code>あなたの名前は {name} です。話し方：{tone}　好きなもの：{likes}　やらないこと：{never}</code><br>1分以内に書き切れる分量が上限。自由記述にすると、書ける人と書けない人の差がそのまま体験の差になる' },
-              { k: '③ 質疑 bot（app/dj/ask.py）', v: '資料の外は答えない', d: '<code>あなたはスタックチャンという手のひらサイズのロボットです。今日の勉強会で、自分がどう作られたかを知っています。来た人の質問に、今日配った資料の中から答えます。</code><br><code>一人称は「僕」。2〜3文で答える。下の「資料」に書いてあることだけを使う。書いていないことは推測しない。資料に無ければ「僕の記憶にありません」と正直に言う。難しい言葉は使わない。</code><br>このあとに、質問と似た資料の抜粋を機械が貼って渡す（bot は道具を持たない）' },
-              { k: '④ 持ち帰り用（参加者が自分の Claude Code に貼る）', v: '手順は渡す。覚えない', d: '<code>このリポジトリを読んで、僕の状況に合わせて手順を出して。持っているもの: M5Stack K151／Mac。いまの状態: 箱を開けたところ。今日やりたいこと: 出荷時のまま喋らせるところまで。詰まったところは docs/learnings.md に全部書いてあるので、先に読んでから答えて。</code>' },
-            ]) +
-            K.memo('作るときの指示は、もっと短い。「右を向いて、写真を撮って」「首を49.8度振る指示が出てきたのはなぜ？」。<b>長い指示より、テストと資料を渡すほうが効きます。</b>') },
-
-    { ch: 2, tag: '③ 減らして直る',
-      talk: `<b>踊りが止まらない、瞬きが消える。機能の不足だと思って叩いていました。</b><br>
-             「モグラ叩きになっている」と言われた日に数えたら、<b>表情を出す箇所が19（5ファイル）、瞬きが12（4ファイル）。持ち主がいませんでした。</b>`,
-      html: K.head('命令をやめて、<em>宣言にしました。</em>') +
-            `<div class="panel"><svg viewBox="0 0 760 300" role="img" aria-label="状態の持ち方：前は19箇所が実機を直接叩いていた。後は入力が1つの状態に集まり、優先順で1つに決まり、反映役が差分だけを実機と背景に送る" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
-  <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
-  <text x="120" y="28" text-anchor="middle" font-size="14" fill="#C43D3D">前：各所が叩く</text>
-  <rect x="20" y="44" width="200" height="150" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
-  <text x="120" y="70" text-anchor="middle" font-size="12" fill="#173A54">踊り・タッチ・DJ・会話・LED …</text>
-  <text x="120" y="92" text-anchor="middle" font-size="12" fill="#173A54">表情を出す箇所 19（5ファイル）</text>
-  <text x="120" y="110" text-anchor="middle" font-size="12" fill="#173A54">まばたき 12（4ファイル）</text>
-  <text x="120" y="140" text-anchor="middle" font-size="11" fill="#C43D3D">「顔を出せ」「N秒後に戻せ」が交錯</text>
-  <text x="120" y="158" text-anchor="middle" font-size="11" fill="#C43D3D">戻し忘れ・割り込み・上書き合戦</text>
-  <text x="120" y="182" text-anchor="middle" font-size="11" fill="#4E7590">＋見張り役（監督）が 0.4秒ごと</text>
-  <text x="500" y="28" text-anchor="middle" font-size="14" fill="#2E8C42">後：状態は1つ、書くのは1人</text>
-  <rect x="260" y="44" width="110" height="150" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="315" y="66" text-anchor="middle" font-size="12" fill="#1A73C4">入口</text>
-  <text x="315" y="88" text-anchor="middle" font-size="11" fill="#173A54">つまみ</text>
-  <text x="315" y="106" text-anchor="middle" font-size="11" fill="#173A54">タッチ</text>
-  <text x="315" y="124" text-anchor="middle" font-size="11" fill="#173A54">NFC</text>
-  <text x="315" y="142" text-anchor="middle" font-size="11" fill="#173A54">聞く／落ち／歓声</text>
-  <text x="315" y="160" text-anchor="middle" font-size="11" fill="#173A54">拍（踊り）</text>
-  <text x="315" y="178" text-anchor="middle" font-size="11" fill="#173A54">顔（既定）</text>
-  <rect x="400" y="44" width="180" height="150" rx="14" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
-  <text x="490" y="66" text-anchor="middle" font-size="13" fill="#2E8C42">Presence（いまどうあるべきか）</text>
-  <text x="490" y="90" text-anchor="middle" font-size="11" fill="#173A54">優先順で1つに決まる</text>
-  <text x="490" y="110" text-anchor="middle" font-size="11" fill="#4E7590">つまみ ＞ タッチ ＞ NFC ＞ 聞く</text>
-  <text x="490" y="126" text-anchor="middle" font-size="11" fill="#4E7590">＞ 落ち ＞ 歓声 ＞ 顔</text>
-  <text x="490" y="150" text-anchor="middle" font-size="11" fill="#173A54">一時的なものは期限つき</text>
-  <text x="490" y="168" text-anchor="middle" font-size="11" fill="#4E7590">（表情は4秒で idle へ）</text>
-  <rect x="610" y="44" width="130" height="150" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="675" y="66" text-anchor="middle" font-size="12" fill="#1A73C4">反映役（Reconciler）</text>
-  <text x="675" y="90" text-anchor="middle" font-size="11" fill="#173A54">前回との差分だけ送る</text>
-  <text x="675" y="116" text-anchor="middle" font-size="11" fill="#173A54">→ 実機：首・顔・LED・声</text>
-  <text x="675" y="134" text-anchor="middle" font-size="11" fill="#173A54">→ 背景：同じ30個の配列</text>
-  <text x="675" y="164" text-anchor="middle" font-size="11" fill="#4E7590">書くのはここ1人</text>
-  <line x1="370" y1="120" x2="398" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar3)"/>
-  <line x1="580" y1="120" x2="608" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar3)"/>
-  <text x="380" y="236" text-anchor="middle" font-size="12" fill="#1A73C4">見張り役が要らなくなって消えた。足して直すのではなく、減らして直った</text>
-  <text x="380" y="262" text-anchor="middle" font-size="11" fill="#4E7590">新旧に同じ時刻を流して 16,000 点で最大差 0.0000000000 度を確かめてから、旧コードを消した</text>
-</svg></div>` +
-            K.cards([
-              { k: '前', v: '各所が実機を叩く', d: '「顔を出せ」「N秒後に戻せ」を19箇所が送る → 戻し忘れ・割り込み・上書き合戦' },
-              { k: '後', v: '「いまどうあるべきか」を1箇所に', d: '状態は1つ（Presence）。優先順は つまみ > タッチ > NFC > 聞く > 落ち > 歓声 > 顔。反映役（Reconciler）が差分だけ実機に送る' },
-              { k: '結果', v: '見張り役が1つ消えた', d: '「音が止まったら畳む」監督が要らなくなった。<b>足して直すのではなく、減らして直る</b>' },
-            ]) +
-            K.memo('リファクタの出口は数字で。旧コードを残して新旧に同じ時刻を流し、<b>4種の BPM × 4,000点 = 16,000点で最大差 0.0000000000 度</b>を確かめてから旧コードを消しました。') },
-
-    { ch: 2, tag: '③ 完成の条件を、先にテストで書く',
-      talk: `<b>言葉のままだと、実装しながらずれます。テストなら、ずれたら落ちます。</b><br>
-             だから<b>エージェントに任せられる範囲が広がります。</b>いまテストは 524 件、1回 16 秒で全部回ります。`,
-      html: K.head('首を<span class="r">49.8度</span>振る指示が出てきました。') +
-            K.lead('上限は40度。<b>超えた分は黙って丸められていました。</b>「頷きが弱い」の正体がこれ。コードを読んでも気づけません。') +
-            K.cards([
-              { k: '順番', v: '① 仕様をテストに書く → ② 赤を見る → ③ 直す', d: '赤を見ると直す範囲が確定する。推測で広く触らなくて済む' },
-              { k: '罠', v: '偽物を本物より甘くしない', d: 'テスト363件が緑なのに画面が真っ白だった。テスト用の偽 canvas が「何もしない」実装で、本物だけが例外を投げていた' },
-              { k: '罠', v: 'import が通る ≠ 動く', d: '1,218行を9ファイルに割ったら、テストは通るのに未定義の名前が30個。静的解析で捕まえた' },
-            ]) },
-
-    { ch: 2, tag: '④ DJ → PC → ｽﾀｯｸﾁｬﾝ',
+    { ch: 3, tag: 'DJ → PC → ｽﾀｯｸﾁｬﾝ',
       talk: `<b>3つの関係は「機材が数字を出す → PC が意味に翻訳する → 実機が身体で出す」です。</b><br>
              DJ 機材は USB で PC に刺さっているだけ（ドライバ不要）。PC の中にあるのは、<b>翻訳表（mapping.json）と、いまの状態を1つ持つ console</b>。実機はそれを首・顔・光で出すだけ。`,
       html: K.head('機材は数字を出す。PC が翻訳する。<em>実機は身体で出す。</em>') +
@@ -532,7 +505,7 @@ const CONTENT = {
             ]) +
             K.memo('番号は推測せず、<b>1つずつ動かして覚えさせました</b>（2026-09-08 実測）。最初「うなずきは 0〜64」と記録して間違えた。本人が中央で止めた区間を全可動域と解釈していた。<b>0 と 127 の両方が観測されたこと</b>を全可動域の条件にした。') },
 
-    { ch: 2, tag: '④ 割り当て表（mapping.json）★見せ場',
+    { ch: 3, tag: '割り当て表（mapping.json）★見せ場',
       talk: `<b>この表のとおりに、その場で触ります。</b>「特別な操作画面は1つもありません」。<br>
              表情は<b>4秒で自動的に idle に戻ります</b>。押しっぱなしで顔が固定されないように。落差で「反応した」ように見えます。`,
       html: `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="DJ 機材の見取り図と割り当て：左のジョグを擦ると光が刻む、EQ つまみで首が回る、FILTER でうなずく、パッド4枚で表情、音量フェーダーでバースト、PLAY で踊り ON、MASTER で OFF" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
@@ -587,24 +560,104 @@ const CONTENT = {
             ]) +
             K.memo('<b>素材（機材・ファーム・モデル・曲）は自分が作っていない。それでも、選択と並びとタイミングに自分が出る。</b>') },
 
-    { ch: 2, tag: '④ 機材なしで、同じことを起こす',
+    { ch: 3, tag: '機材なしで、同じことを起こす',
       talk: `<b>言いたいことは1つ。「機材から来る数字を、PC が自分で作って流せば、機材が無くても同じ動きが出る」。</b><br>
              操作パネルの「MIDI 流し込み」で、パッド #5 の Note を PC が自分に送ります。ケーブルは抜いたまま。実機の顔が驚き顔になります。`,
       html: K.head('機材を抜いても、<em>同じ顔が出る。</em>') +
             K.cards([
-              { k: 'やること', v: 'ケーブルを抜く → パネルで「パッド #5」を流し込む', d: '起きること：B①-2 と同じ驚き顔・同じ光。機材が無いのに' },
+              { k: 'やること', v: 'ケーブルを抜く → パネルで「パッド #5」を流し込む', d: '起きること：デモ2 と同じ驚き顔・同じ光。機材が無いのに' },
               { k: 'なぜ効くか', v: 'PC が見ているのは数字だけだから', d: '機材が出したか、PC が自分で作ったか、PC には区別がつかない。だから同じ翻訳表を通って同じ動きになる' },
               { k: '当日の使い道', v: '「パッドが効かない」の切り分けが10秒', d: '流し込みで動く → 機材かケーブルが悪い。流し込みでも動かない → 翻訳表か console が悪い' },
               { k: '家での使い道', v: '機材が無い日に開発できる', d: '録った MIDI を再生して、同じ動きを何度でも再現できる' },
             ]) +
             K.quote('人の手でしか確かめられない作りは、確かめられていないのと同じです。') },
 
+    { ch: 3, tag: '作り方 — 会話で動かしてから、コードに',
+      talk: `<b>これが開発の実体です。コードを書く前に、まず会話で動かします。</b><br>
+             動いてから、繰り返したいものだけコードにしています。2週間・175コミット・手を動かした日は7日（git の記録）。`,
+      html: K.head('線で繋いで、<em>話しかけて作る。</em>') +
+            K.quote('右を向いて、写真を撮って', '→ 首が振れて、画像が返ってきます（Claude Code から MCP で）') +
+            K.cards([
+              { k: '1日目', v: '会話で動かす', d: 'MCP の道具を Claude Code から呼ぶだけ。コードはゼロ' },
+              { k: '2日目〜', v: '繰り返すものをコードに', d: '踊り・LED・タッチ反応は毎秒動くので、Python の console に' },
+              { k: '途中から', v: 'テストを先に書く', d: '設計の不変条件7つをテストにしたら、<b>違反が35箇所</b>機械的に出た' },
+            ]) },
+
+    { ch: 3, tag: '実際に使っているプロンプト',
+      talk: `<b>全文をそのまま見せます。</b>短いのが特徴です。<b>ロールを増やすほど失敗する</b>ので、土台は壊れない指示だけ。知識はファイルで渡し、指示に書きません。`,
+      html: K.cards([
+              { k: '① 会話の土台（app/persona/stackchan.md）', v: '実機が喋るときの人格', d: '<code>あなたは手のひらサイズのロボットです。目の前の人と短く会話します。</code><br><code>必ず守ること：返答の先頭に感情タグを1つ付ける（Neutral / Happy / Sleepy / Doubt / Sad / Angry）。返答は2文以内。声で聞くので長いと伝わらない。分からないことは分からないと言う。作らない。考える時間が要るときは、まず短い相槌を返す。</code>' },
+              { k: '② 参加者カードの差し込み口', v: '4項目だけ', d: '<code>あなたの名前は {name} です。話し方：{tone}　好きなもの：{likes}　やらないこと：{never}</code><br>1分以内に書き切れる分量が上限。自由記述にすると、書ける人と書けない人の差がそのまま体験の差になる' },
+              { k: '③ 質疑 bot（app/dj/ask.py）', v: '資料の外は答えない', d: '<code>あなたはスタックチャンという手のひらサイズのロボットです。今日の勉強会で、自分がどう作られたかを知っています。来た人の質問に、今日配った資料の中から答えます。</code><br><code>一人称は「僕」。2〜3文で答える。下の「資料」に書いてあることだけを使う。書いていないことは推測しない。資料に無ければ「僕の記憶にありません」と正直に言う。難しい言葉は使わない。</code><br>このあとに、質問と似た資料の抜粋を機械が貼って渡す（bot は道具を持たない）' },
+              { k: '④ 持ち帰り用（参加者が自分の Claude Code に貼る）', v: '手順は渡す。覚えない', d: '<code>このリポジトリを読んで、僕の状況に合わせて手順を出して。持っているもの: M5Stack K151／Mac。いまの状態: 箱を開けたところ。今日やりたいこと: 出荷時のまま喋らせるところまで。詰まったところは docs/learnings.md に全部書いてあるので、先に読んでから答えて。</code>' },
+            ]) +
+            K.memo('作るときの指示は、もっと短い。「右を向いて、写真を撮って」「首を49.8度振る指示が出てきたのはなぜ？」。<b>長い指示より、テストと資料を渡すほうが効きます。</b>') },
+
+    { ch: 3, tag: '減らして直る',
+      talk: `<b>踊りが止まらない、瞬きが消える。機能の不足だと思って叩いていました。</b><br>
+             「モグラ叩きになっている」と言われた日に数えたら、<b>表情を出す箇所が19（5ファイル）、瞬きが12（4ファイル）。持ち主がいませんでした。</b>`,
+      html: K.head('命令をやめて、<em>宣言にしました。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 300" role="img" aria-label="状態の持ち方：前は19箇所が実機を直接叩いていた。後は入力が1つの状態に集まり、優先順で1つに決まり、反映役が差分だけを実機と背景に送る" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <text x="120" y="28" text-anchor="middle" font-size="14" fill="#C43D3D">前：各所が叩く</text>
+  <rect x="20" y="44" width="200" height="150" rx="16" fill="#FFE2E2" stroke="#FF6B6B" stroke-width="3"/>
+  <text x="120" y="70" text-anchor="middle" font-size="12" fill="#173A54">踊り・タッチ・DJ・会話・LED …</text>
+  <text x="120" y="92" text-anchor="middle" font-size="12" fill="#173A54">表情を出す箇所 19（5ファイル）</text>
+  <text x="120" y="110" text-anchor="middle" font-size="12" fill="#173A54">まばたき 12（4ファイル）</text>
+  <text x="120" y="140" text-anchor="middle" font-size="11" fill="#C43D3D">「顔を出せ」「N秒後に戻せ」が交錯</text>
+  <text x="120" y="158" text-anchor="middle" font-size="11" fill="#C43D3D">戻し忘れ・割り込み・上書き合戦</text>
+  <text x="120" y="182" text-anchor="middle" font-size="11" fill="#4E7590">＋見張り役（監督）が 0.4秒ごと</text>
+  <text x="500" y="28" text-anchor="middle" font-size="14" fill="#2E8C42">後：状態は1つ、書くのは1人</text>
+  <rect x="260" y="44" width="110" height="150" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="315" y="66" text-anchor="middle" font-size="12" fill="#1A73C4">入口</text>
+  <text x="315" y="88" text-anchor="middle" font-size="11" fill="#173A54">つまみ</text>
+  <text x="315" y="106" text-anchor="middle" font-size="11" fill="#173A54">タッチ</text>
+  <text x="315" y="124" text-anchor="middle" font-size="11" fill="#173A54">NFC</text>
+  <text x="315" y="142" text-anchor="middle" font-size="11" fill="#173A54">聞く／落ち／歓声</text>
+  <text x="315" y="160" text-anchor="middle" font-size="11" fill="#173A54">拍（踊り）</text>
+  <text x="315" y="178" text-anchor="middle" font-size="11" fill="#173A54">顔（既定）</text>
+  <rect x="400" y="44" width="180" height="150" rx="14" fill="#DCF5DF" stroke="#55C96A" stroke-width="3"/>
+  <text x="490" y="66" text-anchor="middle" font-size="13" fill="#2E8C42">Presence（いまどうあるべきか）</text>
+  <text x="490" y="90" text-anchor="middle" font-size="11" fill="#173A54">優先順で1つに決まる</text>
+  <text x="490" y="110" text-anchor="middle" font-size="11" fill="#4E7590">つまみ ＞ タッチ ＞ NFC ＞ 聞く</text>
+  <text x="490" y="126" text-anchor="middle" font-size="11" fill="#4E7590">＞ 落ち ＞ 歓声 ＞ 顔</text>
+  <text x="490" y="150" text-anchor="middle" font-size="11" fill="#173A54">一時的なものは期限つき</text>
+  <text x="490" y="168" text-anchor="middle" font-size="11" fill="#4E7590">（表情は4秒で idle へ）</text>
+  <rect x="610" y="44" width="130" height="150" rx="14" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="675" y="66" text-anchor="middle" font-size="12" fill="#1A73C4">反映役（Reconciler）</text>
+  <text x="675" y="90" text-anchor="middle" font-size="11" fill="#173A54">前回との差分だけ送る</text>
+  <text x="675" y="116" text-anchor="middle" font-size="11" fill="#173A54">→ 実機：首・顔・LED・声</text>
+  <text x="675" y="134" text-anchor="middle" font-size="11" fill="#173A54">→ 背景：同じ30個の配列</text>
+  <text x="675" y="164" text-anchor="middle" font-size="11" fill="#4E7590">書くのはここ1人</text>
+  <line x1="370" y1="120" x2="398" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar3)"/>
+  <line x1="580" y1="120" x2="608" y2="120" stroke="#4E7590" stroke-width="3" marker-end="url(#ar3)"/>
+  <text x="380" y="236" text-anchor="middle" font-size="12" fill="#1A73C4">見張り役が要らなくなって消えた。足して直すのではなく、減らして直った</text>
+  <text x="380" y="262" text-anchor="middle" font-size="11" fill="#4E7590">新旧に同じ時刻を流して 16,000 点で最大差 0.0000000000 度を確かめてから、旧コードを消した</text>
+</svg></div>` +
+            K.cards([
+              { k: '前', v: '各所が実機を叩く', d: '「顔を出せ」「N秒後に戻せ」を19箇所が送る → 戻し忘れ・割り込み・上書き合戦' },
+              { k: '後', v: '「いまどうあるべきか」を1箇所に', d: '状態は1つ（Presence）。優先順は つまみ > タッチ > NFC > 聞く > 落ち > 歓声 > 顔。反映役（Reconciler）が差分だけ実機に送る' },
+              { k: '結果', v: '見張り役が1つ消えた', d: '「音が止まったら畳む」監督が要らなくなった。<b>足して直すのではなく、減らして直る</b>' },
+            ]) +
+            K.memo('リファクタの出口は数字で。旧コードを残して新旧に同じ時刻を流し、<b>4種の BPM × 4,000点 = 16,000点で最大差 0.0000000000 度</b>を確かめてから旧コードを消しました。') },
+
+    { ch: 3, tag: '完成の条件を、先にテストで書く',
+      talk: `<b>言葉のままだと、実装しながらずれます。テストなら、ずれたら落ちます。</b><br>
+             だから<b>エージェントに任せられる範囲が広がります。</b>いまテストは 524 件、1回 16 秒で全部回ります。`,
+      html: K.head('首を<span class="r">49.8度</span>振る指示が出てきました。') +
+            K.lead('上限は40度。<b>超えた分は黙って丸められていました。</b>「頷きが弱い」の正体がこれ。コードを読んでも気づけません。') +
+            K.cards([
+              { k: '順番', v: '① 仕様をテストに書く → ② 赤を見る → ③ 直す', d: '赤を見ると直す範囲が確定する。推測で広く触らなくて済む' },
+              { k: '罠', v: '偽物を本物より甘くしない', d: 'テスト363件が緑なのに画面が真っ白だった。テスト用の偽 canvas が「何もしない」実装で、本物だけが例外を投げていた' },
+              { k: '罠', v: 'import が通る ≠ 動く', d: '1,218行を9ファイルに割ったら、テストは通るのに未定義の名前が30個。静的解析で捕まえた' },
+            ]) },
+
     /* ───────── お披露目会（仕組みのあと） ───────── */
-    { ch: 3, tag: 'お披露目会', cover: { num: '♥', title: '持ってきたスタックチャンのお披露目会！', sub: '8分 / 推しポイントを、1人2分' },
-      talk: `<b>仕組みの話のすぐあとに、持ってきた人の番です。</b>堅苦しいことは無し。<b>共有したい人が、自分の大好きなスタックチャンの推しポイントを共有する時間</b>です。<br>
+    { ch: 4, tag: 'お披露目会', cover: { num: '♥', title: '持ってきたスタックチャンのお披露目会！', sub: '8分 / 推しポイントを、1人2分' },
+      talk: `<b>デモの話のすぐあとに、持ってきた人の番です。</b>堅苦しいことは無し。<b>共有したい人が、自分の大好きなスタックチャンの推しポイントを共有する時間</b>です。<br>
              1人2分、拍手で交代。進行役は司会と時計係だけ。` },
 
-    { ch: 3, tag: '推しポイントを、2分で',
+    { ch: 4, tag: '推しポイントを、2分で',
       talk: `<b>言うこと：「持ってきてくれた方、自分の大好きなスタックチャンの推しポイントを2分でどうぞ！」</b><br>
              受付でお披露目スペースに並べてもらった順に。写真は受付で撮ったものを背景（iPad）に。全員で見ます。`,
       html: K.head('自分の大好きなスタックチャンの、<em>推しポイントを。</em>') +
@@ -618,11 +671,11 @@ const CONTENT = {
             K.memo('進行役も1人の参加者として、いちばん前で見ます。時間が来たら「ありがとうございます！続きはあとで」で次の人へ。') },
 
     /* ───────── C ───────── */
-    { ch: 4, tag: '失敗カタログ', cover: { num: 'C', title: '失敗カタログ', sub: '16分 / ★ここが差別化' },
+    { ch: 5, tag: '失敗カタログ', cover: { num: 'C', title: '失敗カタログ', sub: '16分 / ★ここが差別化' },
       talk: `<b>他の AI イベントは「できます」を見せます。「壊れ方」を配るところはあまりありません。</b><br>
              詰まって抜けるたびに書いた記録から、<b>今日は3件だけ。</b>残りは配布物に畳んであるので、気づいた失敗や良いプラクティスは交流会で。` },
 
-    { ch: 4, tag: '失敗1 曲を止めても踊り続けた（原因は自分）',
+    { ch: 5, tag: '失敗1 曲を止めても踊り続けた（原因は自分）',
       talk: `<b>1件目、原因は自分でした。</b>3〜4分。実機を指しながら。<br>
              ★A-2 で踊らなかったときは、ここに繋げます（「会場の音量だと閾値が足りない」のと同じ場所の話）。`,
       html: K.head('マイクが拾っていたのは、<span class="r">自分のサーボ音。</span>') +
@@ -658,7 +711,7 @@ const CONTENT = {
               { k: '一般化', v: 'センサーとアクチュエータが同じ体に載ると、必ず自己観測が混ざる', d: '打てる手は3つだけ：物理的に離す／自分の出力を差し引く／動きを止めて測る' },
             ]) },
 
-    { ch: 4, tag: '失敗2 見張ろうとしたら壊れた（原因は観測）',
+    { ch: 5, tag: '失敗2 見張ろうとしたら壊れた（原因は観測）',
       talk: `<b>2件目、原因は「見に行ったこと」でした。</b>3〜4分。<br>
              不安なほど細かく見たくなる。<b>監視は無害に思える</b>、という話です。`,
       html: K.head('測るために、<span class="o">壊していた。</span>') +
@@ -694,7 +747,7 @@ const CONTENT = {
               { k: '一般化', v: '見る頻度と、そこから出る指示の量は、対象の性能を削る', d: '二重に判定しない。測る前に「測ること自体が相手に何をするか」を1回考える' },
             ]) },
 
-    { ch: 4, tag: '失敗3 派手にした瞬間に落ちた（仕様の1行）',
+    { ch: 5, tag: '失敗3 派手にした瞬間に落ちた（仕様の1行）',
       talk: `<b>3件目、原因は仕様表の1行でした。</b>3〜4分。LED テープを指しながら。<br>
              ★A-3 でバーストを 100% にしたとき、テープが白全開にならないのはこのためです（上限 35%）。`,
       html: K.head('繋がることと、使えることは<span class="r">別。</span>') +
@@ -705,7 +758,7 @@ const CONTENT = {
               { k: '一般化', v: '仕様表の1行を、繋ぐ前に1回読む', d: '「繋がった」は「使える」ではない。最大電流・最大電圧・最大長は、繋ぐ前の3項目' },
             ]) },
 
-    { ch: 4, tag: '残りは、交流会で',
+    { ch: 5, tag: '残りは、交流会で',
       talk: `<b>ここで深掘りを止めます。</b>言うことは2つ。「<b>エキスパートのみなさま、うちではこう壊れた、をぜひ</b>」「<b>これからやりたい人は、知りたいことを聞かせてください</b>」。<br>
              配布物の失敗カタログに型ごとに畳んであります。型が分かると、まだ踏んでいない穴も避けられます。`,
       html: K.head('気づいた失敗や良いプラクティスは、<em>交流会で。</em>') +
@@ -718,12 +771,12 @@ const CONTENT = {
             K.memo('★言い切る一言：「<b>できたことは持ち帰れません。壊れ方は持ち帰れます。</b>」') },
 
     /* ───────── D ───────── */
-    { ch: 5, tag: '手を動かす', cover: { num: 'D', title: '動かす', sub: '渡し方を覚えてもらう' },
+    { ch: 6, tag: '手を動かす', cover: { num: 'D', title: '動かす', sub: '渡し方を覚えてもらう' },
       talk: `<b>このブロック自体がメッセージです。</b><br>
              手順は人間に渡しません。<b>エージェントに渡します。人間が覚えるのは「渡し方」のほうです。</b><br>
              声の会話は今日は進行役からは見せません。持ってきたスタックチャンで会話できるものがあれば、そちらで。` },
 
-    { ch: 5, tag: '① リポジトリを渡す（10分）',
+    { ch: 6, tag: '① リポジトリを渡す（10分）',
       talk: `<b>大きな手順は6つ。止まりやすいのは、アンバインドと焼くの間です。</b><br>
              「<b>一度、喋らなくなります</b>」を知ってから始めてもらいます。知らずに入ると「自分が壊した」と思って、そこで止まります。`,
       html: K.head('今日は<em>1まで。</em>') +
@@ -734,7 +787,7 @@ const CONTENT = {
             ]) +
             K.memo('★17分で焼くと事故になります。<b>今日やるのは「出荷時のまま喋らせる」まで。</b>持っていない人は、進行役の実機で見る。買うかどうかは見てから決めればよい。') },
 
-    { ch: 5, tag: '① ★渡す前に外したもの（1.5分）',
+    { ch: 6, tag: '① ★渡す前に外したもの（1.5分）',
       talk: `<b>QR を配った瞬間、こちらは「配る側」になります。</b>その前にやったことを見せます。<br>
              公開する前に <code>scripts/secret_scan.py</code> を通しています。名前ではなく<b>形</b>で探します。`,
       html: K.head('危ないのは鍵ではなく、<span class="r">ログ。</span>') +
@@ -745,7 +798,7 @@ const CONTENT = {
             ]) +
             K.quote('鍵は形が決まっているので目に付きます。会話ログは、作業ファイルの顔をしているのに、中に本名と雑談が入っている。') },
 
-    { ch: 5, tag: '② 三本立て（残り約7分）',
+    { ch: 6, tag: '② 三本立て（残り約7分）',
       talk: `<b>リポジトリを渡したあとは、自分のペースで。</b>進行役は机を回ります。持ってきた人には、黙々派の机で相談に乗ってもらえるとありがたい、と一言。`,
       html: K.cards([
               { k: '黙々派', v: 'エージェントと文字で', d: 'リポジトリを読ませて、自分の企画を詰める。質疑 bot（スマホ）にも「今日のこと」を聞ける' },
@@ -755,11 +808,11 @@ const CONTENT = {
             K.memo('質疑 bot は道具を持たない作りです（読む・書く・実行の口が無い）。答えるのは配布物と記録の範囲だけ。5回/分の制限と、秘密の形をした文字列を出さないフィルタ。<b>「AI を使って中身を吸い出しに来る」前提で設計しました。</b>') },
 
     /* ───────── 交流 ───────── */
-    { ch: 6, tag: '交流', cover: { num: '∞', title: '交流', sub: 'みんなで自由に。エージェントも一緒に、ロボットもね' },
+    { ch: 7, tag: '交流', cover: { num: '∞', title: '交流', sub: 'みんなで自由に。エージェントも一緒に、ロボットもね' },
       talk: `<b>最後は自由時間です。</b>冒頭の1分だけ、背景に図を1枚出します。<br>
              そのあとは、お披露目スペース・DJ 機材・黙々の机、どこでも。エージェントも一緒に、ロボットもね。` },
 
-    { ch: 6, tag: '② 最後に図を1枚',
+    { ch: 7, tag: '② 最後に図を1枚',
       talk: `<b>説明はしません。順番に指すだけです。</b>背景（iPad）に図を1枚。左に人、右に実機、真ん中に AI、下に机。`,
       html: K.todo([
               { title: '左を指す', body: '「さっき、つまみを回しましたよね。あれが左です」' },
@@ -770,14 +823,14 @@ const CONTENT = {
             K.memo('A で触った手、B④ で回したつまみ、D で話した声。<b>今日やったことが、この1枚に全部入っています。</b>') },
 
     /* ───────── 締 ───────── */
-    { ch: 7, tag: '最後のひとこと',
+    { ch: 8, tag: '最後のひとこと',
       talk: `<b>ここは言い切ります。</b>説明を足すと、全部ぼやけてしまいます。`,
       html: K.head('素材は、<em>自分が作ったものでなくていい。</em>') +
             K.lead('<b>選ぶ順番と、混ぜ方と、止めるタイミングに、その人が出ます。</b>ファームも、モデルも、曲も、借り物でした。') +
             K.rule() +
             K.head('さあ、<span class="o">始めましょう。</span>') },
 
-    { ch: 7, tag: '落ちたときの言い換え',
+    { ch: 8, tag: '落ちたときの言い換え',
       talk: `<b>慌てなくて大丈夫です。</b>どれも、そのまま話に繋がります。切り分けは <code>./scripts/rescue.sh</code>、実機の言い分は <code>--serial</code>。`,
       html: K.cards([
               { k: '踊りが変', v: '「いま聴き入っています」', d: '4秒ごとに首を止めて測る作り。そのまま失敗1の話へ' },
@@ -786,7 +839,7 @@ const CONTENT = {
               { k: '実機が落ちた', v: '電源を入れ直す（顔まで約10〜35秒）', d: 'OTA スタブ → gateway の順で来る。30秒は待つ。それでもダメなら<b>デモ録画に切り替える</b>（★録画は必ず持っていく）' },
             ]) },
 
-    { ch: 7, tag: '★これだけは守りたいこと',
+    { ch: 8, tag: '★これだけは守りたいこと',
       talk: `<b>いってらっしゃい。</b>`,
       html: K.todo([
               { title: '用語を先に出さない', body: '体験してから、用語の共有として名前を伝えます' },
