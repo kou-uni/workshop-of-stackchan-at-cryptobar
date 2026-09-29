@@ -132,7 +132,7 @@ const CONTENT = {
             ]) },
 
     { ch: 0, tag: '★デモ一覧：やること／起きること／ダメなとき',
-      talk: `<b>進行役の手順書です。</b>進行役がやるデモは A の3つだけ。<b>「やること → 起きること → ダメなときの一言」</b>を決めてあります。本番前に1周通しておきます（約3分）。`,
+      talk: `<b>進行役の手順書です。</b>進行役がやるデモは A の4つだけ。<b>「やること → 起きること → ダメなときの一言」</b>を決めてあります。本番前に1周通しておきます（約3分）。`,
       html: K.todo([
               { title: 'A-1 なでる（手のひらに乗せて、頭の上をなでる）',
                 body: '起きること：顔が照れ顔になり、首が少し上がり、「きもちいい」など6種の声のどれか。LED 12個が七色。<br>ダメなとき：「タッチの感度は外殻ごしだと落ちます。もう少し長めに」。それでも無反応なら status.py の4行を見る' },
@@ -140,23 +140,22 @@ const CONTENT = {
                 body: '起きること：数拍おいて首が拍に合わせて振れ、テープ30粒が拍で光る。4秒ごとに一瞬止まって聴き入る。<br>ダメなとき：「会場の音量だと閾値が足りません」→ そのまま C の失敗1へ繋ぐ' },
               { title: 'A-3 音量フェーダーを上げて、戻して、指す',
                 body: '起きること：70% で実機のテープと背景が赤く、100% で背景に花火と CO2、首が揺れ、テープが白く速く刻む。<br>言うこと：戻して一拍おいて「で、いま僕がやったのは、このフェーダーを上げただけです」' },
+              { title: 'A-4 カードで登録 → かざして受付',
+                body: 'やること：来た人のカードをスタックチャンの頭のリーダーに置き、MacBook で名前を打つ（scripts/nfc_enroll.py。かざす → 名前を打つ → 保存の繰り返し）。もう一度かざす。<br>起きること：2秒以内に、名前入りで反応（顔が happy・光が白→ミント・「いらっしゃい、○○さん！」）。2回目は「また来たね」。<br>ダメなとき：声が出なくても顔と光は出る。「声の係が寝ています」。読めなければ scripts/nfc_enroll.py --scan でリーダーが見えるか' },
             ]) },
 
     /* ───────── A ───────── */
-    { ch: 1, tag: '掴み', cover: { num: 'A', title: '掴み', sub: '10分 / 説明より先に触ってもらう' },
+    { ch: 1, tag: '掴み', cover: { num: 'A', title: '掴み', sub: '説明より先に触ってもらう' },
       talk: `<b>合格条件は1つだけ。触った人が、自分から2回目を触ること。</b><br>
              これが出れば、あとは何が動いていなくても大丈夫です。実機は<b>踊りモード</b>にしておきます（PLAY ボタンで ON）。` },
 
-    { ch: 1, tag: '手に乗せる → なでる',
-      talk: `<b>言うことは最小限で。</b>順番に回して、1人ずつ手のひらに乗せてもらいます。<br>
-             なでる場所は<b>頭の上（画面の上の縁）</b>。3ゾーンの静電容量タッチで、外殻ごしでも取れる感度に上げてあります。`,
-      html: K.head('さわってみましょう。') +
-            K.cards([
-              { k: '手に乗せる', v: '待機中は動かない', d: '「置いてあるだけの時は、何もしていません」。静止ではなく、まばたきだけしています' },
-              { k: 'なでる', v: '顔・首・声・LED が同時に', d: '6種の反応 × 声。<b>いつも喜ぶ相手は機械に見える</b>ので、嫌がる反応も入っています' },
-              { k: '続けてなでる', v: '反応が変わる', d: '「同じ返しは続きません」。閾値は実測から（9.5秒・52秒・92秒の撫でが実在した）' },
-              { k: '曲を流す', v: '踊る・LED が拍で光る', d: '音からテンポを推定。4秒ごとに首を止めて聴き入る（自分のサーボ音を拍と間違えないため）' },
-            ]) },
+    { ch: 1, tag: 'スタックチャンでできること',
+      talk: `<b>触ってもらいながら、1枚だけ見せます。</b>なでる・踊る・つまみで首・カードで名前 ── 今日机の上にあるのは、この輪のうちの4つ。
+             <b>物理のインターフェースでいろんなことを実装できるのが、スタックチャンの魅力です。</b>持ってきた人の輪は、また別の形をしています。`,
+      html: K.head('交流タイムで、<em>みんなのスタックチャンの展示会をしましょう！</em>') +
+            K.lead('<b>いろんなことを、物理のインターフェースで実装できる。</b>それがスタックチャンの魅力。今日はそのうち4つ。') +
+            `<div class="panel"><svg viewBox="0 0 760 520" role="img" aria-label="真ん中にスタックチャン、周りに物理のインターフェースで実装できる機能の例が12個" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700"><line x1="380" y1="260" x2="380" y2="70" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="475" y2="95" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="545" y2="165" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="570" y2="260" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="545" y2="355" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="475" y2="425" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="380" y2="450" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="285" y2="425" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="215" y2="355" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="190" y2="260" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="215" y2="165" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="260" x2="285" y2="95" stroke="#87A6BC" stroke-width="2"/><circle cx="380" cy="70" r="52" fill="#CFEBFA" stroke="#fff" stroke-width="3"/><text x="380" y="74" text-anchor="middle" font-size="12" fill="#173A54">なでると照れる</text><circle cx="475" cy="95" r="52" fill="#DCF5DF" stroke="#fff" stroke-width="3"/><text x="475" y="99" text-anchor="middle" font-size="12" fill="#173A54">曲に合わせて踊る</text><circle cx="545" cy="165" r="52" fill="#FFF2CC" stroke="#fff" stroke-width="3"/><text x="545" y="162" text-anchor="middle" font-size="12" fill="#173A54">DJのつまみで</text><text x="545" y="178" text-anchor="middle" font-size="12" fill="#173A54">首が回る</text><circle cx="570" cy="260" r="52" fill="#EDE6FF" stroke="#fff" stroke-width="3"/><text x="570" y="257" text-anchor="middle" font-size="12" fill="#173A54">カードで</text><text x="570" y="273" text-anchor="middle" font-size="12" fill="#173A54">名前を呼ぶ</text><circle cx="545" cy="355" r="52" fill="#FFE2E2" stroke="#fff" stroke-width="3"/><text x="545" y="359" text-anchor="middle" font-size="12" fill="#173A54">写真を撮って送る</text><circle cx="475" cy="425" r="52" fill="#E4F6FC" stroke="#fff" stroke-width="3"/><text x="475" y="422" text-anchor="middle" font-size="12" fill="#173A54">LEDテープで</text><text x="475" y="438" text-anchor="middle" font-size="12" fill="#173A54">光る</text><circle cx="380" cy="450" r="52" fill="#CFEBFA" stroke="#fff" stroke-width="3"/><text x="380" y="454" text-anchor="middle" font-size="12" fill="#173A54">背景の画面と連動</text><circle cx="285" cy="425" r="52" fill="#DCF5DF" stroke="#fff" stroke-width="3"/><text x="285" y="429" text-anchor="middle" font-size="12" fill="#173A54">朝の時間に「おはよう」</text><circle cx="215" cy="355" r="52" fill="#FFF2CC" stroke="#fff" stroke-width="3"/><text x="215" y="359" text-anchor="middle" font-size="12" fill="#173A54">来た人を数える</text><circle cx="190" cy="260" r="52" fill="#EDE6FF" stroke="#fff" stroke-width="3"/><text x="190" y="257" text-anchor="middle" font-size="12" fill="#173A54">天気を顔で</text><text x="190" y="273" text-anchor="middle" font-size="12" fill="#173A54">知らせる</text><circle cx="215" cy="165" r="52" fill="#FFE2E2" stroke="#fff" stroke-width="3"/><text x="215" y="169" text-anchor="middle" font-size="12" fill="#173A54">会議のタイマー係</text><circle cx="285" cy="95" r="52" fill="#E4F6FC" stroke="#fff" stroke-width="3"/><text x="285" y="99" text-anchor="middle" font-size="12" fill="#173A54">帰ってきたら出迎える</text><circle cx="380" cy="260" r="74" fill="#2E9BE0" stroke="#fff" stroke-width="4"/><rect x="340" y="226" width="80" height="58" rx="10" fill="#1c1f24"/><circle cx="364" cy="252" r="8" fill="#fff"/><circle cx="396" cy="252" r="8" fill="#fff"/><path d="M368 268 Q 380 278 392 268" fill="none" stroke="#fff" stroke-width="3"/><text x="380" y="308" text-anchor="middle" font-size="13" fill="#fff">スタックチャン</text><text x="380" y="500" text-anchor="middle" font-size="12" fill="#1A73C4">入口（触る・聞く・読む・見る）と出口（顔・首・光・声）の組み合わせ。アイデア次第で、いくらでも増える</text></svg></div>` +
+            K.tiny('今日机の上にあるのは：なでると照れる／曲に合わせて踊る／DJ のつまみで首が回る／カードで名前を呼ぶ。残りはアイデアの例') },
 
     { ch: 1, tag: '★先に伝える注意',
       talk: `<b>回す前に、一言だけ。</b>サーボは電源が入っている間トルクが掛かっています。手で回すとギアが傷みます。`,
@@ -637,7 +636,7 @@ const CONTENT = {
             ]) },
 
     /* ───────── お披露目会（仕組みのあと） ───────── */
-    { ch: 4, tag: 'お披露目会', cover: { num: '♥', title: '持ってきたスタックチャンのお披露目会！', sub: '8分 / 推しポイントを、1人2分' },
+    { ch: 4, tag: 'お披露目会', cover: { num: '♥', title: '持ってきたスタックチャンのお披露目会！', sub: '推しポイントを、1人2分' },
       talk: `<b>デモの話のすぐあとに、持ってきた人の番です。</b>堅苦しいことは無し。<b>共有したい人が、自分の大好きなスタックチャンの推しポイントを共有する時間</b>です。<br>
              1人2分、拍手で交代。進行役は司会と時計係だけ。` },
 
@@ -655,7 +654,7 @@ const CONTENT = {
             K.memo('進行役も1人の参加者として、いちばん前で見ます。時間が来たら「ありがとうございます！続きはあとで」で次の人へ。') },
 
     /* ───────── C ───────── */
-    { ch: 5, tag: '失敗カタログ', cover: { num: 'C', title: '失敗カタログ', sub: '16分 / ★ここが差別化' },
+    { ch: 5, tag: '失敗カタログ', cover: { num: 'C', title: '失敗カタログ', sub: '★ここが差別化' },
       talk: `<b>他の AI イベントは「できます」を見せます。「壊れ方」を配るところはあまりありません。</b><br>
              詰まって抜けるたびに書いた記録から、<b>今日は3件だけ。</b>残りは配布物に畳んであるので、気づいた失敗や良いプラクティスは交流会で。` },
 
