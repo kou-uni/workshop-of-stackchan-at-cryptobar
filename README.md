@@ -20,3 +20,7 @@
 - 各ページは**1ファイルで完結**しています。ダウンロードしてダブルクリックでも開けます（書体だけ Google Fonts）
 - コードとスターターは [kou-uni/stack-chan-DJ](https://github.com/kou-uni/stack-chan-DJ)
 - 原本は stack-chan-DJ の `docs/pages/src/`。ここは配る形のコピーです
+
+## 進行役だけが見るもの
+
+- [紙芝居（当日の台本）](kamishibai/) — https://kou-uni.github.io/workshop-of-stackchan-at-cryptobar/kamishibai/ 。直し方は `kamishibai/README.md`。**参加者用の一覧（index.html）からは張っていません**
