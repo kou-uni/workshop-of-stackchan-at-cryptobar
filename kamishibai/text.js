@@ -263,7 +263,7 @@ const CONTENT = {
       talk: `<b>最初に繋ぐのは、本体と USB-C と Wi-Fi だけです。</b>今日の机の上は、そこにあとから足したもの。図はその全部。<br>
              今日は実機を USB ケーブルで MacBook に繋いでいます（USB が有線 LAN になる）。会場の Wi-Fi に依存しないため。`,
       html: K.head('始めるのに要るのは、<em>本体と USB-C と 2.4GHz の Wi-Fi。</em>') +
-            `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="物理的な接続：MacBook が Wi-Fi を出し、ｽﾀｯｸﾁｬﾝと iPad がそこに繋がる。DJ 機材は USB で MacBook に。LED テープは Grove Port B、NFC リーダーは Grove Port A で実機に。実機は USB 給電" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+            `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="物理的な接続：ｽﾀｯｸﾁｬﾝは USB ケーブル1本で MacBook に繋がり、その USB がそのまま有線 LAN になる（給電も兼ねる）。iPad だけが会場の Wi-Fi。DJ 機材は USB で MacBook に。LED テープは Grove Port B、NFC リーダーは Grove Port A で実機に" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
   <defs><marker id="ar9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
   <rect x="290" y="110" width="180" height="110" rx="18" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
   <text x="380" y="140" text-anchor="middle" font-size="15" fill="#1A73C4">MacBook</text>
@@ -510,9 +510,9 @@ const CONTENT = {
             K.tiny('DJ 機材の MIDI は 1秒に数十件、首の角度は 30回/秒、色の列は 20回/秒、会話は1往復 3〜5秒') },
 
     { ch: 3, tag: '役割ごとの製品・技術',
-      talk: `<b>役割と製品を、机の見取り図で1枚に。</b>身体・ファーム・窓口・演技・考える・声・DJ 機材・光・受付・背景。全部 OSS か市販品で、特別なものはありません。下の一覧は開くと詳しく。`,
-      html: K.head('役割は8つ。<em>机の上に、こう並んでいます。</em>') +
-            `<div class="panel"><svg viewBox="0 0 760 500" role="img" aria-label="机の上の見取り図で役割と製品を対応づける：背景は iPad、真ん中にスタックチャン（身体 K151・中にファーム stackchan-mcp・頭に NFC リーダー・周りに LED テープ）、左に DJ 機材 DDJ-FLX2、下に MacBook（窓口 gateway・演技 console・考える Ollama・声 VOICEVOX・聞き取り faster-whisper）、MacBook が Wi-Fi を出す" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+      talk: `<b>役割と製品を、机の見取り図で1枚に。</b>身体・ファーム・窓口・演技・考える・声・DJ 機材・光・受付・背景・網。全部 OSS か市販品で、特別なものはありません。下の一覧は開くと詳しく。`,
+      html: K.head('役割は11。<em>机の上に、こう並んでいます。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 500" role="img" aria-label="机の上の見取り図で役割と製品を対応づける：背景は iPad、真ん中にスタックチャン（身体 K151・中にファーム stackchan-mcp・頭に NFC リーダー・周りに LED テープ）、左に DJ 機材 DDJ-FLX2、下に MacBook（窓口 gateway・演技 console・考える Ollama・声 VOICEVOX・聞き取り faster-whisper）、実機とは USB ケーブル1本の有線 LAN、iPad とは会場の Wi-Fi" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
   <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
   <rect x="250" y="14" width="260" height="96" rx="16" fill="#1c1f24" stroke="#87A6BC" stroke-width="4"/>
   <rect x="262" y="26" width="236" height="72" rx="8" fill="#1A73C4"/>
@@ -887,7 +887,7 @@ const CONTENT = {
               { k: '6手順・実測', v: '30 / 20 / 10 / 60 / 20 分 / ずっと', d: '①出荷時で遊ぶ ②まるごと吸い出す ③アンバインド ④焼く ⑤gateway ⑥作り込む。⑤まで <b>2時間20分</b>' },
               { k: '渡し方', v: 'この一文を、自分の Claude Code に貼る', d: '「このリポジトリを読んで、僕の状況に合わせて手順を出して。持っているもの: K151／Mac。いまの状態: 箱を開けたところ。今日やりたいこと: 出荷時のまま喋らせるところまで。詰まったところは docs/learnings.md に全部書いてあるので、先に読んでから答えて」' },
             ]) +
-            K.memo('★17分で焼くと事故になります。<b>今日やるのは「出荷時のまま喋らせる」まで。</b>持っていない人は、進行役の実機で見る。買うかどうかは見てから決めればよい。') },
+            K.memo('★今日の時間で焼くと事故になります。<b>今日やるのは「出荷時のまま喋らせる」まで。</b>持っていない人は、進行役の実機で見る。買うかどうかは見てから決めればよい。') },
 
     { ch: 6, tag: '① ★渡す前に外したもの（1.5分）',
       talk: `<b>QR を配った瞬間、こちらは「配る側」になります。</b>その前にやったことを見せます。<br>
@@ -914,7 +914,7 @@ const CONTENT = {
       talk: `<b>最後は自由時間です。</b>冒頭の1分だけ、背景に図を1枚出します。<br>
              そのあとは、お披露目スペース・DJ 機材・黙々の机、どこでも。エージェントも一緒に、ロボットもね。` },
 
-    { ch: 7, tag: '② 最後に図を1枚',
+    { ch: 7, tag: '最後に図を1枚',
       talk: `<b>説明はしません。順番に指すだけです。</b>背景（iPad）に図を1枚。左に人、右に実機、真ん中に AI、下に机。`,
       html: K.todo([
               { title: '左を指す', body: '「さっき、つまみを回しましたよね。あれが左です」' },
