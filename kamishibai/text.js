@@ -25,7 +25,7 @@ const CONTENT = {
             K.head('触って、開けて、<em>語って、作る。</em>') +
             K.todo([
               { title: 'A 掴み', body: 'まず、さわる時間。1人ずつ手のひらに乗せて、なでてもらいます。曲を流すと踊ります' },
-              { title: 'B 基本', body: '用語を合わせる。何を繋げば始められるか。ファームウェアとは何か、出荷時はどうか、他に何があって今回はどれを選んだか。カスタマイズの3つの入口' },
+              { title: 'B 基本的な構成', body: '用語を合わせる。何を繋げば始められるか。ファームウェアとは何か、出荷時はどうか、他に何があって今回はどれを選んだか。カスタマイズの3つの入口。有識者の方は、プラクティスの補足をぜひ' },
               { title: 'B+ 今回のデモ', body: 'DJ 機材をロボットの入力にした、という話。なぜそうしたか、中で何が起きているか、どう作ったか' },
               { title: '♥ 持ってきたスタックチャンのお披露目会！', body: '受付で並べてもらったスタックチャンを、持ち主が2分で。名前 → 推しポイント（実演30秒）→ 一言。X で #スタックチャンザギャザリング も' },
               { title: 'C 失敗カタログ', body: '失敗体験を、楽しく語ろう。サーボ音で踊り続けた／監視で壊した／LED で電源が落ちた、の3つ。そのあとはみんなの「うちではこう壊れた」' },
@@ -150,39 +150,18 @@ const CONTENT = {
              これが出れば、あとは何が動いていなくても大丈夫です。実機は<b>踊りモード</b>にしておきます（PLAY ボタンで ON）。` },
 
     { ch: 1, tag: 'スタックチャンでできること',
-      talk: `<b>触ってもらいながら、1枚だけ見せます。</b>なでる・踊る・つまみで首・カードで名前 ── 今日机の上にあるのは、この輪のうちの4つ。
+      talk: `<b>触ってもらいながら、1枚だけ見せます。</b>先に一言だけ「電源が入っている間は、首を手で回さないでくださいね」。なでる・踊る・つまみで首・カードで名前 ── 今日机の上にあるのは、この輪のうちの4つ。
              <b>物理のインターフェースでいろんなことを実装できるのが、スタックチャンの魅力です。</b>持ってきた人の輪は、また別の形をしています。`,
       html: K.head('交流タイムで、<em>みんなのスタックチャンの展示会をしましょう！</em>') +
             K.lead('<b>いろんなことを、物理のインターフェースで実装できる。</b>それがスタックチャンの魅力。今日はそのうち4つ。') +
             `<div class="panel"><svg viewBox="0 0 760 520" role="img" aria-label="真ん中にスタックチャン、周りに物理のインターフェースで実装できる機能の例が12個" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700"><line x1="380" y1="262" x2="380" y2="70" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="476" y2="96" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="546" y2="166" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="572" y2="262" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="546" y2="358" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="476" y2="428" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="380" y2="454" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="284" y2="428" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="214" y2="358" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="188" y2="262" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="214" y2="166" stroke="#87A6BC" stroke-width="2"/><line x1="380" y1="262" x2="284" y2="96" stroke="#87A6BC" stroke-width="2"/><circle cx="380" cy="70" r="56" fill="#CFEBFA" stroke="#fff" stroke-width="3"/><text x="380" y="67" text-anchor="middle" font-size="12" fill="#173A54">なでると</text><text x="380" y="84" text-anchor="middle" font-size="12" fill="#173A54">照れる</text><circle cx="476" cy="96" r="56" fill="#DCF5DF" stroke="#fff" stroke-width="3"/><text x="476" y="93" text-anchor="middle" font-size="12" fill="#173A54">曲に合わせて</text><text x="476" y="110" text-anchor="middle" font-size="12" fill="#173A54">踊る</text><circle cx="546" cy="166" r="56" fill="#FFF2CC" stroke="#fff" stroke-width="3"/><text x="546" y="163" text-anchor="middle" font-size="12" fill="#173A54">DJ のつまみで</text><text x="546" y="180" text-anchor="middle" font-size="12" fill="#173A54">首が回る</text><circle cx="572" cy="262" r="56" fill="#EDE6FF" stroke="#fff" stroke-width="3"/><text x="572" y="259" text-anchor="middle" font-size="12" fill="#173A54">カードで</text><text x="572" y="276" text-anchor="middle" font-size="12" fill="#173A54">名前を呼ぶ</text><circle cx="546" cy="358" r="56" fill="#FFE2E2" stroke="#fff" stroke-width="3"/><text x="546" y="355" text-anchor="middle" font-size="12" fill="#173A54">写真を撮って</text><text x="546" y="372" text-anchor="middle" font-size="12" fill="#173A54">送る</text><circle cx="476" cy="428" r="56" fill="#E4F6FC" stroke="#fff" stroke-width="3"/><text x="476" y="425" text-anchor="middle" font-size="12" fill="#173A54">LED テープで</text><text x="476" y="442" text-anchor="middle" font-size="12" fill="#173A54">光る</text><circle cx="380" cy="454" r="56" fill="#CFEBFA" stroke="#fff" stroke-width="3"/><text x="380" y="451" text-anchor="middle" font-size="12" fill="#173A54">背景の画面と</text><text x="380" y="468" text-anchor="middle" font-size="12" fill="#173A54">連動</text><circle cx="284" cy="428" r="56" fill="#DCF5DF" stroke="#fff" stroke-width="3"/><text x="284" y="425" text-anchor="middle" font-size="12" fill="#173A54">朝になったら</text><text x="284" y="442" text-anchor="middle" font-size="12" fill="#173A54">「おはよう」</text><circle cx="214" cy="358" r="56" fill="#FFF2CC" stroke="#fff" stroke-width="3"/><text x="214" y="355" text-anchor="middle" font-size="12" fill="#173A54">来た人を</text><text x="214" y="372" text-anchor="middle" font-size="12" fill="#173A54">数える</text><circle cx="188" cy="262" r="56" fill="#EDE6FF" stroke="#fff" stroke-width="3"/><text x="188" y="259" text-anchor="middle" font-size="12" fill="#173A54">天気を</text><text x="188" y="276" text-anchor="middle" font-size="12" fill="#173A54">顔で知らせる</text><circle cx="214" cy="166" r="56" fill="#FFE2E2" stroke="#fff" stroke-width="3"/><text x="214" y="163" text-anchor="middle" font-size="12" fill="#173A54">会議の</text><text x="214" y="180" text-anchor="middle" font-size="12" fill="#173A54">タイマー係</text><circle cx="284" cy="96" r="56" fill="#E4F6FC" stroke="#fff" stroke-width="3"/><text x="284" y="93" text-anchor="middle" font-size="12" fill="#173A54">帰ってきたら</text><text x="284" y="110" text-anchor="middle" font-size="12" fill="#173A54">出迎える</text><circle cx="380" cy="262" r="74" fill="#2E9BE0" stroke="#fff" stroke-width="4"/><rect x="340" y="228" width="80" height="58" rx="10" fill="#1c1f24"/><circle cx="364" cy="254" r="8" fill="#fff"/><circle cx="396" cy="254" r="8" fill="#fff"/><path d="M368 270 Q 380 280 392 270" fill="none" stroke="#fff" stroke-width="3"/><text x="380" y="310" text-anchor="middle" font-size="13" fill="#fff">スタックチャン</text><text x="380" y="506" text-anchor="middle" font-size="12" fill="#1A73C4">入口（触る・聞く・読む・見る）と出口（顔・首・光・声）の組み合わせ。アイデア次第で、いくらでも増える</text></svg></div>` +
             K.tiny('今日机の上にあるのは：なでると照れる／曲に合わせて踊る／DJ のつまみで首が回る／カードで名前を呼ぶ。残りはアイデアの例') },
 
-    { ch: 1, tag: '★先に伝える注意',
-      talk: `<b>回す前に、一言だけ。</b>サーボは電源が入っている間トルクが掛かっています。手で回すとギアが傷みます。`,
-      html: K.head('<span class="r">電源が入っている間は、首を手で回さないでくださいね。</span>') +
-            K.cards([
-              { k: '首', v: '横 ±90°・縦 5〜85°', d: 'サーボ2基（フィードバック付き）。動かすのは console からだけ' },
-              { k: 'タッチ', v: '連続タップは控えめに', d: 'モードが切り替わって、踊りが止まって見えます' },
-              { k: '持ち方', v: '台座ごと手のひらに', d: '頭だけつまむと首に力が掛かります' },
-            ]) },
-
-    { ch: 1, tag: 'バーストを上げて、戻して、指す',
-      talk: `<b>ここでは説明をしません。手元を指すだけです。</b><br>
-             音量フェーダーを 70% まで上げると会場が赤く染まり、100% で花火と CO2。首と LED も同時に激しくなります。
-             戻して、「で、いま僕がやったのは、このフェーダーを上げただけです」。`,
-      html: K.head('上げる → 戻す → <em>指す。</em>') +
-            K.cards([
-              { k: '70%', v: '会場が赤く', d: '実機の LED テープ 30粒と、背景の柱・グリル・ウーファーの縁が同じ赤に' },
-              { k: '100%', v: '花火と CO2', d: '背景に花火、首が揺れ、テープが白く速く刻む' },
-              { k: '戻す', v: '一拍おく', d: '静かになってから指す。「バースト」と名前を言うのは、あとで' },
-            ]) +
-            K.quote('……で、いま僕がやったのは、このフェーダーを上げただけです。', '説明は足さない') },
-
     /* ───────── B ───────── */
     /* ───────── 基本（用語・接続・ファーム・カスタマイズ） ───────── */
-    { ch: 2, tag: '基本', cover: { num: 'B', title: '基本', sub: '用語を合わせて、何があれば始められるかを知る' },
-      talk: `<b>ここは基本編。デモの話はしません。</b>目的は3つ：用語を合わせる／物理的に何を繋げば始められるかを知る／ファームウェアという層があることを知る。<br>
-             そのあとで「今回僕が持ってきたデモ」を、別の章で話します。` },
+    { ch: 2, tag: '基本的な構成', cover: { num: 'B', title: '基本的な構成', sub: '用語を合わせて、何があれば始められるかを知る。有識者の方、プラクティスの補足をぜひ！' },
+      talk: `<b>ここは基本的な構成の話。デモはしません。</b>目的は3つ：用語を合わせる／物理的に何を繋げば始められるかを知る／ファームウェアという層があることを知る。<br>
+             <b>言うこと：「作り込んでいる方、ここは僕の理解です。作っていく上でのプラクティスの補足を、ぜひその場で」。</b>間違いも、別のやり方も、大歓迎。` },
 
     { ch: 2, tag: '用語を合わせる',
       talk: `<b>6つだけ。</b>この6語が通じれば、今日の話は全部追えます。押すと説明が出ます。`,
@@ -194,6 +173,81 @@ const CONTENT = {
               { k: '4', v: '母艦（PC）', d: '実機の外で考える係。今日は MacBook 1台。実機と Wi-Fi で繋がる。「頭脳をどこに置くか」は、ファーム次第で自分で選べる' },
               { k: '5', v: 'gateway と MCP', d: 'gateway は母艦にいる窓口のプログラム。MCP は「道具の並べ方と呼び方」の規格で、これに対応すると AI（Claude Code など）から実機の機能を名前で呼べる' },
               { k: '6', v: 'Grove', d: '実機の横にある差し込み口（Port A 赤・Port B 黒）。センサーや LED を<b>買って挿すだけ</b>で足せる。今日は NFC リーダーと LED テープ' },
+            ]) },
+
+    { ch: 2, tag: '関係図 — 誰が作ったものか',
+      talk: `<b>用語が揃ったところで、関係を1枚に。</b>色は「誰が作ったものか」。買ったもの（青）、OSS をそのまま（緑）、OSS を自分で直したもの（黄）、自分で書いたもの（赤）、商用サービス（紫）。<br>
+             gateway は OSS の stackchan-mcp。ファームもその一部で、xiaozhi のフォーク（非公式）。どちらも少し直して使っています。MCP はその gateway が話す規格で、対応していれば Claude Code からも自作の console からも同じ道具が呼べます。`,
+      html: K.head('gateway と MCP の関係を、<em>「誰が作ったか」で色分け。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 470" role="img" aria-label="今回の構成を「誰が作ったものか」で色分け：製品（M5Stack K151・DDJ-FLX2・iPad）、OSS（Ollama・VOICEVOX・faster-whisper）、OSS を改造（stackchan-mcp のファームと gateway）、自作（console）、商用サービス（Claude Code）。gateway が MCP で AI と実機をつなぐ" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="20" y="16" width="120" height="20" rx="10" fill="#CFEBFA"/><text x="80" y="30" text-anchor="middle" font-size="11" fill="#173A54">製品（買う）</text>
+  <rect x="150" y="16" width="120" height="20" rx="10" fill="#DCF5DF"/><text x="210" y="30" text-anchor="middle" font-size="11" fill="#173A54">OSS（そのまま）</text>
+  <rect x="280" y="16" width="130" height="20" rx="10" fill="#FFF2CC"/><text x="345" y="30" text-anchor="middle" font-size="11" fill="#173A54">OSS を改造</text>
+  <rect x="420" y="16" width="120" height="20" rx="10" fill="#FFE2E2"/><text x="480" y="30" text-anchor="middle" font-size="11" fill="#173A54">自作</text>
+  <rect x="550" y="16" width="150" height="20" rx="10" fill="#EDE6FF"/><text x="625" y="30" text-anchor="middle" font-size="11" fill="#173A54">商用サービス</text>
+  <rect x="20" y="70" width="200" height="120" rx="16" fill="#CFEBFA" stroke="#fff" stroke-width="3"/>
+  <text x="120" y="96" text-anchor="middle" font-size="14" fill="#1A73C4">実機 M5Stack K151</text>
+  <text x="120" y="116" text-anchor="middle" font-size="11" fill="#4E7590">公式キット。買ってくる</text>
+  <rect x="34" y="128" width="172" height="50" rx="12" fill="#FFF2CC"/>
+  <text x="120" y="148" text-anchor="middle" font-size="12" fill="#173A54">ファーム stackchan-mcp</text>
+  <text x="120" y="166" text-anchor="middle" font-size="10" fill="#4E7590">xiaozhi のフォーク（非公式 OSS）＋自分の直し</text>
+  <rect x="20" y="260" width="200" height="60" rx="16" fill="#CFEBFA" stroke="#fff" stroke-width="3"/>
+  <text x="120" y="286" text-anchor="middle" font-size="13" fill="#1A73C4">DJ 機材 DDJ-FLX2</text>
+  <text x="120" y="306" text-anchor="middle" font-size="10" fill="#4E7590">製品。USB MIDI</text>
+  <rect x="20" y="340" width="200" height="60" rx="16" fill="#CFEBFA" stroke="#fff" stroke-width="3"/>
+  <text x="120" y="366" text-anchor="middle" font-size="13" fill="#1A73C4">NFC リーダー・LED テープ</text>
+  <text x="120" y="386" text-anchor="middle" font-size="10" fill="#4E7590">M5Stack の Grove ユニット。買って挿す</text>
+  <rect x="270" y="56" width="220" height="150" rx="16" fill="#FFF2CC" stroke="#fff" stroke-width="3"/>
+  <text x="380" y="82" text-anchor="middle" font-size="14" fill="#173A54">gateway（stackchan-mcp）</text>
+  <text x="380" y="102" text-anchor="middle" font-size="10" fill="#4E7590">OSS。実機との窓口。ここも少し改造</text>
+  <rect x="284" y="114" width="192" height="78" rx="12" fill="#fff"/>
+  <text x="380" y="136" text-anchor="middle" font-size="12" fill="#1A73C4">MCP（規格）</text>
+  <text x="380" y="154" text-anchor="middle" font-size="10" fill="#4E7590">道具の並べ方と呼び方の決まりごと</text>
+  <text x="380" y="170" text-anchor="middle" font-size="10" fill="#4E7590">move_head / set_avatar / i2c.scan … 49個</text>
+  <text x="380" y="186" text-anchor="middle" font-size="10" fill="#4E7590">対応していれば、どの AI からも呼べる</text>
+  <rect x="270" y="236" width="220" height="80" rx="16" fill="#FFE2E2" stroke="#fff" stroke-width="3"/>
+  <text x="380" y="262" text-anchor="middle" font-size="14" fill="#173A54">console（演技）</text>
+  <text x="380" y="282" text-anchor="middle" font-size="10" fill="#4E7590">自作 Python。DJ・拍・タッチ・NFC を受けて</text>
+  <text x="380" y="298" text-anchor="middle" font-size="10" fill="#4E7590">gateway の道具を叩く。テスト 524 件</text>
+  <rect x="270" y="336" width="220" height="110" rx="16" fill="#DCF5DF" stroke="#fff" stroke-width="3"/>
+  <text x="380" y="360" text-anchor="middle" font-size="14" fill="#173A54">頭脳（OSS をそのまま）</text>
+  <text x="380" y="382" text-anchor="middle" font-size="11" fill="#173A54">Ollama（gemma3 / qwen2.5）</text>
+  <text x="380" y="402" text-anchor="middle" font-size="11" fill="#173A54">VOICEVOX（声）</text>
+  <text x="380" y="422" text-anchor="middle" font-size="11" fill="#173A54">faster-whisper（聞き取り）</text>
+  <rect x="540" y="56" width="200" height="90" rx="16" fill="#EDE6FF" stroke="#fff" stroke-width="3"/>
+  <text x="640" y="82" text-anchor="middle" font-size="14" fill="#173A54">Claude Code</text>
+  <text x="640" y="102" text-anchor="middle" font-size="10" fill="#4E7590">商用の AI。MCP 経由で実機を動かす</text>
+  <text x="640" y="120" text-anchor="middle" font-size="10" fill="#4E7590">「右を向いて、写真を撮って」</text>
+  <text x="640" y="136" text-anchor="middle" font-size="10" fill="#4E7590">作るときだけ使う。当日は無くても動く</text>
+  <rect x="540" y="236" width="200" height="80" rx="16" fill="#CFEBFA" stroke="#fff" stroke-width="3"/>
+  <text x="640" y="262" text-anchor="middle" font-size="14" fill="#1A73C4">iPad（背景）</text>
+  <text x="640" y="282" text-anchor="middle" font-size="10" fill="#4E7590">製品。ブラウザ1枚（stage.html は自作）</text>
+  <rect x="540" y="336" width="200" height="110" rx="16" fill="#FFE2E2" stroke="#fff" stroke-width="3"/>
+  <text x="640" y="360" text-anchor="middle" font-size="14" fill="#173A54">自分で足したもの</text>
+  <text x="640" y="382" text-anchor="middle" font-size="11" fill="#173A54">表情 14 枚・振り付け・LED 13 種</text>
+  <text x="640" y="402" text-anchor="middle" font-size="11" fill="#173A54">DJ の割り当て表・受付・背景</text>
+  <text x="640" y="422" text-anchor="middle" font-size="11" fill="#173A54">テスト・失敗の記録・配布物</text>
+  <line x1="220" y1="130" x2="268" y2="130" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)" marker-start="url(#arw)"/>
+  <text x="244" y="122" text-anchor="middle" font-size="9" fill="#4E7590">Wi-Fi</text>
+  <line x1="490" y1="100" x2="538" y2="100" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)" marker-start="url(#arw)"/>
+  <text x="514" y="92" text-anchor="middle" font-size="9" fill="#4E7590">MCP</text>
+  <line x1="380" y1="236" x2="380" y2="208" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="404" y="226" text-anchor="middle" font-size="9" fill="#4E7590">MCP</text>
+  <line x1="380" y1="316" x2="380" y2="334" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)" marker-start="url(#arw)"/>
+  <line x1="220" y1="290" x2="268" y2="276" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="244" y="272" text-anchor="middle" font-size="9" fill="#4E7590">USB</text>
+  <line x1="220" y1="370" x2="120" y2="192" stroke="#4E7590" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arw)"/>
+  <text x="150" y="240" text-anchor="middle" font-size="9" fill="#4E7590">Grove</text>
+  <line x1="490" y1="276" x2="538" y2="276" stroke="#4E7590" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="380" y="464" text-anchor="middle" font-size="12" fill="#1A73C4">買ったのは青。緑と黄は OSS で、黄は自分で直したところ。赤が自分で書いたところ。全部読めて、直せて、フォークできる</text>
+</svg></div>` +
+            K.cards([
+              { k: '製品（青）', v: 'M5Stack K151・DDJ-FLX2・iPad・Grove ユニット', d: '買ってくる。公式のキットと市販品。ここは何も直していない' },
+              { k: 'OSS をそのまま（緑）', v: 'Ollama・VOICEVOX・faster-whisper', d: '頭脳・声・聞き取り。入れて設定するだけ。全部 MacBook の中で動く' },
+              { k: 'OSS を改造（黄）', v: 'stackchan-mcp のファームと gateway', d: 'xiaozhi のフォーク（非公式）。ファームは頭なでの検出と起動時の省電力を直した。gateway は名乗り方（mDNS）を直した。改変は patch にして持ち運ぶ' },
+              { k: '自作（赤）', v: 'console・表情・振り付け・割り当て表・受付・背景', d: 'Python 約9,300行。MCP の道具を叩く側。ここが「今回のデモ」の本体' },
+              { k: '商用（紫）', v: 'Claude Code', d: 'MCP 経由で実機を動かしながら作った。当日は無くても動く。他の MCP 対応 AI でも同じことができる' },
             ]) },
 
     { ch: 2, tag: '物理的な接続 — 何があれば始められるか',
