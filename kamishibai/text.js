@@ -931,5 +931,19 @@ const CONTENT = {
               { k: '実機が落ちた', v: '電源を入れ直す（顔まで約10〜35秒）', d: 'OTA スタブ → gateway の順で来る。30秒は待つ。それでもダメなら<b>デモ録画に切り替える</b>（★録画は必ず持っていく）' },
             ]) },
 
+    { ch: 7, tag: '交流タイム！好きなことを試しましょう',
+      talk: `<b>最後の画面。</b>ソースは全部公開しているので、どの機能を持ち出すかは自由です。持ってきたスタックチャンにも、これから買う人にも。`,
+      html: K.head('ソースは全部公開。<em>好きなことを、試しましょう！</em>') +
+            K.lead('<b>交流タイム！</b>どの機能を持ち出すかは自由です。下は「持ち出しやすいもの」の例。押すと場所が出ます。') +
+            K.todo([
+              { title: '表情 14 枚', body: '自分で描いて差し替えられる。<code>app/avatar/make_faces.py</code> で作って、起動時に流し込むだけ。焼き直し不要', link: { href: 'https://github.com/kou-uni/stack-chan-DJ', label: 'kou-uni/stack-chan-DJ' } },
+              { title: 'DJ 機材の割り当て表', body: '<code>app/dj/mapping.json</code>。番号を書き換えれば、別の機材・別のつまみで同じことが起きる', link: { href: 'https://github.com/kou-uni/stack-chan-DJ', label: 'app/dj/mapping.json' } },
+              { title: 'カードで名前を呼ぶ受付', body: 'RFID 2 Unit を Grove Port A に挿すだけ。<code>scripts/nfc_enroll.py</code> でカードを登録', link: { href: 'https://github.com/kou-uni/stack-chan-DJ', label: 'app/dj/nfc.py' } },
+              { title: '背景の画面', body: 'ブラウザ1枚。実機と同じ色の列を受け取って、会場ごと光らせる', link: { href: 'https://github.com/kou-uni/stack-chan-DJ', label: 'app/dj/stage.html' } },
+              { title: '質疑 bot', body: '配布物と記録の範囲だけで答える、道具を持たない bot。自分の資料に差し替えられる', link: { href: 'https://github.com/kou-uni/stack-chan-DJ', label: 'app/dj/ask.py' } },
+              { title: '始め方の地図・失敗カタログ・原価と日数', body: '配布物10枚。そのまま持ち帰って、自分のエージェントに読ませてください', link: { href: 'https://kou-uni.github.io/workshop-of-stackchan-at-cryptobar/', label: '配布物のページ' } },
+            ]) +
+            K.callout('<div class="l1">今日は来てくださって、ありがとうございます。</div><div class="l2">では、交流タイム！ <span class="spark">✦</span></div>') },
+
   ],
 };
