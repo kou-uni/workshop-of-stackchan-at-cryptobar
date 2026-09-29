@@ -1179,9 +1179,10 @@ const CONTENT = {
               { k: '網', v: 'MacBook のインターネット共有', d: '<b>設定だけ。</b>2.4GHz。MacBook は 192.168.2.1 固定。外には出ない' },
             ]) },
 
-    { ch: 3, tag: 'DJ → PC → ｽﾀｯｸﾁｬﾝ',
+    { ch: 3, tag: 'DJ 台 → PC → ｽﾀｯｸﾁｬﾝ',
       talk: `<b>3つの関係は「機材が数字を出す → PC が意味に翻訳する → 実機が身体で出す」です。</b><br>
-             DJ 機材は USB で PC に刺さっているだけ（ドライバ不要）。PC の中にあるのは、<b>翻訳表（mapping.json）と、いまの状態を1つ持つ console</b>。実機はそれを首・顔・光で出すだけ。`,
+             DJ 機材は USB で PC に刺さっているだけ（ドライバ不要）。PC の中にあるのは、<b>翻訳表（mapping.json）と、いまの状態を1つ持つ console</b>。実機はそれを首・顔・光で出すだけ。
+             下の見取り図のとおりに、その場で触ります。表情は<b>4秒で自動的に idle に戻る</b>ので、押しっぱなしでも顔が固定されません。`,
       html: K.head('機材は数字を出す。PC が翻訳する。<em>実機は身体で出す。</em>') +
             `<div class="panel"><svg viewBox="0 0 760 250" role="img" aria-label="DJ機材からｽﾀｯｸﾁｬﾝまでの翻訳の流れ：機材がMIDIの数字を出し、consoleが翻訳表で意味に変え、状態を1つに決め、gatewayが実機へ、同じ配列が背景へ" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
   <defs><marker id="ar5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
@@ -1226,17 +1227,8 @@ const CONTENT = {
   <line x1="550" y1="130" x2="588" y2="150" stroke="#4E7590" stroke-width="2" marker-end="url(#ar5)"/>
   <text x="380" y="222" text-anchor="middle" font-size="12" fill="#1A73C4">機材は数字を出す → PC が意味に翻訳する → 実機は身体で出す。翻訳表を書き換えれば、同じ機材で別のスタックチャンになる</text>
 </svg></div>` +
-            K.cards([
-              { k: '① 機材（DDJ-FLX2）', v: '出しているのは MIDI の数字だけ', d: 'つまみは CC（番号と 0〜127）、パッドとボタンは Note（番号と ON/OFF）。<b>機材は実機の存在を知りません</b>' },
-              { k: '② PC の中', v: '翻訳表<br>状態1つ<br>窓口', d: '<b>mapping.json</b>（この番号はこの意味）→ <b>console</b>（いまどうあるべきか。優先順 つまみ > タッチ > NFC > 聞く > 落ち > 歓声 > 顔）→ <b>gateway</b>（49個の道具で実機へ）' },
-              { k: '③ 実機', v: '角度と色の列を受けて動く', d: '首 30回/秒・色 20回/秒で届く。<b>意味は持っていません</b>。同じ配列を背景（iPad）も受け取るので、実機と画面が必ず揃う' },
-            ]) +
-            K.memo('番号は推測せず、<b>1つずつ動かして覚えさせました</b>（2026-09-08 実測）。最初「うなずきは 0〜64」と記録して間違えた。本人が中央で止めた区間を全可動域と解釈していた。<b>0 と 127 の両方が観測されたこと</b>を全可動域の条件にした。') },
-
-    { ch: 3, tag: '割り当て表（mapping.json）★見せ場',
-      talk: `<b>この表のとおりに、その場で触ります。</b>「特別な操作画面は1つもありません」。<br>
-             表情は<b>4秒で自動的に idle に戻ります</b>。押しっぱなしで顔が固定されないように。落差で「反応した」ように見えます。`,
-      html: `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="DJ 機材の見取り図と割り当て：左のジョグを擦ると光が刻む、EQ つまみで首が回る、FILTER でうなずく、パッド4枚で表情、音量フェーダーでバースト、PLAY で踊り ON、MASTER で OFF" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+            K.lead('<b>どのつまみが、何になるか。</b>DDJ-FLX2 を上から見た図で。') +
+            `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="DJ 機材の見取り図と割り当て：左のジョグを擦ると光が刻む、EQ つまみで首が回る、FILTER でうなずく、パッド4枚で表情、音量フェーダーでバースト、PLAY で踊り ON、MASTER で OFF" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
   <defs><marker id="ar8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1A73C4"/></marker></defs>
   <rect x="40" y="70" width="680" height="200" rx="18" fill="#2B2F36" stroke="#4E7590" stroke-width="3"/>
   <text x="380" y="58" text-anchor="middle" font-size="13" fill="#1A73C4">DDJ-FLX2（上から見た図）</text>
@@ -1286,19 +1278,7 @@ const CONTENT = {
               { k: '音量フェーダー', v: '70% で赤、100% で花火と CO2', d: '会場が赤く染まり、首が揺れ、テープが白く速く。A の掴みで使ったのはこれ' },
               { k: 'PLAY / MASTER ボタン（Note 11 / 99）', v: '踊り ON / OFF', d: 'トグルにしていない。セット中に何度も押す人、押しっぱなしの人がいるため' },
             ]) +
-            K.memo('<b>素材（機材・ファーム・モデル・曲）は自分が作っていない。それでも、選択と並びとタイミングに自分が出る。</b>') },
-
-    { ch: 3, tag: '機材なしで、同じことを起こす',
-      talk: `<b>言いたいことは1つ。「機材から来る数字を、PC が自分で作って流せば、機材が無くても同じ動きが出る」。</b><br>
-             操作パネルの「MIDI 流し込み」で、パッド #5 の Note を PC が自分に送ります。ケーブルは抜いたまま。実機の顔が驚き顔になります。`,
-      html: K.head('機材を抜いても、<em>同じ顔が出る。</em>') +
-            K.cards([
-              { k: 'やること', v: 'ケーブルを抜く → パネルで「パッド #5」を流し込む', d: '起きること：デモ2 と同じ驚き顔・同じ光。機材が無いのに' },
-              { k: 'なぜ効くか', v: 'PC が見ているのは数字だけだから', d: '機材が出したか、PC が自分で作ったか、PC には区別がつかない。だから同じ翻訳表を通って同じ動きになる' },
-              { k: '当日の使い道', v: '「パッドが効かない」の切り分けが10秒', d: '流し込みで動く → 機材かケーブルが悪い。流し込みでも動かない → 翻訳表か console が悪い' },
-              { k: '家での使い道', v: '機材が無い日に開発できる', d: '録った MIDI を再生して、同じ動きを何度でも再現できる' },
-            ]) +
-            K.quote('人の手でしか確かめられない作りは、確かめられていないのと同じです。') },
+            K.memo('番号は推測せず、<b>1つずつ動かして覚えさせました</b>（2026-09-08 実測）。最初「うなずきは 0〜64」と記録して間違えた。本人が中央で止めた区間を全可動域と解釈していた。<b>0 と 127 の両方が観測されたこと</b>を全可動域の条件にした。翻訳表を書き換えれば、同じ機材で別のスタックチャンになる。') },
 
     { ch: 3, tag: '作り方 — 会話で動かしてから、コードに',
       talk: `<b>これが開発の実体です。コードを書く前に、まず会話で動かします。</b><br>
