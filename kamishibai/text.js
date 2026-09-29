@@ -374,15 +374,53 @@ const CONTENT = {
             K.memo('★焼いても消えない領域（NVS）があります。前の接続先が残っていて、こちらの指定を無視して古い先へ行き続けました。「焼き直したのだから初期状態」は成り立ちません。<br>' +
                    '★<b>実機の顔を指して1行。</b>「この表情、<b>14枚とも自分で描いています</b>（顔6・目3・口5）。同梱の画像は、開けたら<b>1×1の黒い点</b>でした」') },
 
-    { ch: 2, tag: '今回のファームの特長 — MCP で道具が49個',
-      talk: `<b>これは感想ではなく、選定理由です。</b>「AI に任せられる範囲」が、ファームの作りで決まります。<br>
-             ★道具の一覧をその場で出します（Claude Code の MCP 一覧か、<code>gateway_config_get</code>）。`,
+    { ch: 2, tag: '今回のファームの特長 — 道具が49個',
+      talk: `<b>言いたいことは1つ。実機が「自分にできること」を、名前つきで49個持っている。</b>AI も自作プログラムも、その名前を呼ぶだけ。<br>
+             下に並べたのは<b>49個のうちの代表例</b>です。全部の一覧は、その場で Claude Code の MCP 一覧を出して見せます。`,
       html: K.head('ファームの中に、道具が<em>49個。</em>') +
+            K.lead('<b>実機が「自分にできること」を名前つきで持っている</b>、ということ。頼む側は名前を呼ぶだけです。') +
+            `<div class="panel"><svg viewBox="0 0 760 360" role="img" aria-label="AI や自作プログラムが「右を向いて、写真を撮って」と頼むと、gateway の道具箱から move_head と take_photo が選ばれ、スタックチャンが右を向いて写真を返す" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="art" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="16" y="120" width="170" height="80" rx="18" fill="#EDE6FF" stroke="#fff" stroke-width="3"/>
+  <text x="101" y="150" text-anchor="middle" font-size="13" fill="#173A54">AI や自作プログラム</text>
+  <text x="101" y="170" text-anchor="middle" font-size="10" fill="#4E7590">Claude Code ／ console</text>
+  <rect x="30" y="40" width="200" height="56" rx="16" fill="#FFF2CC" stroke="#fff" stroke-width="3"/>
+  <text x="130" y="64" text-anchor="middle" font-size="12" fill="#173A54">「右を向いて、</text>
+  <text x="130" y="82" text-anchor="middle" font-size="12" fill="#173A54">　写真を撮って」</text>
+  <path d="M70 96 L80 120 L96 96" fill="#FFF2CC"/>
+  <rect x="250" y="60" width="260" height="240" rx="22" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
+  <text x="380" y="88" text-anchor="middle" font-size="14" fill="#1A73C4">gateway の道具箱（49個）</text>
+  <rect x="266" y="104" width="108" height="34" rx="10" fill="#fff" stroke="#55C96A" stroke-width="3"/><text x="320" y="126" text-anchor="middle" font-size="11" fill="#173A54">move_head</text>
+  <rect x="386" y="104" width="108" height="34" rx="10" fill="#fff" stroke="#55C96A" stroke-width="3"/><text x="440" y="126" text-anchor="middle" font-size="11" fill="#173A54">take_photo</text>
+  <rect x="266" y="148" width="108" height="34" rx="10" fill="#fff"/><text x="320" y="170" text-anchor="middle" font-size="11" fill="#4E7590">set_avatar</text>
+  <rect x="386" y="148" width="108" height="34" rx="10" fill="#fff"/><text x="440" y="170" text-anchor="middle" font-size="11" fill="#4E7590">led.set_all</text>
+  <rect x="266" y="192" width="108" height="34" rx="10" fill="#fff"/><text x="320" y="214" text-anchor="middle" font-size="11" fill="#4E7590">say</text>
+  <rect x="386" y="192" width="108" height="34" rx="10" fill="#fff"/><text x="440" y="214" text-anchor="middle" font-size="11" fill="#4E7590">i2c.scan</text>
+  <rect x="266" y="236" width="108" height="34" rx="10" fill="#fff"/><text x="320" y="258" text-anchor="middle" font-size="11" fill="#4E7590">set_blink</text>
+  <rect x="386" y="236" width="108" height="34" rx="10" fill="#fff"/><text x="440" y="258" text-anchor="middle" font-size="11" fill="#4E7590">…あと 41 個</text>
+  <text x="380" y="290" text-anchor="middle" font-size="10" fill="#4E7590">名前と引数が決まっている ＝ 取扱説明書そのもの</text>
+  <line x1="186" y1="160" x2="248" y2="160" stroke="#4E7590" stroke-width="2" marker-end="url(#art)"/>
+  <text x="217" y="152" text-anchor="middle" font-size="9" fill="#4E7590">MCP</text>
+  <line x1="510" y1="160" x2="572" y2="160" stroke="#4E7590" stroke-width="2" marker-end="url(#art)"/>
+  <text x="541" y="152" text-anchor="middle" font-size="9" fill="#4E7590">Wi-Fi</text>
+  <rect x="600" y="118" width="120" height="86" rx="18" fill="#1c1f24" stroke="#87A6BC" stroke-width="4" transform="rotate(-8 660 161)"/>
+  <circle cx="636" cy="150" r="11" fill="#fff" transform="rotate(-8 660 161)"/><circle cx="684" cy="150" r="11" fill="#fff" transform="rotate(-8 660 161)"/>
+  <path d="M644 176 Q 660 190 676 176" fill="none" stroke="#fff" stroke-width="4" transform="rotate(-8 660 161)"/>
+  <rect x="640" y="206" width="40" height="18" rx="6" fill="#4E7590"/>
+  <circle cx="660" cy="242" r="26" fill="#87A6BC"/>
+  <text x="660" y="290" text-anchor="middle" font-size="13" fill="#1A73C4">右を向いて、パシャ</text>
+  <circle cx="722" cy="100" r="16" fill="#FFC831"/><text x="722" y="105" text-anchor="middle" font-size="14" fill="#4A3200">✦</text>
+  <rect x="576" y="40" width="150" height="40" rx="12" fill="#DCF5DF" stroke="#fff" stroke-width="3"/>
+  <text x="651" y="65" text-anchor="middle" font-size="11" fill="#2E8C42">画像が返ってくる</text>
+  <path d="M600 80 Q 400 20 200 110" fill="none" stroke="#55C96A" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#art)"/>
+  <text x="380" y="340" text-anchor="middle" font-size="12" fill="#1A73C4">「どう動かすか」を読んでコードに書き写す工程が、丸ごと消えた。呼ぶのは名前だけ</text>
+</svg></div>` +
             K.cards([
-              { k: '身体', v: 'move_head<br>set_avatar<br>set_blink<br>set_mouth', d: '首を向ける・表情14枚・まばたき・口の動き' },
-              { k: '光と目', v: 'led.set_all<br>set_brightness<br>take_photo', d: '本体 LED 12個・画面の明るさ・カメラ' },
-              { k: '外の口', v: 'i2c.scan<br>i2c.write_read<br>port_b.ws2812', d: 'Grove の I2C（NFC リーダーはこれで読んだ）と LED テープ' },
-              { k: '声と耳', v: 'say<br>listen<br>touch.get_touch_state', d: '喋る・聞き取る・タッチの状態' },
+              { k: '下の4つは代表例', v: '49個を、使いどころで4つに分けると', d: '身体を動かす／光と目／横の差し込み口／声と耳。残りは Wi-Fi の省電力・サーボのトルク・頭の向きの読み取り・設定の読み書きなど。全部の一覧は Claude Code の MCP 一覧か gateway_config_get で' },
+              { k: '身体を動かす', v: 'move_head<br>set_avatar<br>set_blink<br>set_mouth', d: '首を「右へ30度」と向ける／表情を「happy」に変える（14枚から）／まばたきを止める・再開する／口を動かす。今日は DJ のつまみと、パッドの顔の切り替えで使っています' },
+              { k: '光と目', v: 'led.set_all<br>set_brightness<br>take_photo', d: '本体の LED 12個の色を一度に変える／画面の明るさを変える／カメラで1枚撮って画像を返す。今日は受付の光で。写真は作っている最中の確認に' },
+              { k: '横の差し込み口（Grove）', v: 'i2c.scan<br>i2c.write_read<br>port_b.ws2812', d: '何が挿さっているかを調べる／挿したセンサーを読む／LED テープに色の列を送る。今日は NFC リーダーとテープ30粒で。<b>ファームを直さずに新しい部品が足せる</b>のは、この3つがあるから' },
+              { k: '声と耳', v: 'say<br>listen<br>touch.get_touch_state', d: '文字を渡すと喋る／聞き取って文字で返す／頭のタッチの状態を読む。今日は受付の「いらっしゃい」で' },
             ]) +
             K.quote('「どう動かすか」を読んで、コードに書き写す工程が、丸ごと消えました。「右を向いて写真を撮って」で、実機が動いて画像が返ります。') },
 
