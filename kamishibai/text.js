@@ -515,13 +515,14 @@ const CONTENT = {
   <rect x="325" y="164" width="110" height="82" rx="14" fill="#1c1f24" stroke="#87A6BC" stroke-width="4"/>
   <circle cx="358" cy="196" r="10" fill="#fff"/><circle cx="402" cy="196" r="10" fill="#fff"/>
   <path d="M366 220 Q 380 232 394 220" fill="none" stroke="#fff" stroke-width="4"/>
-  <rect x="338" y="168" width="84" height="14" rx="5" fill="#FFF2CC"/>
-  <text x="380" y="179" text-anchor="middle" font-size="9" fill="#B37C00">ファーム stackchan-mcp</text>
+  <rect x="352" y="167" width="56" height="14" rx="5" fill="#FFF2CC"/>
+  <text x="380" y="178" text-anchor="middle" font-size="9" fill="#B37C00">ファーム</text>
   <rect x="365" y="248" width="30" height="14" rx="4" fill="#4E7590"/>
   <circle cx="380" cy="280" r="20" fill="#87A6BC"/>
   <text x="470" y="200" text-anchor="start" font-size="12" fill="#1A73C4">身体 ── M5Stack K151</text>
   <text x="470" y="216" text-anchor="start" font-size="10" fill="#4E7590">CoreS3 / ESP32-S3</text>
-  <text x="470" y="236" text-anchor="start" font-size="11" fill="#B37C00">中のファーム ── xiaozhi のフォーク</text>
+  <text x="470" y="236" text-anchor="start" font-size="11" fill="#B37C00">中のファーム ── stackchan-mcp</text>
+  <text x="470" y="252" text-anchor="start" font-size="9" fill="#B37C00">xiaozhi のフォーク</text>
   <circle cx="300" cy="300" r="5" fill="#FF6B6B"/><circle cx="318" cy="308" r="5" fill="#FF9F40"/><circle cx="338" cy="313" r="5" fill="#FFC831"/><circle cx="358" cy="316" r="5" fill="#55C96A"/><circle cx="380" cy="317" r="5" fill="#2E9BE0"/><circle cx="402" cy="316" r="5" fill="#9B7BF0"/><circle cx="422" cy="313" r="5" fill="#FF6B6B"/><circle cx="442" cy="308" r="5" fill="#FF9F40"/><circle cx="460" cy="300" r="5" fill="#FFC831"/>
   <text x="470" y="300" text-anchor="start" font-size="11" fill="#2E8C42">光 ── LED テープ 30粒（A093）</text>
   <rect x="30" y="180" width="180" height="96" rx="16" fill="#2B2F36" stroke="#4E7590" stroke-width="3"/>
@@ -552,22 +553,22 @@ const CONTENT = {
   <line x1="210" y1="250" x2="230" y2="338" stroke="#4E7590" stroke-width="2" marker-end="url(#arr)"/>
   <text x="236" y="300" text-anchor="middle" font-size="9" fill="#4E7590">USB</text>
   <path d="M380 340 Q 380 320 380 302" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)" marker-start="url(#arr)"/>
-  <path d="M600 340 Q 680 200 520 60" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)"/>
-  <text x="660" y="250" text-anchor="middle" font-size="10" fill="#1A73C4">Wi-Fi</text>
-  <text x="380" y="486" text-anchor="middle" font-size="12" fill="#1A73C4">役割は8つ。買ったもの・OSS・自作が、机の上でこう並んでいる</text>
+  <path d="M606 342 Q 748 210 515 48" fill="none" stroke="#2E9BE0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="712" y="170" text-anchor="middle" font-size="10" fill="#1A73C4">Wi-Fi</text>
+  <text x="380" y="486" text-anchor="middle" font-size="12" fill="#1A73C4">買ったもの・OSS・自作が、机の上でこう並んでいる。いじったのは、ファーム1行・gateway 6ファイル・あとは自作</text>
 </svg></div>` +
             K.cards([
-              { k: '身体', v: 'M5Stack K151<br>（CoreS3 / ESP32-S3）', d: 'サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。¥18,150' },
-              { k: 'ファーム', v: 'stackchan-mcp<br>（xiaozhi のフォーク）', d: 'K151 専用のボード定義。MCP で道具 49 個。WebSocket で母艦と話す' },
-              { k: '窓口', v: 'stackchan-mcp gateway<br>（Python）', d: '実機と1本の WebSocket。MCP サーバー。聞き取り faster-whisper もここ' },
-              { k: '演技', v: 'console<br>（自作 Python 約9,300行）', d: 'MIDI・拍・タッチ・NFC → 状態1つ → 差分で反映。テスト 524 件' },
-              { k: '考える', v: 'Ollama<br>gemma3:4b／qwen2.5:14b', d: '会話は小さく速く、質疑 bot は大きく正確に。全部 MacBook の中' },
-              { k: '声', v: 'VOICEVOX', d: '文字 → 音声。話者 14。40 文字まで' },
-              { k: 'DJ 機材', v: 'Pioneer DDJ-FLX2', d: 'USB MIDI。クラスコンプライアントでドライバ不要' },
-              { k: '光', v: 'LED テープ SK6812 30粒<br>（M5Stack A093）', d: 'Grove Port B。全開 5V 1.8A なので上限 35%。¥1,344' },
-              { k: '受付', v: 'RFID 2 Unit<br>（WS1850S / I2C 0x28）', d: 'Grove Port A。カードの ID 3 バイトで名前を呼ぶ' },
-              { k: '背景', v: 'iPad ＋ ブラウザ1枚<br>（stage.html）', d: '奥から手前へ7層。実機と同じ色の列を受け取る' },
-              { k: '網', v: 'MacBook のインターネット共有', d: '2.4GHz。MacBook は 192.168.2.1 固定。外には出ない' },
+              { k: '身体', v: 'M5Stack K151<br>（CoreS3 / ESP32-S3）', d: '<b>そのまま。</b>サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。¥18,150' },
+              { k: 'ファーム', v: 'stackchan-mcp<br>（xiaozhi のフォーク）', d: '<b>改造は1行。</b>起動直後の Wi-Fi 省電力を切る（効果はまだ確かめ切れていない）。頭なでの検出は上流の PR #374 を焼いた。表情14枚は自作の画像を起動時に流し込む（ファームは触らない）' },
+              { k: '窓口', v: 'stackchan-mcp gateway<br>（Python）', d: '<b>改造 6ファイル。</b>踊りの閾値を外から変えられるように／聞き取り（小さい音を持ち上げる・当日の語彙を先に教える・無音を捨てる）／名乗り方（Tailscale の網を除外）／実機から来る信号の切り分けログ。改変は patch にして持ち運ぶ' },
+              { k: '演技', v: 'console<br>（自作 Python 約9,300行）', d: '<b>自作。</b>MIDI・拍・タッチ・NFC → 状態1つ → 差分で反映。表情・振り付け・LED 13種・割り当て表・受付もここ。テスト 524 件' },
+              { k: '考える', v: 'Ollama<br>gemma3:4b／qwen2.5:14b', d: '<b>そのまま。</b>触ったのはモデルの選択とプロンプトだけ。会話は小さく速く、質疑 bot は大きく正確に' },
+              { k: '声・聞き取り', v: 'VOICEVOX<br>faster-whisper', d: '<b>そのまま。</b>VOICEVOX は話者14を選んだだけ。faster-whisper の使い方は gateway 側で少し直した（上の6ファイルに含む）' },
+              { k: 'DJ 機材', v: 'Pioneer DDJ-FLX2', d: '<b>そのまま。</b>USB MIDI、ドライバ不要。どのつまみを何にするかの割り当て表（mapping.json）は自作' },
+              { k: '光', v: 'LED テープ SK6812 30粒<br>（M5Stack A093）', d: '<b>そのまま。</b>Grove Port B。全開 5V 1.8A なので上限 35% はソフト側で。¥1,344' },
+              { k: '受付', v: 'RFID 2 Unit<br>（WS1850S / I2C 0x28）', d: '<b>そのまま。</b>Grove Port A。読むコードは自作（ファームの汎用 I2C の道具を母艦から叩く）' },
+              { k: '背景', v: 'iPad ＋ ブラウザ1枚<br>（stage.html）', d: '<b>自作。</b>奥から手前へ7層。実機と同じ色の列を受け取る' },
+              { k: '網', v: 'MacBook のインターネット共有', d: '<b>設定だけ。</b>2.4GHz。MacBook は 192.168.2.1 固定。外には出ない' },
             ]) },
 
     { ch: 3, tag: 'DJ → PC → ｽﾀｯｸﾁｬﾝ',
