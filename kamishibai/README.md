@@ -2,11 +2,11 @@
 
 **動くもの**: https://kou-uni.github.io/workshop-of-stackchan-at-cryptobar/kamishibai/
 
-進行役が1枚ずつ送る台本です。42画面。スワイプ／← →／スペースで送れます。左下の顔で解説が開きます。
+進行役が1枚ずつ送る台本です。41画面。スワイプ／← →／スペースで送れます。左下の顔で解説が開きます。
 
 ## 直し方（GitHub の画面だけで完結）
 
-1. [`text.js`](text.js) を開いて ✏️ で直す（42画面 = `steps` の1要素。`tag` が見出し、`html` が本文、`talk` が解説）
+1. [`text.js`](text.js) を開いて ✏️ で直す（41画面 = `steps` の1要素。`tag` が見出し、`html` が本文、`talk` が解説）
 2. commit する → 1〜2分で GitHub Actions が `index.html` を組み立て直し、上の URL に反映
 3. 直したい場所・気づいたことは **Issue** に。1つの Issue に1つのこと
 
