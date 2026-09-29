@@ -7,7 +7,7 @@ const CONTENT = {
   brand: { name: 'ｽﾀｯｸﾁｬﾝ交流会', sub: 'Crypto Cafe & Bar' },
   guide: { still: '@@assets/stackchan.png@@', face: '@@assets/stackchan-face.png@@' },
   sound: 'chip',   // ぴこぴこ音。ｽﾀｯｸﾁｬﾝに寄せている
-  chapters: ['序', 'A', 'B', 'お披露目', 'C', 'D', 'E', 'F', '締'],
+  chapters: ['序', 'A', 'B', 'お披露目', 'C', 'D', '交流', '締'],
   labels: { next: 'つぎへ', prev: 'もどる', start: 'はじめる', end: 'いってらっしゃい' },
 
   steps: [
@@ -19,25 +19,17 @@ const CONTENT = {
              左上の章バーが序〜締、右上がいま何枚目か。左下の顔を押すと、その画面で<b>実際に言うこと・やること</b>が出ます。` },
 
     { ch: 0, tag: 'アジェンダ',
-      talk: `<b>ここは全体の流れです。</b>DJ が鳴るのは A だけ、声で相談するのは D だけ（踊りと会話は同じマイクを取り合うため）。
-             <b>どのブロックにも、持ち帰れるものが1つずつあります。</b>`,
-      html: K.sys('AGENDA / 90分') +
-            K.head('触って、開けて、<em>持ち帰る。</em>') +
+      talk: `<b>ここは全体の流れです。</b>DJ が鳴るのは A だけ、声で相談するのは D だけ（踊りと会話は同じマイクを取り合うため）。`,
+      html: `<style>.cards{grid-template-columns:1fr !important}</style>` +
+            K.sys('AGENDA') +
+            K.head('触って、開けて、<em>語って、作る。</em>') +
             K.todo([
-              { title: 'A 掴み（10分）— 持ち帰り：触った実感',
-                body: '1人ずつ手のひらに乗せて、なでてもらいます。曲を流すと踊ります。最後に DJ のフェーダーを1本上げて、会場を赤くして戻します。説明はそのあと' },
-              { title: 'B 仕組み（27分）— 持ち帰り：構成図・ファーム選び・DJ の割り当て表',
-                body: '①実機は入口と出口だけ（Wi-Fi を切る実演）→ ②ファーム5つの比較と、焼き方3つ → ③作り方（会話で動かす・テストを先に書く）→ ④DJ → PC → ｽﾀｯｸﾁｬﾝの対応表' },
-              { title: '♥ 持ってきた子のお披露目会！（8分）— 推しポイントを1人2分',
-                body: '仕組みの話のすぐあと。受付で並べてもらった子を、持ち主が2分で。子の名前 → 推しポイント（実演30秒）→ 一言。X で #スタックチャン交流会 も' },
-              { title: 'C 失敗カタログ（16分）— 持ち帰り：3つの壊れ方',
-                body: '1,878行の記録から3件だけ（サーボ音で踊り続けた／監視で壊した／LED で電源が落ちた）を深く。残り32件は配布物と交流会で' },
-              { title: 'D 手を動かす（17分）— 持ち帰り：スターターと始め方の地図',
-                body: 'リポジトリの URL を渡し、自分のエージェントに読ませてもらいます。黙々派・DJ 派・お披露目スペースで話す派、それぞれのペースで。ここでだけ実機と声で話せます' },
-              { title: 'E 出す（5分）',
-                body: '2人だけ発表。「自分なら何をさせたいか」か「何を聞きたいか」を一言ずつ' },
-              { title: 'F 返す（7分）— 持ち帰り：原価と日数',
-                body: '今日の録音と記録を本人に返してから同意を聞く。¥19,494 と 2時間20分。最後に背景に図を1枚出して、左・右・真ん中・机を指します' },
+              { title: 'A 掴み', body: 'まず、さわる時間。1人ずつ手のひらに乗せて、なでてもらいます。曲を流すと踊ります' },
+              { title: 'B 仕組み', body: '構成やファームなど、簡単なことを知る・振り返る。①実機は入口と出口だけ ②ファーム5つの比較と焼き方 ③作り方 ④DJ 機材との対応' },
+              { title: '♥ 持ってきた子のお披露目会！', body: '受付で並べてもらった子を、持ち主が2分で。子の名前 → 推しポイント（実演30秒）→ 一言。X で #スタックチャン交流会 も' },
+              { title: 'C 失敗カタログ', body: '失敗体験を、楽しく語ろう。サーボ音で踊り続けた／監視で壊した／LED で電源が落ちた、の3つ。そのあとはみんなの「うちではこう壊れた」' },
+              { title: 'D 動かす', body: 'スターターと始め方の地図を渡します。自分のエージェントに読ませて、それぞれのペースで。ここでだけ実機と声で話せます' },
+              { title: '交流', body: 'みんなで交流・意見交換・作る。みんな自由に。エージェントも一緒に、ロボットもね' },
             ]) +
             K.tiny('配布物 10 枚は <b>kou-uni.github.io/workshop-of-stackchan-at-cryptobar</b>。スマホでそのまま開けます') },
 
@@ -120,30 +112,28 @@ const CONTENT = {
             K.memo('<b>外に出る通信はありません。</b>Wi-Fi も MacBook 自身が出しています。だから B② の「クラウドに行く出荷時」との対比が、そのまま成り立ちます。') },
 
     /* ───────── 序 ───────── */
-    { ch: 0, tag: '今日いちばん大事なこと',
-      talk: `<b>この画面は進行役向けです。</b>参加者に見せるものではありません。<br>
-             進行中に迷ったら、<b>「いまの時間は、この5つのどれを起こしているか」</b>で決めます。`,
-      html: K.sys('進行役へ — 迷ったらここに戻る') +
-            K.head('参加者が帰り道に、<em>この5つ</em>を思っていたら成功です。') +
+    { ch: 0, tag: '今日のゴール',
+      talk: `<b>アジェンダのあとに、みんなに向けて言います。</b>「帰り道にこう思っていたら、今日は大成功です」。5つを読み上げるだけでよいです。`,
+      html: K.sys('みんなへ') +
+            K.head('帰り道に、<em>こう思っていたら大成功。</em>') +
             K.goals([
-              { title: '私もやってみたい',            body: '難しさではなく<b>始め方</b>を見せます。K151 一択・6手順・今日は手順1まで・所要は実測で 2時間20分', color: 'var(--blue)' },
-              { title: 'あー、聞いておいてよかった',  body: '知らなかったら損したこと。<b>出荷時は声もカメラ画像もクラウドへ／焼いても消えない領域がある／同梱 LED は 1.8A で本体から取れない</b>', color: 'var(--grass)' },
-              { title: '家に帰ったらこれをしよう',    body: '<b>今夜できる1手</b>：リポジトリを自分のエージェントに読ませて、出荷時のまま喋らせる（30分）', color: 'var(--ora)' },
-              { title: 'またこのイベントに来たい', body: '他では聞けない話だけ。<b>自分で測った数字</b>（サーボ音 40倍／撫で 9.5・52・92秒／16,000点で差 0 度）', color: 'var(--pur)' },
-              { title: 'こんなんまでもらってラッキー', body: '<b>期待より多く渡します。</b>配布物10枚・スターター・失敗カタログ35件・原価と日数・DJ 機材の割り当て表', color: 'var(--red)' },
-            ]) +
-            K.memo('だから、<b>どのブロックでも「持ち帰るもの」を1つ渡します。</b>体験して「面白かった」で終わる時間は、作りません。') },
+              { title: '私もやってみたい',            body: '難しさより、始め方を見ます。K151 一択・6手順・今日は手順1まで。所要は実測で 2時間20分', color: 'var(--blue)' },
+              { title: 'あー、聞いておいてよかった',  body: '知らなかったら損したこと。出荷時は声もカメラ画像もクラウドへ／焼いても消えない領域がある／同梱 LED はそのままだと電源が落ちる', color: 'var(--grass)' },
+              { title: '家に帰ったらこれをしよう',    body: '今夜できる1手。リポジトリを自分のエージェントに読ませて、出荷時のまま喋らせる（30分）', color: 'var(--ora)' },
+              { title: 'またこのイベントに来たい',    body: '他では聞けない話だけ。自分で測った数字と、みんなが持ってきた子の話', color: 'var(--pur)' },
+              { title: 'こんな人たちと会えてよかった・こんなの見つけてよかった', body: '持ってきた子と持ち主。配布物10枚・スターター・失敗カタログ・原価と日数。全部そのまま持ち帰れます', color: 'var(--red)' },
+            ]) },
 
     { ch: 0, tag: '誰に話すか',
       talk: `<b>ハードルを下げる画面です。</b>「できる人向け」に聞こえる言葉を、ここで全部落とします。<br>
-             来るのはエンジニアとは限りません。Bar に来た人です。`,
+             来るのはエンジニアとは限りません。Bar に来た人です。用語の共有は、体験のあとで。`,
       html: K.sys('宛先') +
             K.head('何から手をつければいいか、<em>まだ分からない人へ。</em>') +
             K.lead('<b>分からないまま来て、分からないまま触って大丈夫。</b>その空気を最初に作ります。') +
             K.cards([
               { k: '言うこと',  v: 'さわってみましょう', d: '説明より先に、手を動かしてもらいます。首を手で回すことだけ、先に伝えます' },
               { k: '言うこと',  v: '分からないところは、その場で聞いてください', d: '「僕も9月8日に箱を開けるまで、全部分かりませんでした」と添えます' },
-              { k: 'しないこと', v: '専門用語を先に出す', d: 'MCP・ファーム・gateway は、体験のあとで名前として教えます' },
+              { k: 'しないこと', v: '用語を先に出す', d: 'MCP・ファーム・gateway は、体験のあとで「用語の共有」として名前を伝えます' },
               { k: 'しないこと', v: '知っている前提で話す', d: '「ご存じのとおり」は使いません。ESP32 も M5Stack も、その場で1行説明します' },
             ]) },
 
@@ -221,8 +211,8 @@ const CONTENT = {
   <text x="575" y="58" text-anchor="middle" font-size="12" fill="#173A54">D 17分</text>
   <text x="575" y="76" text-anchor="middle" font-size="11" fill="#2E8C42">会話（聞き取り）</text>
   <rect x="650" y="40" width="100" height="44" rx="10" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
-  <text x="700" y="58" text-anchor="middle" font-size="12" fill="#173A54">E・F 12分</text>
-  <text x="700" y="76" text-anchor="middle" font-size="11" fill="#4E7590">台本の声だけ</text>
+  <text x="700" y="58" text-anchor="middle" font-size="12" fill="#173A54">交流 12分</text>
+  <text x="700" y="76" text-anchor="middle" font-size="11" fill="#4E7590">会話のまま</text>
   <text x="50" y="112" text-anchor="middle" font-size="11" fill="#B37C00">PLAY で ON</text>
   <text x="510" y="112" text-anchor="start" font-size="11" fill="#2E8C42">MASTER で踊り OFF → 聞ける</text>
   <text x="380" y="138" text-anchor="middle" font-size="12" fill="#1A73C4">同じマイクを取り合うので、持ち主はブロックの切れ目で1回だけ替える</text>
@@ -230,7 +220,7 @@ const CONTENT = {
             K.cards([
               { k: 'A', v: '踊りモード', d: 'マイクは拍の検出に。曲を流す・DJ 機材を触る。PLAY ボタン（Note 11）で ON' },
               { k: 'B・C', v: 'どちらでもない', d: '実演のときだけ、その場で切り替える' },
-              { k: 'D', v: '会話モード', d: 'MASTER ボタン（Note 99）で踊り OFF → マイクは聞き取りに。頭をなでると緑になって聞く' },
+              { k: 'D・交流', v: '会話モード', d: 'MASTER ボタン（Note 99）で踊り OFF → マイクは聞き取りに。頭をなでると緑になって聞く。交流でもそのまま' },
             ]) +
             K.memo('★<b>D に入る前に、1回だけ予告します。</b><br>' +
                    '「さっきと同じところを触ってみてください。<b>さっきと違うことが起きます</b>」<br>' +
@@ -293,6 +283,127 @@ const CONTENT = {
               { k: '数字', v: '首 30回/秒<br>色 20回/秒', d: '実機が受け取っているのは<b>角度と色の列だけ</b>。意味は持っていません' },
             ]) +
             K.memo('実機のファームは xiaozhi 系のフォーク。<b>WebSocket で遠くのサーバーに繋いで喋る</b>のがプロトコルの前提なので、接続先の URL を差し替えるだけで頭脳の置き場所が変わります。無理をしていません。') },
+
+    { ch: 2, tag: '① 物理的な接続',
+      talk: `<b>線は USB 1本だけです。</b>あとは MacBook が出す Wi-Fi。実機の Grove ポートに NFC リーダー（Port A）と LED テープ（Port B）。<br>
+             「どこにも繋がっていない」を、この図で見せます。`,
+      html: K.sys('B① 物理的な接続') +
+            K.head('線は<em>1本。</em>あとは、この机の上の Wi-Fi。') +
+            `<div class="panel"><svg viewBox="0 0 760 330" role="img" aria-label="物理的な接続：MacBook が Wi-Fi を出し、ｽﾀｯｸﾁｬﾝと iPad がそこに繋がる。DJ 機材は USB で MacBook に。LED テープは Grove Port B、NFC リーダーは Grove Port A で実機に。実機は USB 給電" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <rect x="290" y="110" width="180" height="110" rx="18" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
+  <text x="380" y="140" text-anchor="middle" font-size="15" fill="#1A73C4">MacBook</text>
+  <text x="380" y="162" text-anchor="middle" font-size="11" fill="#4E7590">Wi-Fi を出す（親機）</text>
+  <text x="380" y="180" text-anchor="middle" font-size="11" fill="#4E7590">192.168.2.1</text>
+  <text x="380" y="204" text-anchor="middle" font-size="11" fill="#4E7590">USB-C ×2</text>
+  <rect x="20" y="120" width="170" height="90" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="105" y="150" text-anchor="middle" font-size="14" fill="#173A54">DDJ-FLX2</text>
+  <text x="105" y="172" text-anchor="middle" font-size="11" fill="#4E7590">DJ 機材</text>
+  <text x="105" y="192" text-anchor="middle" font-size="11" fill="#4E7590">電源も USB から</text>
+  <line x1="190" y1="165" x2="288" y2="165" stroke="#4E7590" stroke-width="4"/>
+  <text x="239" y="156" text-anchor="middle" font-size="11" fill="#173A54">USB（MIDI）</text>
+  <rect x="560" y="20" width="180" height="120" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="650" y="48" text-anchor="middle" font-size="14" fill="#173A54">ｽﾀｯｸﾁｬﾝ</text>
+  <text x="650" y="68" text-anchor="middle" font-size="11" fill="#4E7590">M5Stack CoreS3（K151）</text>
+  <text x="650" y="90" text-anchor="middle" font-size="11" fill="#4E7590">Port A（赤）← NFC リーダー</text>
+  <text x="650" y="108" text-anchor="middle" font-size="11" fill="#4E7590">Port B（黒）← LED テープ 30粒</text>
+  <text x="650" y="128" text-anchor="middle" font-size="11" fill="#4E7590">USB-C ← 給電（台側）</text>
+  <path d="M470 140 Q 520 90 558 80" fill="none" stroke="#2E9BE0" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ar9)"/>
+  <text x="500" y="96" text-anchor="middle" font-size="11" fill="#1A73C4">Wi-Fi 2.4GHz</text>
+  <rect x="560" y="200" width="180" height="90" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="650" y="230" text-anchor="middle" font-size="14" fill="#173A54">iPad</text>
+  <text x="650" y="252" text-anchor="middle" font-size="11" fill="#4E7590">背景の画面（ブラウザ1枚）</text>
+  <text x="650" y="272" text-anchor="middle" font-size="11" fill="#4E7590">QR を読んで開く</text>
+  <path d="M470 190 Q 520 240 558 245" fill="none" stroke="#2E9BE0" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ar9)"/>
+  <text x="500" y="232" text-anchor="middle" font-size="11" fill="#1A73C4">Wi-Fi</text>
+  <rect x="20" y="20" width="170" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="105" y="48" text-anchor="middle" font-size="14" fill="#173A54">スピーカー</text>
+  <text x="105" y="70" text-anchor="middle" font-size="11" fill="#4E7590">曲。実機のマイクが拾う</text>
+  <rect x="20" y="240" width="170" height="70" rx="16" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="105" y="268" text-anchor="middle" font-size="14" fill="#173A54">参加者のスマホ</text>
+  <text x="105" y="290" text-anchor="middle" font-size="11" fill="#4E7590">質疑 bot（同じ Wi-Fi）</text>
+  <path d="M190 275 Q 240 275 288 200" fill="none" stroke="#2E9BE0" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ar9)"/>
+  <text x="380" y="318" text-anchor="middle" font-size="12" fill="#1A73C4">線は USB 1本だけ。あとは MacBook が出す Wi-Fi。外（インターネット）には何も繋がっていない</text>
+</svg></div>` +
+            K.tiny('実機の USB-C は2つ。台側は給電だけ、本体側は書き込み用（今日は使わない）') },
+
+    { ch: 2, tag: '① データの流れ',
+      talk: `<b>何が、どんな形で流れているか。</b>入口は4種類、出口も4種類。<b>意味を持っているのは真ん中だけ</b>で、実機に届くのは角度・表情の名前・色の列・音です。`,
+      html: K.sys('B① データの流れ') +
+            K.head('入るのは数字と音。<em>出るのも数字と音。</em>') +
+            `<div class="panel"><svg viewBox="0 0 760 300" role="img" aria-label="データの流れ：入口から出口まで、何がどんな形で流れるか。MIDI の数字、音、タッチ、カード ID が MacBook に入り、角度と色の列、文字、声になって出ていく" style="width:100%;height:auto;display:block;font-family:inherit;font-weight:700">
+  <defs><marker id="ar10" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4E7590"/></marker></defs>
+  <text x="90" y="24" text-anchor="middle" font-size="13" fill="#1A73C4">入ってくるもの</text>
+  <text x="380" y="24" text-anchor="middle" font-size="13" fill="#1A73C4">MacBook の中で</text>
+  <text x="670" y="24" text-anchor="middle" font-size="13" fill="#1A73C4">出ていくもの</text>
+  <rect x="10" y="40" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="90" y="59" text-anchor="middle" font-size="12" fill="#173A54">つまみ・パッド</text>
+  <text x="90" y="76" text-anchor="middle" font-size="10" fill="#4E7590">MIDI：番号 + 0〜127</text>
+  <rect x="10" y="96" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="90" y="115" text-anchor="middle" font-size="12" fill="#173A54">曲の音・人の声</text>
+  <text x="90" y="132" text-anchor="middle" font-size="10" fill="#4E7590">音声（実機マイク → Opus）</text>
+  <rect x="10" y="152" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="90" y="171" text-anchor="middle" font-size="12" fill="#173A54">頭のタッチ</text>
+  <text x="90" y="188" text-anchor="middle" font-size="10" fill="#4E7590">tap / stroke + 時間ms</text>
+  <rect x="10" y="208" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="90" y="227" text-anchor="middle" font-size="12" fill="#173A54">NFC カード</text>
+  <text x="90" y="244" text-anchor="middle" font-size="10" fill="#4E7590">ID 3バイト（例 043b33）</text>
+  <rect x="220" y="40" width="320" height="214" rx="18" fill="#E4F6FC" stroke="#2E9BE0" stroke-width="3"/>
+  <rect x="234" y="56" width="140" height="60" rx="12" fill="#fff"/>
+  <text x="304" y="78" text-anchor="middle" font-size="12" fill="#173A54">拍を推定</text>
+  <text x="304" y="96" text-anchor="middle" font-size="10" fill="#4E7590">音 → BPM と確信度</text>
+  <rect x="386" y="56" width="140" height="60" rx="12" fill="#fff"/>
+  <text x="456" y="78" text-anchor="middle" font-size="12" fill="#173A54">聞き取り</text>
+  <text x="456" y="96" text-anchor="middle" font-size="10" fill="#4E7590">音 → 文字（faster-whisper）</text>
+  <rect x="234" y="126" width="292" height="54" rx="12" fill="#DCF5DF"/>
+  <text x="380" y="148" text-anchor="middle" font-size="12" fill="#2E8C42">いまどうあるべきか（状態1つ）</text>
+  <text x="380" y="166" text-anchor="middle" font-size="10" fill="#2E8C42">つまみ ＞ タッチ ＞ NFC ＞ 聞く ＞ 落ち ＞ 歓声 ＞ 顔</text>
+  <rect x="234" y="190" width="140" height="54" rx="12" fill="#fff"/>
+  <text x="304" y="210" text-anchor="middle" font-size="12" fill="#173A54">考える</text>
+  <text x="304" y="228" text-anchor="middle" font-size="10" fill="#4E7590">文字 → 文字（Ollama）</text>
+  <rect x="386" y="190" width="140" height="54" rx="12" fill="#fff"/>
+  <text x="456" y="210" text-anchor="middle" font-size="12" fill="#173A54">声を作る</text>
+  <text x="456" y="228" text-anchor="middle" font-size="10" fill="#4E7590">文字 → 音（VOICEVOX）</text>
+  <rect x="590" y="40" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="59" text-anchor="middle" font-size="12" fill="#173A54">首</text>
+  <text x="670" y="76" text-anchor="middle" font-size="10" fill="#4E7590">角度2つ × 30回/秒</text>
+  <rect x="590" y="96" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="115" text-anchor="middle" font-size="12" fill="#173A54">顔</text>
+  <text x="670" y="132" text-anchor="middle" font-size="10" fill="#4E7590">表情の名前（14枚から）</text>
+  <rect x="590" y="152" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="171" text-anchor="middle" font-size="12" fill="#173A54">LED・背景</text>
+  <text x="670" y="188" text-anchor="middle" font-size="10" fill="#4E7590">色 30個の列 × 20回/秒（同じ列を2つへ）</text>
+  <rect x="590" y="208" width="160" height="46" rx="12" fill="#fff" stroke="#CFEBFA" stroke-width="3"/>
+  <text x="670" y="227" text-anchor="middle" font-size="12" fill="#173A54">声</text>
+  <text x="670" y="244" text-anchor="middle" font-size="10" fill="#4E7590">音声（40文字まで）</text>
+  <line x1="170" y1="63" x2="218" y2="140" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <line x1="170" y1="119" x2="232" y2="90" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <line x1="170" y1="175" x2="218" y2="155" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <line x1="170" y1="231" x2="218" y2="165" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <line x1="540" y1="140" x2="588" y2="63" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <line x1="540" y1="150" x2="588" y2="119" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <line x1="540" y1="160" x2="588" y2="175" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <line x1="526" y1="217" x2="588" y2="231" stroke="#4E7590" stroke-width="2.5" marker-end="url(#ar10)"/>
+  <text x="380" y="286" text-anchor="middle" font-size="12" fill="#1A73C4">実機に届くのは「角度」「表情の名前」「色の列」「音」だけ。意味を持っているのは真ん中</text>
+</svg></div>` +
+            K.tiny('DJ 機材の MIDI は 1秒に数十件、首の角度は 30回/秒、色の列は 20回/秒、会話は1往復 3〜5秒') },
+
+    { ch: 2, tag: '① 役割ごとの製品・技術',
+      talk: `<b>用語の共有です。</b>役割ごとに「何を使っているか」を一覧で。全部 OSS か市販品で、特別なものはありません。`,
+      html: K.sys('B① 役割 → 使っているもの') +
+            K.cards([
+              { k: '身体', v: 'M5Stack K151<br>（CoreS3 / ESP32-S3）', d: 'サーボ2基・カメラ・マイク・3ゾーンタッチ・LED 12個・バッテリー 550mAh。¥18,150' },
+              { k: 'ファーム', v: 'stackchan-mcp<br>（xiaozhi のフォーク）', d: 'K151 専用のボード定義。MCP で道具 49 個。WebSocket で母艦と話す' },
+              { k: '窓口', v: 'stackchan-mcp gateway<br>（Python）', d: '実機と1本の WebSocket。MCP サーバー。聞き取り faster-whisper もここ' },
+              { k: '演技', v: 'console<br>（自作 Python 約9,300行）', d: 'MIDI・拍・タッチ・NFC → 状態1つ → 差分で反映。テスト 524 件' },
+              { k: '考える', v: 'Ollama<br>gemma3:4b／qwen2.5:14b', d: '会話は小さく速く、質疑 bot は大きく正確に。全部 MacBook の中' },
+              { k: '声', v: 'VOICEVOX', d: '文字 → 音声。話者 14。40 文字まで' },
+              { k: 'DJ 機材', v: 'Pioneer DDJ-FLX2', d: 'USB MIDI。クラスコンプライアントでドライバ不要' },
+              { k: '光', v: 'LED テープ SK6812 30粒<br>（M5Stack A093）', d: 'Grove Port B。全開 5V 1.8A なので上限 35%。¥1,344' },
+              { k: '受付', v: 'RFID 2 Unit<br>（WS1850S / I2C 0x28）', d: 'Grove Port A。カードの ID 3 バイトで名前を呼ぶ' },
+              { k: '背景', v: 'iPad ＋ ブラウザ1枚<br>（stage.html）', d: '奥から手前へ7層。実機と同じ色の列を受け取る' },
+              { k: '網', v: 'MacBook のインターネット共有', d: '2.4GHz。MacBook は 192.168.2.1 固定。外には出ない' },
+            ]) },
 
     { ch: 2, tag: '① 正直に言っておくこと',
       talk: `<b>先に言っておくと、あとでがっかりされません。</b>D で声をかける前に、ここで期待値を揃えます。`,
@@ -721,7 +832,7 @@ const CONTENT = {
             K.memo('★言い切る一言：「<b>できたことは持ち帰れません。壊れ方は持ち帰れます。</b>」') },
 
     /* ───────── D ───────── */
-    { ch: 5, tag: '手を動かす', cover: { num: 'D', title: '手を動かす', sub: '17分 / 渡し方を覚えてもらう' },
+    { ch: 5, tag: '手を動かす', cover: { num: 'D', title: '動かす', sub: '渡し方を覚えてもらう' },
       talk: `<b>このブロック自体がメッセージです。</b><br>
              手順は人間に渡しません。<b>エージェントに渡します。人間が覚えるのは「渡し方」のほうです。</b>
              ★入る前に、実機を<b>会話モード</b>に切り替えます（MASTER ボタンで踊り OFF）。切り替えは1回だけ。` },
@@ -807,29 +918,15 @@ const CONTENT = {
             ]) +
             K.memo('合図なしで録音したら、2回に1回は無音で終わりました（実測）。「いつ話せばいいか」は作った側には自明でも、その人には見えていません。<b>見えていないものは、見せること自体が機能。</b>') },
 
-    /* ───────── E ───────── */
-    { ch: 6, tag: '出す', cover: { num: 'E', title: '出す', sub: '5分 / 発表項目は2つだけ' },
-      talk: `<b>②を発表項目にしているのは、質問を集める作業そのものを、体験の一部にするためです。</b>
-             集まった質問は、その場で質疑 bot と締めのスピーチの材料になります。` },
+    /* ───────── 交流 ───────── */
+    { ch: 6, tag: '交流', cover: { num: '∞', title: '交流', sub: 'みんなで自由に。エージェントも一緒に、ロボットもね' },
+      talk: `<b>最後は自由時間です。</b>冒頭の3分だけ進行役がやることがあります：今日の録音を本人に返して同意を聞く → 図を1枚出す → この子に一言。<br>
+             そのあとは、お披露目スペース・DJ 機材・黙々の机、どこでも。エージェントも一緒に、ロボットもね。` },
 
-    { ch: 6, tag: '発表は2つだけ',
-      talk: `<b>「技術の話でなくて構いません」</b>と、先に伝えておきます。1人1分、2人で終わり。時間が余ったら3人目。`,
-      html: K.sys('E 5分') +
-            K.goals([
-              { title: '自分は何をやろうと思ったか', body: '技術の話でなくて構いません。「玄関で名前を呼ばせたい」「猫の代わりに」で十分です' },
-              { title: '何を聞きたいか', body: '★これを発表項目にすると、質問の収集が体験の一部になります。答えは F の診断と、帰ってからの質疑 bot に' },
-            ]) +
-            K.memo('進行役は答えを言いません。<b>「それ、D の黙々派の机で続きを」</b>か、<b>「配布物の○○に書いてあります」</b>で受けます。') },
-
-    /* ───────── F ───────── */
-    { ch: 7, tag: '返す', cover: { num: 'F', title: '返す', sub: '7分 / 集める前に返す' },
-      talk: `<b>順序を逆にしています。「集めさせて、使わせて」ではなく「あなたに返します、よければ共有してください」。</b>
-             B② で批判した「同意の動線が無い」の、裏返しをやります。` },
-
-    { ch: 7, tag: '① 返す（3分）',
+    { ch: 6, tag: '① 返す（3分）',
       talk: `<b>まず本人に返します。それから同意を聞きます。</b><br>
              今日この机の上で文字にした録音（Mac と Omi）から、質問の傾向を実機に読み上げさせます。`,
-      html: K.sys('F①') +
+      html: K.sys('交流の冒頭 3分') +
             K.cards([
               { k: '1', v: 'あなたの DJ スタイルを診断して返す', d: 'その日の質問の傾向から、実機が一言ずつ。台本の文に [face] [led] [move] のタグを混ぜてあるので、喋りながら顔と首と LED が動く' },
               { k: '2', v: '足りなければ「評価対象外」と言う', d: '★占いとの決定的な差。データが無いのに当てに行かない' },
@@ -838,7 +935,7 @@ const CONTENT = {
             K.memo('★<b>原価と日数も配ります。</b>「買ったのは2つだけで、<b>¥19,494</b>（K151 ¥18,150 ＋ LED テープ ¥1,344）。暦では27日、手を動かしたのは11日。' +
                    '<b>¥18,150 と2時間20分</b>で、声もカメラも外に出ないロボットが机の上に立ちます。今夜、そこから始められます」') },
 
-    { ch: 7, tag: '② 最後に図を1枚',
+    { ch: 6, tag: '② 最後に図を1枚',
       talk: `<b>説明はしません。順番に指すだけです。</b>背景（iPad）に図を1枚。左に人、右に実機、真ん中に AI、下に机。`,
       html: K.sys('背景スクリーンに1枚') +
             K.todo([
@@ -849,21 +946,21 @@ const CONTENT = {
             ]) +
             K.memo('A で触った手、B④ で回したつまみ、D で話した声。<b>今日やったことが、この1枚に全部入っています。</b>') },
 
-    { ch: 7, tag: '② ｽﾀｯｸﾁｬﾝに言ってもらう',
+    { ch: 6, tag: '② ｽﾀｯｸﾁｬﾝに言ってもらう',
       talk: `<b>本人ではなく、この子に言ってもらいます。</b>台本にタグが入っているので、言いながら顔と首が動きます。進行役は黙って実機を指すだけ。`,
       html: K.sys('★進行役は黙って、実機を指すだけ') +
             K.quote('今日、あなたたちは僕を DJ していました。<br>そして僕は、あなたたちと DJ していました。') +
             K.tiny('声は VOICEVOX（話者 14）。文は 40 文字以内で2つに割ってある。1文目のあとに一拍、首をこちらへ') },
 
     /* ───────── 締 ───────── */
-    { ch: 8, tag: '最後のひとこと',
+    { ch: 7, tag: '最後のひとこと',
       talk: `<b>ここは言い切ります。</b>説明を足すと、全部ぼやけてしまいます。`,
       html: K.head('素材は、<em>自分が作ったものでなくていい。</em>') +
             K.lead('<b>選ぶ順番と、混ぜ方と、止めるタイミングに、その人が出ます。</b>ファームも、モデルも、曲も、借り物でした。') +
             K.rule() +
             K.head('さあ、<span class="o">始めましょう。</span>') },
 
-    { ch: 8, tag: '落ちたときの言い換え',
+    { ch: 7, tag: '落ちたときの言い換え',
       talk: `<b>慌てなくて大丈夫です。</b>どれも、そのまま話に繋がります。切り分けは <code>./scripts/rescue.sh</code>、実機の言い分は <code>--serial</code>。`,
       html: K.sys('保険') +
             K.cards([
@@ -873,11 +970,11 @@ const CONTENT = {
               { k: '実機が落ちた', v: '電源を入れ直す（顔まで約10〜35秒）', d: 'OTA スタブ → gateway の順で来る。30秒は待つ。それでもダメなら<b>デモ録画に切り替える</b>（★録画は必ず持っていく）' },
             ]) },
 
-    { ch: 8, tag: '★これだけは守りたいこと',
+    { ch: 7, tag: '★これだけは守りたいこと',
       talk: `<b>いってらっしゃい。</b>`,
       html: K.sys('やらないと決めていること') +
             K.todo([
-              { title: '専門用語を先に出さない', body: '体験してから、名前を教えます' },
+              { title: '用語を先に出さない', body: '体験してから、用語の共有として名前を伝えます' },
               { title: '自慢に聞こえる言い方をしない', body: '手元を指して、感想は相手に言ってもらいます。「できて当たり前」の前提も置きません' },
               { title: '説明を先に足さない', body: '触ってもらってから、名前を教えます' },
               { title: '電源が入ったまま、首を手で回さない', body: 'ハードが壊れます' },
